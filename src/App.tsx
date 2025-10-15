@@ -47,12 +47,23 @@ function App() {
       setShowInstallPopup(true);
     };
 
+    const handleShowInstallPopup = () => {
+      if (deferredPrompt) {
+        setShowInstallPopup(true);
+      } else {
+        // If no prompt available, still show the popup to inform user
+        setShowInstallPopup(true);
+      }
+    };
+
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    window.addEventListener('showInstallPopup', handleShowInstallPopup);
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      window.removeEventListener('showInstallPopup', handleShowInstallPopup);
     };
-  }, []);
+  }, [deferredPrompt]);
 
   const handleInstallClick = () => {
     if (deferredPrompt) {
@@ -101,7 +112,7 @@ function App() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg text-black max-w-sm mx-4">
             <h2 className="text-xl font-bold mb-4">Install Catalyst Crew App</h2>
-            <p className="mb-4">Install our app for a better mobile experience!</p>
+            <p className="mb-4">Install our app for a better experience on your device!</p>
             <div className="flex justify-end space-x-4">
               <button
                 onClick={() => setShowInstallPopup(false)}
