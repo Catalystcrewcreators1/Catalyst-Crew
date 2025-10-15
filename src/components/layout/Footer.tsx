@@ -148,6 +148,20 @@ const Footer = () => {
           className="border-t border-red-500/20 mt-8 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
+            {/* Install App Button */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+              viewport={{ once: true }}
+              onClick={() => window.dispatchEvent(new CustomEvent('showInstallPopup'))}
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium mb-4 md:mb-0 transition-all duration-300 mr-4"
+            >
+              Install App on Mobile
+            </motion.button>
+
             {/* Copyright */}
             <div className="text-gray-300 mb-4 md:mb-0" style={{ color: '#d1d5db' }}>
               © 2025 Catalyst Crew. All rights reserved.
