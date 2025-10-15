@@ -47,23 +47,12 @@ function App() {
       setShowInstallPopup(true);
     };
 
-    const handleShowInstallPopup = () => {
-      if (deferredPrompt) {
-        setShowInstallPopup(true);
-      } else {
-        // If no prompt available, still show the popup to inform user
-        setShowInstallPopup(true);
-      }
-    };
-
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    window.addEventListener('showInstallPopup', handleShowInstallPopup);
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-      window.removeEventListener('showInstallPopup', handleShowInstallPopup);
     };
-  }, [deferredPrompt]);
+  }, []);
 
   const handleInstallClick = () => {
     if (deferredPrompt) {

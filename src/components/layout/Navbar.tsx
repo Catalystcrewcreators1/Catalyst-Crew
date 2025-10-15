@@ -77,19 +77,13 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="hidden md:flex items-center space-x-4"
+            className="hidden md:block"
           >
-            <button
-              onClick={() => window.dispatchEvent(new CustomEvent('showInstallPopup'))}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300"
-            >
-              Install App
-            </button>
             <Link
               to="/contact"
               className="bg-red-600 hover:bg-red-900 hover:shadow-xl hover:scale-105 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 border border-red-600 hover:border-red-900"
@@ -160,15 +154,6 @@ const Navbar = () => {
               ))}
             </div>
             <div className="px-4 py-3 border-t border-red-500/20" style={{ borderColor: 'rgba(215, 27, 27, 0.2)' }}>
-              <button
-                onClick={() => {
-                  window.dispatchEvent(new CustomEvent('showInstallPopup'));
-                  setIsOpen(false);
-                }}
-                className="block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium text-center transition-all duration-300 mb-3"
-              >
-                Install App
-              </button>
               <Link
                 to="/contact"
                 className="block w-full bg-red-600 hover:bg-red-900 hover:shadow-xl hover:scale-105 text-white px-4 py-2 rounded-lg font-medium text-center transition-all duration-300 border border-red-600 hover:border-red-900"
