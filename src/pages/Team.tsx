@@ -127,8 +127,8 @@ const Team = () => {
   ];
 
   const companyStats = [
-    { number: 200, suffix: "+", label: "Projects Completed" },
-    { number: 50, suffix: "+", label: "Happy Clients" },
+    { number: 20, suffix: "+", label: "Projects Completed" },
+    { number: 15, suffix: "+", label: "Happy Clients" },
     { number: 15, suffix: "+", label: "Awards Won" },
     { number: 5, suffix: "+", label: "Years Experience" }
   ];

@@ -93,9 +93,9 @@ const Testimonials = () => {
   ];
 
   const stats = [
-    { number: 150, suffix: "+", label: "Happy Clients" },
+    { number: 15, suffix: "+", label: "Happy Clients" },
     { number: 98, suffix: "%", label: "Client Satisfaction" },
-    { number: 200, suffix: "+", label: "Projects Completed" },
+    { number: 20, suffix: "+", label: "Projects Completed" },
     { number: 4.9, suffix: "/5", label: "Average Rating" }
   ];
 

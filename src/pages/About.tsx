@@ -19,9 +19,9 @@ import { ScrollReveal, FloatingElement } from '../components/ui/ScrollAnimations
 const About = () => {
   const stats = [
     { number: 2024, label: 'Founded', icon: Rocket },
-    { number: 15, label: 'Team Members', icon: Users },
-    { number: 200, label: 'Projects Completed', icon: Award },
-    { number: 50, label: 'Happy Clients', icon: Star }
+    { number: 7, label: 'Team Members', icon: Users },
+    { number: 20, label: 'Projects Completed', icon: Award },
+    { number: 15, label: 'Happy Clients', icon: Star }
   ];
 
   const values = [
@@ -534,15 +534,16 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: "Sulax Solar", type: "Website", icon: "☀️" },
-              { name: "Catalyst Crew Inventory", type: "Web App", icon: "📊" },
-              { name: "Premium Portfolio", type: "Portfolio", icon: "🎨" },
-              { name: "Our Website", type: "Company Site", icon: "🚀" }
+              { name: "Sulax Solar", type: "Website", icon: "☀️", url: "https://sulaxsolar.com/" },
+              { name: "Catalyst Crew Inventory", type: "Web App", icon: "📊", url: "#" },
+              { name: "Premium Portfolio", type: "Portfolio", icon: "🎨", url: "https://ashwin-portolio-react.vercel.app/" },
+              { name: "Our Website", type: "Company Site", icon: "🚀", url: "https://catalyst-crew-alpha.vercel.app/" }
             ].map((project, index) => (
               <ScrollReveal key={index} direction="up" delay={index * 0.1}>
                 <motion.div
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="group bg-gradient-to-br from-white/5 to-white/10 border border-white/20 rounded-3xl p-8 backdrop-blur-sm hover:border-catalyst-red/30 transition-all duration-500 hover:shadow-2xl hover:shadow-catalyst-red/10"
+                  className="group bg-gradient-to-br from-white/5 to-white/10 border border-white/20 rounded-3xl p-8 backdrop-blur-sm hover:border-catalyst-red/30 transition-all duration-500 hover:shadow-2xl hover:shadow-catalyst-red/10 cursor-pointer"
+                  onClick={() => project.url !== "#" && window.open(project.url, '_blank')}
                 >
                   <motion.div
                     whileHover={{ rotate: 15, scale: 1.1 }}
