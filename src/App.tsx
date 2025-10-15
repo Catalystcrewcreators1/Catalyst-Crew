@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
 
 // Define types for PWA install prompt
 interface BeforeInstallPromptEvent extends Event {
@@ -37,8 +36,53 @@ import MarketingConsulting from './pages/MarketingConsulting';
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallPopup, setShowInstallPopup] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  // Define page order for swipe navigation
+  const pageOrder = [
+    '/',
+    '/about',
+    '/services',
+    '/portfolio',
+    '/team',
+    '/testimonials',
+    '/contact',
+    '/careers',
+    '/mission',
+    '/pricing',
+    '/blog',
+    '/events'
+  ];
+
+  // Get current page index
+  const currentIndex = pageOrder.indexOf(location.pathname);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(0);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isRightSwipe && currentIndex < pageOrder.length - 1) {
+      navigate(pageOrder[currentIndex + 1]);
+    } else if (isLeftSwipe && currentIndex > 0) {
+      navigate(pageOrder[currentIndex - 1]);
+    }
+  };
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: Event) => {
@@ -70,7 +114,7 @@ function App() {
   return (
     <div className="min-h-screen bg-black text-white pb-20" style={{ backgroundColor: '#0B0B0B', color: '#ffffff' }}>
       <Navbar />
-      <main className="relative">
+      <main className="relative" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
