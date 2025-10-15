@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -84,15 +83,6 @@ const Home = () => {
       color: "text-red-400"
     }
   ];
-
-  useEffect(() => {
-    const link = document.createElement('a');
-    link.href = '/app-info.txt';
-    link.download = 'catalyst-crew-info.txt';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden">
