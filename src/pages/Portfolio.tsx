@@ -15,10 +15,10 @@ const Portfolio = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   const filters = [
-    { id: 'all', label: 'All', count: 5 },
+    { id: 'all', label: 'All', count: 6 },
     { id: 'web', label: 'Websites', count: 1 },
     { id: 'ecommerce', label: 'E-Commerce', count: 2 },
-    { id: 'webapp', label: 'Web Apps', count: 2 }
+    { id: 'webapp', label: 'Web Apps', count: 3 }
   ];
 
   const projects = [
@@ -64,7 +64,7 @@ const Portfolio = () => {
     {
       id: 4,
       title: "Our Website",
-      category: "Proffesional Website",
+      category: "Professional Website",
       description: "Catalyst Crew's official digital home built for performance, clarity, and a powerful brand-driven user experience.",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_4-removebg-preview.png?updatedAt=1755976929761",
       technologies: ["HTML/CSS", "JavaScript"],
@@ -85,6 +85,19 @@ const Portfolio = () => {
       year: "2023",
       featured: false,
       link: "https://catalystcrew1.github.io/Twinkle-Pal-Portfolio/",
+      github: "#"
+    },
+    {
+      id: 6,
+      title: "Ashwin Jauhary – Advanced Portfolio",
+      category: "Advance Portfolio",
+      description: "An advanced and immersive portfolio website showcasing Ashwin Jauhary's professional journey, technical expertise, and creative projects. Built with React and Framer Motion for fluid animations, and powered by Tailwind CSS for a sleek, modern UI. The site features dynamic project displays, animated skill charts, integrated certifications, and smooth navigation for an exceptional user experience.",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/Ashwin-portfolio_5QO948eZ2?updatedAt=1761308179872",
+      technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite", "EmailJS"],
+      client: "Ashwin Jauhary",
+      year: "2025",
+      featured: true,
+      link: "https://ashwin-portolio-react.vercel.app/",
       github: "#"
     }
   ];
