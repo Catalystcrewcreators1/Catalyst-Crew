@@ -6,21 +6,41 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
+  const originalNavItems = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    {
-      name: 'Services',
-      path: '/services'
-    },
-    {
-      name: 'Portfolio',
-      path: '/portfolio'
-    },
+    { name: 'Services', path: '/services' },
+    { name: 'Portfolio', path: '/portfolio' },
     { name: 'Blog', path: '/blog' },
     { name: 'Events', path: '/events' },
     { name: 'Pricing', path: '/pricing' },
     { name: 'Careers', path: '/careers' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
+  const mobileNavItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    {
+      name: 'Services',
+      path: '/services',
+      subItems: [
+        { name: 'Design Studio', path: '/services/design' },
+        { name: 'Web Development', path: '/services/development' },
+        { name: 'Media Production', path: '/services/media' },
+        { name: 'Event Management', path: '/services/events' },
+        { name: 'Marketing Consulting', path: '/services/marketing' }
+      ]
+    },
+    { name: 'Portfolio', path: '/portfolio' },
+    { name: 'Team', path: '/team' },
+    { name: 'Testimonials', path: '/testimonials' },
+    { name: 'Mission', path: '/mission' },
+    { name: 'Pricing', path: '/pricing' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Events', path: '/events' },
+    { name: 'Careers', path: '/careers' },
+    { name: 'Apply', path: '/apply' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -51,7 +71,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item, index) => (
+              {originalNavItems.map((item, index) => (
                 <div key={item.name} className="relative group">
                   <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -135,22 +155,44 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <Link
-                    to={item.path}
-                    className="block px-3 py-2 text-base font-medium text-white hover:bg-black/50 transition-colors duration-200 rounded-md"
-                    style={{ color: '#ffffff' }}
-                    onClick={() => setIsOpen(false)}
+              {mobileNavItems.map((item, index) => (
+                <div key={item.name}>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    {item.name}
-                  </Link>
-                </motion.div>
+                    <Link
+                      to={item.path}
+                      className="block px-3 py-2 text-base font-medium text-white hover:bg-black/50 transition-colors duration-200 rounded-md"
+                      style={{ color: '#ffffff' }}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                  {item.subItems && (
+                    <div className="ml-4 mt-1 space-y-1">
+                      {item.subItems.map((subItem) => (
+                        <motion.div
+                          key={subItem.name}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: (index + 1) * 0.1 }}
+                        >
+                          <Link
+                            to={subItem.path}
+                            className="block px-3 py-2 text-sm font-medium text-white hover:bg-black/50 transition-colors duration-200 rounded-md"
+                            style={{ color: '#cccccc' }}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {subItem.name}
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
             <div className="px-4 py-3 border-t border-red-500/20" style={{ borderColor: 'rgba(215, 27, 27, 0.2)' }}>
