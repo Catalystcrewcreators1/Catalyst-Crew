@@ -16,9 +16,10 @@ const Portfolio = () => {
 
   const filters = [
     { id: 'all', label: 'All', count: 6 },
-    { id: 'web', label: 'Websites', count: 1 },
-    { id: 'ecommerce', label: 'E-Commerce', count: 2 },
-    { id: 'webapp', label: 'Web Apps', count: 3 }
+    { id: 'web', label: 'Websites', count: 2 },
+    { id: 'ecommerce', label: 'E-Commerce', count: 0 },
+    { id: 'webapp', label: 'Web Apps', count: 2 },
+    { id: 'portfolio', label: 'Portfolios', count: 2 }
   ];
 
   const projects = [
@@ -51,7 +52,7 @@ const Portfolio = () => {
     {
       id: 3,
       title: "Premium Portfolio",
-      category: "Portfolio",
+      category: "webapp",
       description: "A dynamic portfolio web app template with a sleek UI, backend integration, and motion-based animations for modern creatives.",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_3-removebg-preview.png?updatedAt=1755976929799",
       technologies: ["React", "Node.js"],
@@ -64,7 +65,7 @@ const Portfolio = () => {
     {
       id: 4,
       title: "Our Website",
-      category: "Professional Website",
+      category: "web",
       description: "Catalyst Crew's official digital home built for performance, clarity, and a powerful brand-driven user experience.",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_4-removebg-preview.png?updatedAt=1755976929761",
       technologies: ["HTML/CSS", "JavaScript"],
@@ -77,7 +78,7 @@ const Portfolio = () => {
     {
       id: 5,
       title: "Portfolio Website",
-      category: "Portfolio",
+      category: "portfolio",
       description: "A creative personal website design showcasing elegant transitions, lightweight performance, and modern dark-mode support.",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project%205%20(2).png?updatedAt=1755978151851",
       technologies: ["HTML/CSS", "JS"],
@@ -90,8 +91,8 @@ const Portfolio = () => {
     {
       id: 6,
       title: "Ashwin Jauhary – Advanced Portfolio",
-      category: "Advance Portfolio",
-      description: "An advanced and immersive portfolio website showcasing Ashwin Jauhary's professional journey, technical expertise, and creative projects. Built with React and Framer Motion for fluid animations, and powered by Tailwind CSS for a sleek, modern UI. The site features dynamic project displays, animated skill charts, integrated certifications, and smooth navigation for an exceptional user experience.",
+      category: "portfolio",
+      description: "A sleek, animated portfolio showcasing skills, projects, and creativity with modern design and seamless interactions.",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/Ashwin-portfolio_5QO948eZ2?updatedAt=1761308179872",
       technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite", "EmailJS"],
       client: "Ashwin Jauhary",
