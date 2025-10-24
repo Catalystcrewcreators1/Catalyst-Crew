@@ -323,11 +323,11 @@ const Pricing = () => {
               >
                 <h1 className="text-6xl md:text-8xl font-heading font-black leading-tight mb-4">
                   <span className="block mb-3 relative">
-                    <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent drop-shadow-2xl">
+                    <span style={{ color: '#D71B1B' }} className="drop-shadow-2xl">
                       Premium Digital
                     </span>
                     {/* Text shadow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent opacity-20 blur-sm -z-10">
+                    <div className="absolute inset-0 opacity-20 blur-sm -z-10" style={{ color: '#D71B1B' }}>
                       Premium Digital
                     </div>
                   </span>
@@ -344,7 +344,7 @@ const Pricing = () => {
                 className="max-w-5xl mx-auto mb-16"
               >
                 <p className="text-2xl md:text-3xl text-white/90 leading-relaxed font-medium">
-                  Transparent Plans. Maximum Value. <span className="text-red-400 font-bold">Exceptional Results.</span>
+                  Transparent Plans. Maximum Value. <span className="font-bold" style={{ color: '#D71B1B' }}>Exceptional Results.</span>
                 </p>
 
                 {/* Decorative line */}
@@ -352,7 +352,7 @@ const Pricing = () => {
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 1.5, delay: 0.8 }}
-                  className="h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent rounded-full mt-8 mx-auto max-w-md"
+                  className="h-1 rounded-full mt-8 mx-auto max-w-md" style={{ backgroundColor: '#D71B1B' }}
                 />
               </motion.div>
             </ScrollReveal>
@@ -375,12 +375,16 @@ const Pricing = () => {
                     whileTap={{ scale: 0.95 }}
                     className={`group relative flex items-center space-x-3 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 overflow-hidden ${
                       selectedCategory === category.id
-                        ? 'bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-white shadow-2xl shadow-red-600/40 border-2 border-red-400/50'
-                        : 'text-white/80 hover:text-white hover:bg-red-500/15 border-2 border-red-500/30 hover:border-red-400/60 backdrop-blur-sm bg-red-900/10'
+                        ? 'text-white shadow-2xl border-2'
+                        : 'text-white/80 hover:text-white hover:bg-red-500/15 border-2 hover:border-red-400/60 backdrop-blur-sm bg-red-900/10'
                     }`}
+                    style={{
+                      backgroundColor: selectedCategory === category.id ? '#D71B1B' : undefined,
+                      borderColor: '#D71B1B'
+                    }}
                   >
                     {/* Button background effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-red-700/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: '#D71B1B' }} />
 
                     <motion.div
                       className="relative z-10"
@@ -396,7 +400,7 @@ const Pricing = () => {
                       <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        className="absolute -top-2 -right-2 w-6 h-6 bg-red-400 rounded-full flex items-center justify-center"
+                        className="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#D71B1B' }}
                       >
                         <span className="text-white text-xs">✓</span>
                       </motion.div>
@@ -410,79 +414,35 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-32 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid gap-16">
+      <section className="py-24 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid gap-12">
             {getCurrentPlans().map((service, serviceIndex) => (
-              <ScrollReveal key={serviceIndex} delay={serviceIndex * 0.15}>
+              <ScrollReveal key={serviceIndex} delay={serviceIndex * 0.1}>
                 <motion.div
-                  whileHover={{ scale: 1.02, y: -10 }}
+                  whileHover={{ scale: 1.01, y: -5 }}
                   className="relative group"
                 >
-                  {/* Service container with enhanced styling */}
-                  <div className="relative p-12 bg-gradient-to-br from-red-900/30 via-red-900/20 to-red-900/10 border-2 border-red-500/40 rounded-3xl backdrop-blur-2xl hover:border-red-400/60 transition-all duration-700 shadow-2xl hover:shadow-red-500/25 overflow-hidden">
+                  {/* Attractive service container */}
+                  <div className="relative p-10 border rounded-3xl backdrop-blur-xl transition-all duration-500 shadow-xl" style={{ background: 'linear-gradient(135deg, rgba(215, 27, 27, 0.1), rgba(215, 27, 27, 0.05))', borderColor: '#D71B1B' }}>
 
-                    {/* Background decorative elements */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-red-600/10 via-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-red-500/5 rounded-full blur-3xl group-hover:bg-red-500/10 transition-all duration-700" />
-                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-red-400/5 rounded-full blur-2xl group-hover:bg-red-400/10 transition-all duration-700" />
-
-                    {/* Service header with enhanced styling */}
-                    <div className="relative z-10 flex items-center justify-between mb-12">
-                      <div className="flex items-center space-x-6">
+                    {/* Service header with better styling */}
+                    <div className="flex items-center justify-between mb-10">
+                      <div className="flex items-center space-x-5">
                         <motion.div
+                          whileHover={{ scale: 1.15, rotate: 10 }}
                           className="relative"
-                          whileHover={{
-                            scale: 1.2,
-                            rotate: [0, -10, 10, 0],
-                            boxShadow: "0 20px 40px rgba(215, 27, 27, 0.3)"
-                          }}
-                          transition={{ duration: 0.5 }}
                         >
-                          {/* Icon background glow */}
-                          <div className="absolute inset-0 bg-red-500/20 rounded-2xl blur-xl" />
-                          <div className="relative text-6xl bg-gradient-to-br from-red-400 to-red-600 p-4 rounded-2xl shadow-lg">
+                          <div className="absolute inset-0 rounded-2xl blur-xl" style={{ backgroundColor: '#D71B1B' }} />
+                          <div className="relative text-4xl p-3 rounded-2xl shadow-lg" style={{ background: `linear-gradient(135deg, ${'#D71B1B'}, ${'#D71B1B'})` }}>
                             {service.icon}
                           </div>
                         </motion.div>
-
                         <div>
-                          <motion.h3
-                            className="text-4xl font-black text-white mb-3"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.2 }}
-                          >
-                            {service.name}
-                          </motion.h3>
-                          <motion.p
-                            className="text-red-400 font-semibold text-lg"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.3 }}
-                          >
-                            Professional {service.name.toLowerCase()} solutions
-                          </motion.p>
-
-                          {/* Decorative underline */}
-                          <motion.div
-                            initial={{ width: 0 }}
-                            animate={{ width: "80%" }}
-                            transition={{ duration: 1, delay: 0.5 }}
-                            className="h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mt-3"
-                          />
+                          <h3 className="text-3xl font-bold text-white mb-2">{service.name}</h3>
+                          <p className="font-medium" style={{ color: '#D71B1B' }}>Professional {service.name.toLowerCase()} solutions</p>
                         </div>
                       </div>
-
-                      {/* Service number badge */}
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.4 }}
-                        className="hidden md:flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-full shadow-lg"
-                      >
-                        <span className="text-white font-bold text-xl">#{serviceIndex + 1}</span>
-                      </motion.div>
                     </div>
 
                     {/* Enhanced pricing grid */}
@@ -490,130 +450,75 @@ const Pricing = () => {
                       {service.plans.map((plan, planIndex) => (
                         <motion.div
                           key={planIndex}
-                          initial={{ opacity: 0, y: 30, rotateX: 15 }}
-                          animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                          transition={{ duration: 0.6, delay: planIndex * 0.2 }}
-                          whileHover={{
-                            scale: 1.08,
-                            y: -15,
-                            rotateY: 5,
-                            z: 50
-                          }}
-                          className={`relative group/plan overflow-hidden`}
+                          whileHover={{ scale: 1.05, y: -8 }}
+                          className="relative group/plan"
                         >
-                          {/* Plan card with enhanced styling */}
-                          <div className={`relative p-10 rounded-3xl border-2 backdrop-blur-xl transition-all duration-700 ${
+                          {/* Attractive plan card */}
+                          <div className={`relative p-8 rounded-2xl border-2 backdrop-blur-sm transition-all duration-500 ${
                             plan.popular
-                              ? 'bg-gradient-to-br from-red-600/30 via-red-700/25 to-red-600/30 border-red-400/70 shadow-2xl shadow-red-500/30 hover:shadow-red-500/50'
-                              : 'bg-gradient-to-br from-red-900/20 to-red-900/10 border-red-500/40 hover:border-red-400/60 hover:shadow-2xl hover:shadow-red-500/20'
-                          }`}>
+                              ? 'border shadow-2xl'
+                              : 'border hover:shadow-xl'
+                          }`}
+                          style={{
+                            background: plan.popular
+                              ? 'linear-gradient(135deg, rgba(215, 27, 27, 0.15), rgba(215, 27, 27, 0.1))'
+                              : 'linear-gradient(135deg, rgba(215, 27, 27, 0.08), rgba(215, 27, 27, 0.03))',
+                            borderColor: '#D71B1B'
+                          }}>
 
-                            {/* Card background effects */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-red-600/5 via-transparent to-red-500/5 opacity-0 group-hover/plan:opacity-100 transition-opacity duration-700" />
-                            <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/5 rounded-full blur-2xl group-hover/plan:bg-red-500/10 transition-all duration-700" />
-
-                            {/* Popular badge with enhanced styling */}
+                            {/* Popular badge */}
                             {plan.popular && (
-                              <motion.div
-                                initial={{ scale: 0, rotate: -180 }}
-                                animate={{ scale: 1, rotate: 0 }}
-                                transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                                className="absolute -top-5 left-1/2 transform -translate-x-1/2 z-20"
-                              >
-                                <div className="relative">
-                                  <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 rounded-full blur-lg opacity-75" />
-                                  <div className="relative px-8 py-3 bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-white rounded-full text-sm font-bold shadow-2xl border-2 border-red-400/50">
-                                    <span className="flex items-center">
-                                      <span className="mr-2 text-lg">⭐</span>
-                                      Most Popular
-                                      <span className="ml-2 text-lg">⭐</span>
-                                    </span>
-                                  </div>
-                                </div>
-                              </motion.div>
+                              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                                <span className="px-4 py-2 rounded-full text-sm font-bold shadow-lg" style={{ backgroundColor: '#D71B1B', color: 'white' }}>
+                                  ⭐ Most Popular
+                                </span>
+                              </div>
                             )}
 
                             {/* Plan content */}
-                            <div className="relative z-10 text-center mb-8">
-                              <motion.h4
-                                className="text-3xl font-bold text-white mb-4"
-                                whileHover={{ scale: 1.05 }}
-                              >
-                                {plan.name}
-                              </motion.h4>
-
-                              <motion.div
-                                className="mb-6"
-                                whileHover={{ scale: 1.1 }}
-                              >
-                                <div className={`text-5xl font-black mb-2 ${
-                                  plan.popular
-                                    ? 'bg-gradient-to-r from-red-300 to-red-500 bg-clip-text text-transparent'
-                                    : 'bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent'
-                                }`}>
-                                  {plan.price}
-                                </div>
-                                {plan.popular && (
-                                  <div className="text-red-300 font-semibold text-sm">Best Value</div>
-                                )}
-                              </motion.div>
+                            <div className="text-center mb-6">
+                              <h4 className="text-2xl font-bold text-white mb-3">{plan.name}</h4>
+                              <div className="text-3xl font-bold mb-2" style={{ color: '#D71B1B' }}>
+                                {plan.price}
+                              </div>
                             </div>
 
                             {/* Enhanced features list */}
-                            <ul className="space-y-4 mb-10">
+                            <ul className="space-y-3 mb-8">
                               {plan.features.map((feature, featureIndex) => (
                                 <motion.li
                                   key={featureIndex}
-                                  initial={{ opacity: 0, x: -20 }}
+                                  initial={{ opacity: 0, x: -10 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: featureIndex * 0.1 }}
-                                  className="flex items-center text-white/90 text-base group/feature"
-                                  whileHover={{ x: 5 }}
+                                  className="flex items-center text-white/80 text-sm"
                                 >
-                                  <motion.div
-                                    whileHover={{ scale: 1.2, rotate: 360 }}
-                                    transition={{ duration: 0.3 }}
-                                  >
-                                    <Check className="w-6 h-6 text-red-400 mr-4 flex-shrink-0" />
-                                  </motion.div>
-                                  <span className="group-hover/feature:text-white transition-colors duration-300">
-                                    {feature}
-                                  </span>
+                                  <Check className="w-5 h-5 mr-3 flex-shrink-0" style={{ color: '#D71B1B' }} />
+                                  {feature}
                                 </motion.li>
                               ))}
                             </ul>
 
-                            {/* Enhanced button */}
+                            {/* Attractive button */}
                             <motion.button
                               whileHover={{
                                 scale: 1.05,
                                 boxShadow: plan.popular
-                                  ? "0 20px 40px rgba(215, 27, 27, 0.5)"
-                                  : "0 15px 30px rgba(215, 27, 27, 0.3)",
-                                background: plan.popular
-                                  ? "linear-gradient(135deg, #dc2626, #ef4444, #dc2626)"
-                                  : "linear-gradient(135deg, rgba(215, 27, 27, 0.9), rgba(239, 68, 68, 0.8))"
+                                  ? '0 15px 35px rgba(215, 27, 27, 0.4)'
+                                  : '0 10px 25px rgba(215, 27, 27, 0.3)'
                               }}
                               whileTap={{ scale: 0.95 }}
-                              className={`group/btn relative w-full py-5 rounded-2xl font-bold text-xl transition-all duration-300 overflow-hidden ${
+                              className={`w-full py-4 rounded-xl font-bold text-lg transition-all duration-300 ${
                                 plan.popular
-                                  ? 'bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-white shadow-2xl'
-                                  : 'bg-gradient-to-r from-red-500/30 to-red-600/30 text-red-400 border-2 border-red-500/50 hover:text-white hover:border-red-400 backdrop-blur-sm'
+                                  ? 'text-white shadow-lg'
+                                  : 'text-red-400 border hover:text-white hover:border-red-400'
                               }`}
+                              style={{
+                                backgroundColor: plan.popular ? '#D71B1B' : 'rgba(215, 27, 27, 0.2)',
+                                borderColor: plan.popular ? '#D71B1B' : '#D71B1B'
+                              }}
                             >
-                              {/* Button background animation */}
-                              <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-red-600/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
-
-                              <span className="relative z-10 flex items-center justify-center">
-                                Get Quote
-                                <motion.div
-                                  className="ml-3"
-                                  animate={{ x: [0, 5, 0] }}
-                                  transition={{ duration: 1.5, repeat: Infinity }}
-                                >
-                                  →
-                                </motion.div>
-                              </span>
+                              Get Quote
                             </motion.button>
                           </div>
                         </motion.div>
@@ -626,291 +531,124 @@ const Pricing = () => {
           </div>
 
           {/* Call to Action */}
-          <ScrollReveal className="text-center mt-32">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, y: 50 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-              className="relative group"
-            >
-              <div className="relative bg-gradient-to-br from-red-900/40 via-red-800/30 to-red-900/20 border-3 border-red-500/50 rounded-4xl p-16 backdrop-blur-2xl shadow-2xl hover:shadow-red-500/30 transition-all duration-700 overflow-hidden">
+          <ScrollReveal className="text-center mt-24">
+            <div className="relative border-2 rounded-3xl p-12 backdrop-blur-xl shadow-2xl transition-all duration-500" style={{ background: 'linear-gradient(135deg, rgba(215, 27, 27, 0.15), rgba(215, 27, 27, 0.1))', borderColor: '#D71B1B' }}>
+              <div className="relative z-10">
+                <h3 className="text-4xl md:text-5xl font-bold mb-6">
+                  <span style={{ color: '#D71B1B' }}>Ready to Get</span>
+                  <span className="text-white"> Started?</span>
+                </h3>
+                <p className="text-white/80 mb-10 text-xl max-w-3xl mx-auto leading-relaxed">
+                  Let's discuss your project and find the perfect solution for your needs.
+                </p>
 
-                {/* Enhanced background decorations */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-red-600/15 via-transparent to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="absolute top-0 right-0 w-48 h-48 bg-red-500/10 rounded-full blur-3xl group-hover:bg-red-500/15 transition-all duration-700" />
-                <div className="absolute bottom-0 left-0 w-40 h-40 bg-red-400/10 rounded-full blur-2xl group-hover:bg-red-400/15 transition-all duration-700" />
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-red-600/5 rounded-full blur-xl" />
-
-                {/* Animated border effect */}
-                <div className="absolute inset-0 rounded-4xl bg-gradient-to-r from-red-500/20 via-red-600/30 to-red-500/20 p-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="w-full h-full bg-gradient-to-br from-red-900/40 to-red-800/30 rounded-4xl" />
-                </div>
-
-                <div className="relative z-10">
-                  <motion.h3
-                    className="text-5xl md:text-6xl font-black mb-6"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    <span className="block mb-2" style={{ color: '#D71B1B' }}>Ready to Get</span>
-                    <span className="text-white">Started?</span>
-                  </motion.h3>
-
-                  <motion.p
-                    className="text-white/90 mb-12 text-2xl max-w-3xl mx-auto leading-relaxed"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    Let's discuss your project and find the perfect solution for your needs.
-                  </motion.p>
-
-                  {/* Enhanced contact info */}
-                  <div className="flex flex-col lg:flex-row gap-8 justify-center items-center mb-12">
-                    <motion.div
-                      whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 15px 35px rgba(215, 27, 27, 0.3)"
-                      }}
-                      className="flex items-center space-x-4 text-white/90 bg-red-900/30 px-8 py-4 rounded-2xl border-2 border-red-500/40 hover:border-red-400/60 transition-all duration-300"
-                    >
-                      <motion.div
-                        animate={{
-                          rotate: [0, 360],
-                          scale: [1, 1.1, 1]
-                        }}
-                        transition={{
-                          rotate: { duration: 4, repeat: Infinity, ease: "linear" },
-                          scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-                        }}
-                      >
-                        📞
-                      </motion.div>
-                      <span className="font-bold text-lg">+91 92358 23255</span>
-                    </motion.div>
-
-                    <motion.div
-                      whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 15px 35px rgba(215, 27, 27, 0.3)"
-                      }}
-                      className="flex items-center space-x-4 text-white/90 bg-red-900/30 px-8 py-4 rounded-2xl border-2 border-red-500/40 hover:border-red-400/60 transition-all duration-300"
-                    >
-                      <motion.div
-                        animate={{
-                          scale: [1, 1.2, 1],
-                          opacity: [0.7, 1, 0.7]
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }}
-                      >
-                        ✉️
-                      </motion.div>
-                      <span className="font-bold text-lg">catalystcrewcreators@gmail.com</span>
-                    </motion.div>
-                  </div>
-
-                  {/* Enhanced CTA button */}
+                <div className="flex flex-col lg:flex-row gap-6 justify-center items-center mb-10">
                   <motion.div
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 25px 50px rgba(215, 27, 27, 0.4)"
-                    }}
-                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    className="flex items-center space-x-3 text-white/90 px-6 py-3 rounded-xl border transition-all duration-300" style={{ backgroundColor: 'rgba(215, 27, 27, 0.2)', borderColor: '#D71B1B' }}
                   >
-                    <Link
-                      to="/contact"
-                      className="group relative inline-flex items-center space-x-4 bg-gradient-to-r from-red-600 via-red-700 to-red-600 text-white px-12 py-6 rounded-3xl font-black text-2xl shadow-2xl shadow-red-600/30 hover:shadow-red-600/50 transition-all duration-300 overflow-hidden"
-                    >
-                      {/* Button background effects */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 via-red-600/30 to-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="text-lg">📞</span>
+                    <span className="font-bold">+91 92358 23255</span>
+                  </motion.div>
 
-                      <span className="relative z-10">🚀 Contact Us</span>
-                      <motion.div
-                        className="relative z-10"
-                        animate={{ x: [0, 8, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                      >
-                        →
-                      </motion.div>
-                    </Link>
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    className="flex items-center space-x-3 text-white/90 px-6 py-3 rounded-xl border transition-all duration-300" style={{ backgroundColor: 'rgba(215, 27, 27, 0.2)', borderColor: '#D71B1B' }}
+                  >
+                    <span className="text-lg">✉️</span>
+                    <span className="font-bold">catalystcrewcreators@gmail.com</span>
                   </motion.div>
                 </div>
+
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center space-x-3 text-white px-10 py-5 rounded-2xl font-bold text-xl shadow-2xl transition-all duration-300" style={{ backgroundColor: '#D71B1B' }}
+                  >
+                    <span>🚀 Contact Us</span>
+                  </Link>
+                </motion.div>
               </div>
-            </motion.div>
+            </div>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Additional Services */}
-      <section className="py-32 relative bg-gradient-to-br from-red-900/10 via-transparent to-red-900/15">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-24 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollReveal>
-              <div className="text-center mb-20">
-                <motion.h2
-                  className="text-5xl md:text-7xl font-black mb-8"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <span className="block mb-3" style={{ color: '#D71B1B' }}>Additional</span>
-                  <span className="text-white">Services</span>
-                </motion.h2>
-                <motion.p
-                  className="text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  <span style={{ color: '#D71B1B' }}>Additional</span>
+                  <span className="text-white"> Services</span>
+                </h2>
+                <p className="text-xl text-white/70 max-w-3xl mx-auto">
                   Transparent pricing for all your digital needs
-                </motion.p>
-
-                {/* Decorative separator */}
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 1.5, delay: 0.4 }}
-                  className="h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent rounded-full mt-12 mx-auto max-w-lg"
-                />
+                </p>
               </div>
             </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: "Website Maintenance",
                 price: "₹2,599/month",
-                icon: <Zap className="w-10 h-10" />,
-                features: ["Regular Updates", "Security Monitoring", "Performance Optimization", "24/7 Support"],
-                gradient: "from-red-500/30 to-red-600/30",
-                hoverGradient: "from-red-500/40 to-red-600/40"
+                icon: <Zap className="w-8 h-8" />,
+                features: ["Regular Updates", "Security Monitoring", "Performance Optimization", "24/7 Support"]
               },
               {
                 title: "SEO Services",
                 price: "₹7,999/month",
-                icon: <TrendingUp className="w-10 h-10" />,
-                features: ["Keyword Research", "Content Optimization", "Link Building", "Monthly Reports"],
-                gradient: "from-red-400/30 to-red-500/30",
-                hoverGradient: "from-red-400/40 to-red-500/40"
+                icon: <TrendingUp className="w-8 h-8" />,
+                features: ["Keyword Research", "Content Optimization", "Link Building", "Monthly Reports"]
               },
               {
                 title: "Content Management",
                 price: "₹4,999/month",
-                icon: <Award className="w-10 h-10" />,
-                features: ["Content Updates", "Blog Management", "Social Media", "Analytics Reports"],
-                gradient: "from-red-600/30 to-red-700/30",
-                hoverGradient: "from-red-600/40 to-red-700/40"
+                icon: <Award className="w-8 h-8" />,
+                features: ["Content Updates", "Blog Management", "Social Media", "Analytics Reports"]
               }
             ].map((service, index) => (
-              <ScrollReveal key={index} delay={index * 0.2}>
+              <ScrollReveal key={index} delay={index * 0.1}>
                 <motion.div
-                  initial={{ opacity: 0, y: 40, rotateX: 10 }}
-                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                  transition={{ duration: 0.7, delay: index * 0.1 }}
-                  whileHover={{
-                    scale: 1.05,
-                    y: -15,
-                    rotateY: 5,
-                    z: 30
-                  }}
-                  className={`group relative bg-gradient-to-br ${service.gradient} border-2 border-red-500/40 rounded-4xl p-10 backdrop-blur-2xl hover:border-red-400/60 transition-all duration-700 text-center shadow-2xl hover:shadow-red-500/25 overflow-hidden`}
+                  whileHover={{ scale: 1.03, y: -8 }}
+                  className="relative border rounded-2xl p-8 backdrop-blur-xl transition-all duration-500 text-center shadow-xl" style={{ background: 'linear-gradient(135deg, rgba(215, 27, 27, 0.08), rgba(215, 27, 27, 0.03))', borderColor: '#D71B1B' }}
                 >
-                  {/* Enhanced background effects */}
-                  <div className={`absolute inset-0 bg-gradient-to-tr from-red-600/10 via-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl group-hover:bg-red-500/15 transition-all duration-700" />
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-red-400/10 rounded-full blur-2xl group-hover:bg-red-400/15 transition-all duration-700" />
-
-                  {/* Service number badge */}
                   <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.3 + index * 0.1 }}
-                    className="absolute top-4 right-4 w-10 h-10 bg-gradient-to-br from-red-600 to-red-700 rounded-full flex items-center justify-center shadow-lg"
+                    className="mb-6 flex justify-center"
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.5 }}
+                    style={{ color: '#D71B1B' }}
                   >
-                    <span className="text-white font-bold text-sm">{index + 1}</span>
+                    {service.icon}
                   </motion.div>
-
-                  <div className="relative z-10">
-                    <motion.div
-                      className="text-red-400 mb-8 flex justify-center"
-                      whileHover={{
-                        rotate: 360,
-                        scale: 1.2,
-                        boxShadow: "0 15px 30px rgba(215, 27, 27, 0.3)"
-                      }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <div className="p-4 bg-gradient-to-br from-red-500/20 to-red-600/20 rounded-2xl">
-                        {service.icon}
-                      </div>
-                    </motion.div>
-
-                    <motion.h3
-                      className="text-3xl font-bold text-white mb-6"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {service.title}
-                    </motion.h3>
-
-                    <motion.div
-                      className="text-4xl font-black bg-gradient-to-r from-red-300 to-red-500 bg-clip-text text-transparent mb-8"
-                      whileHover={{ scale: 1.1 }}
-                    >
-                      {service.price}
-                    </motion.div>
-
-                    <ul className="space-y-4 mb-10">
-                      {service.features.map((feature, idx) => (
-                        <motion.li
-                          key={idx}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.5 + idx * 0.1 }}
-                          className="text-white/80 text-base flex items-center justify-center group/feature"
-                          whileHover={{ x: 8 }}
-                        >
-                          <motion.div
-                            whileHover={{ scale: 1.3, rotate: 360 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <Check className="w-5 h-5 text-red-400 mr-3 flex-shrink-0" />
-                          </motion.div>
-                          <span className="group-hover/feature:text-white transition-colors duration-300">
-                            {feature}
-                          </span>
-                        </motion.li>
-                      ))}
-                    </ul>
-
-                    <motion.button
-                      whileHover={{
-                        scale: 1.08,
-                        boxShadow: "0 20px 40px rgba(215, 27, 27, 0.4)",
-                        background: "linear-gradient(135deg, rgba(215, 27, 27, 0.9), rgba(239, 68, 68, 0.8))"
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                      className="group/btn relative w-full py-5 bg-red-500/30 text-red-400 rounded-2xl font-bold text-lg hover:text-white transition-all duration-300 border-2 border-red-500/50 hover:border-red-400 backdrop-blur-sm overflow-hidden"
-                    >
-                      {/* Button background animation */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-red-600/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
-
-                      <span className="relative z-10 flex items-center justify-center">
-                        Get Started
-                        <motion.div
-                          className="ml-3"
-                          animate={{ x: [0, 6, 0] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
-                        >
-                          →
-                        </motion.div>
-                      </span>
-                    </motion.button>
-                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                  <div className="text-3xl font-bold mb-6" style={{ color: '#D71B1B' }}>{service.price}</div>
+                  <ul className="space-y-3 mb-8">
+                    {service.features.map((feature, idx) => (
+                      <motion.li
+                        key={idx}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: idx * 0.1 }}
+                        className="text-white/70 text-sm flex items-center justify-center"
+                      >
+                        <Check className="w-4 h-4 mr-2 flex-shrink-0" style={{ color: '#D71B1B' }} />
+                        {feature}
+                      </motion.li>
+                    ))}
+                  </ul>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full py-4 rounded-xl font-semibold transition-all duration-300 border" style={{ backgroundColor: 'rgba(215, 27, 27, 0.2)', color: '#D71B1B', borderColor: '#D71B1B' }}
+                  >
+                    Get Started
+                  </motion.button>
                 </motion.div>
               </ScrollReveal>
             ))}
