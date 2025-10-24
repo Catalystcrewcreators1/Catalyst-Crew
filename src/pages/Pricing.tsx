@@ -13,14 +13,7 @@ import {
   TrendingUp,
   Zap
 } from 'lucide-react';
-import { ScrollReveal, FloatingElement } from '../components/ui/ScrollAnimations';
-
-interface Plan {
-  name: string;
-  price: string;
-  features: string[];
-  popular?: boolean;
-}
+import { ScrollReveal } from '../components/ui/ScrollAnimations';
 
 const Pricing = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -136,27 +129,82 @@ const Pricing = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-catalyst-dark via-black to-catalyst-red/5 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-catalyst-red/10 to-transparent" />
-      {[...Array(12)].map((_, i) => (
-        <FloatingElement key={i} intensity={20} speed={4 + i}>
-          <div className={`absolute w-3 h-3 rounded-full opacity-40 ${
-            i % 3 === 0 ? 'bg-catalyst-red' : i % 3 === 1 ? 'bg-blue-500' : 'bg-green-400'
-          }`} style={{
-            left: `${10 + (i * 8)}%`,
-            top: `${15 + (i * 10)}%`
-          }} />
-        </FloatingElement>
-      ))}
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+      {/* Dynamic Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-red-900/20 via-transparent to-red-500/10" />
+
+      {/* Enhanced Floating Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Geometric shapes */}
+        <motion.div
+          animate={{
+            rotate: 360,
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+            scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+          }}
+          className="absolute top-20 left-10 w-32 h-32 border border-red-500/20 rounded-full"
+        />
+
+        <motion.div
+          animate={{
+            y: [-20, 20, -20],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+            rotate: { duration: 15, repeat: Infinity, ease: "linear" }
+          }}
+          className="absolute top-40 right-20 w-24 h-24 bg-red-500/10 rounded-lg rotate-45"
+        />
+
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.7, 0.3],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute bottom-32 left-1/4 w-16 h-16 border border-red-400/30 rounded-full"
+        />
+
+        {/* Floating particles */}
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{
+              y: [-30, 30, -30],
+              x: [0, Math.sin(i) * 20, 0],
+              opacity: [0.2, 0.8, 0.2],
+            }}
+            transition={{
+              duration: 4 + i,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.5,
+            }}
+            className="absolute w-2 h-2 bg-red-400 rounded-full"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${30 + i * 10}%`,
+            }}
+          />
+        ))}
+      </div>
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="relative min-h-screen flex items-center justify-center pt-24 pb-20 overflow-hidden">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <Link
               to="/"
-              className="inline-flex items-center space-x-2 text-catalyst-red hover:text-white mb-8 transition-colors duration-200"
+              className="inline-flex items-center space-x-2 text-white/60 hover:text-white mb-8 transition-colors duration-200"
             >
               <ArrowLeft className="h-4 w-4" />
               <span>Back to Home</span>
@@ -167,45 +215,62 @@ const Pricing = () => {
             <ScrollReveal>
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-catalyst-red/20 to-orange-500/20 border-2 border-catalyst-red/40 rounded-full mb-8 backdrop-blur-sm shadow-lg shadow-catalyst-red/20"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-500/10 to-red-600/10 border border-red-500/30 rounded-full mb-8 backdrop-blur-sm shadow-lg"
               >
-                <DollarSign className="w-6 h-6 text-catalyst-red mr-3 animate-pulse" />
-                <span className="text-lg font-semibold text-catalyst-red">Explore Pricing</span>
+                <DollarSign className="w-6 h-6 text-red-400 mr-3 animate-pulse" />
+                <span className="text-lg font-semibold text-red-400">Explore Pricing</span>
               </motion.div>
             </ScrollReveal>
 
             <ScrollReveal>
-              <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
-                <span className="block mb-2" style={{ color: '#D71B1B' }}>🚀 Premium Digital</span>
-                <span className="text-white">Solutions</span>
-              </h1>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mb-6"
+              >
+                <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight">
+                  <span className="block mb-2 bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+                    Premium Digital
+                  </span>
+                  <span className="text-white">Solutions</span>
+                </h1>
+              </motion.div>
             </ScrollReveal>
 
             <ScrollReveal>
-              <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed mb-12">
-                Transparent Plans. Maximum Value. Exceptional Results.
-              </p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="max-w-4xl mx-auto mb-12"
+              >
+                <p className="text-xl md:text-2xl text-white/80 leading-relaxed">
+                  Transparent Plans. Maximum Value. Exceptional Results.
+                </p>
+              </motion.div>
             </ScrollReveal>
 
             {/* Category Filter */}
             <ScrollReveal>
               <div className="flex flex-wrap justify-center gap-4 mb-12">
                 {categories.map((category) => (
-                  <button
+                  <motion.button
                     key={category.id}
                     onClick={() => setSelectedCategory(category.id)}
-                    className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                       selectedCategory === category.id
-                        ? 'bg-catalyst-red text-white shadow-lg shadow-catalyst-red/25'
-                        : 'text-white/80 hover:text-white hover:bg-white/5 border border-white/20'
+                        ? 'bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg shadow-red-600/25'
+                        : 'text-white/80 hover:text-white hover:bg-red-500/10 border border-red-500/30 hover:border-red-400/50 backdrop-blur-sm'
                     }`}
                   >
                     {category.icon}
                     <span>{category.name}</span>
-                  </button>
+                  </motion.button>
                 ))}
               </div>
             </ScrollReveal>
@@ -214,18 +279,21 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-16 relative overflow-hidden">
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid gap-12">
             {getCurrentPlans().map((service, serviceIndex) => (
-              <ScrollReveal key={serviceIndex} direction="up" delay={serviceIndex * 0.1}>
-                <div className="bg-gradient-to-br from-white/15 to-white/8 border border-white/30 rounded-3xl p-10 backdrop-blur-sm shadow-2xl hover:shadow-catalyst-red/20 transition-all duration-500">
+              <ScrollReveal key={serviceIndex} delay={serviceIndex * 0.1}>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="relative p-10 bg-gradient-to-br from-red-900/20 via-red-900/10 to-red-900/5 border border-red-500/30 rounded-3xl backdrop-blur-xl hover:border-red-400/50 transition-all duration-500 shadow-2xl hover:shadow-red-500/20"
+                >
                   <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center space-x-4">
                       <div className="text-5xl animate-bounce">{service.icon}</div>
                       <div>
-                        <h3 className="text-3xl font-bold text-white">{service.name}</h3>
-                        <p className="text-white/70">Professional {service.name.toLowerCase()} solutions</p>
+                        <h3 className="text-3xl font-bold text-white mb-2">{service.name}</h3>
+                        <p className="text-red-400 font-medium">Professional {service.name.toLowerCase()} solutions</p>
                       </div>
                     </div>
                   </div>
@@ -234,42 +302,54 @@ const Pricing = () => {
                     {service.plans.map((plan, planIndex) => (
                       <motion.div
                         key={planIndex}
-                        whileHover={{ scale: 1.05, y: -10, rotateY: 5 }}
+                        whileHover={{ scale: 1.05, y: -8, rotateY: 2 }}
                         className={`relative p-8 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
                           plan.popular
-                            ? 'bg-gradient-to-br from-catalyst-red/20 to-orange-500/20 border-catalyst-red/50 shadow-2xl shadow-catalyst-red/20'
-                            : 'bg-gradient-to-br from-white/10 to-white/5 border-white/30 hover:border-catalyst-red/40 hover:shadow-lg hover:shadow-catalyst-red/10'
+                            ? 'bg-gradient-to-br from-red-600/20 to-red-700/20 border-red-400/60 shadow-2xl shadow-red-500/25'
+                            : 'bg-gradient-to-br from-red-900/15 to-red-900/5 border-red-500/30 hover:border-red-400/50 hover:shadow-lg hover:shadow-red-500/10'
                         }`}
                       >
                         {plan.popular && (
-                          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                            <span className="px-4 py-1 bg-catalyst-red text-white rounded-full text-sm font-semibold">
-                              Most Popular
+                          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                            <span className="px-6 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full text-sm font-bold shadow-lg">
+                              ⭐ Most Popular
                             </span>
                           </div>
                         )}
 
                         <div className="text-center mb-6">
-                          <h4 className="text-xl font-bold text-white mb-2">{plan.name}</h4>
-                          <div className="text-3xl font-bold text-catalyst-red mb-4">{plan.price}</div>
+                          <h4 className="text-2xl font-bold text-white mb-2">{plan.name}</h4>
+                          <div className="text-4xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent mb-4">{plan.price}</div>
                         </div>
 
                         <ul className="space-y-3 mb-8">
                           {plan.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-center text-white/80 text-sm">
-                              <Check className="w-4 h-4 text-catalyst-red mr-3 flex-shrink-0" />
+                            <motion.li
+                              key={featureIndex}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: featureIndex * 0.1 }}
+                              className="flex items-center text-white/80 text-sm"
+                            >
+                              <Check className="w-5 h-5 text-red-400 mr-3 flex-shrink-0" />
                               {feature}
-                            </li>
+                            </motion.li>
                           ))}
                         </ul>
 
                         <motion.button
-                          whileHover={{ scale: 1.1, boxShadow: "0 10px 25px rgba(215, 27, 27, 0.3)" }}
+                          whileHover={{
+                            scale: 1.05,
+                            boxShadow: "0 10px 30px rgba(215, 27, 27, 0.4)",
+                            background: plan.popular
+                              ? "linear-gradient(135deg, #dc2626, #ef4444)"
+                              : "linear-gradient(135deg, rgba(215, 27, 27, 0.8), rgba(239, 68, 68, 0.6))"
+                          }}
                           whileTap={{ scale: 0.95 }}
                           className={`w-full py-4 rounded-xl font-bold text-lg transition-all duration-300 ${
                             plan.popular
-                              ? 'bg-gradient-to-r from-catalyst-red to-orange-500 text-white shadow-lg hover:shadow-catalyst-red/30'
-                              : 'bg-gradient-to-r from-white/20 to-white/10 text-white border border-white/30 hover:border-catalyst-red/50 hover:bg-catalyst-red/10 hover:text-catalyst-red'
+                              ? 'bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg'
+                              : 'bg-gradient-to-r from-red-500/20 to-red-600/20 text-red-400 border border-red-500/50 hover:text-white hover:border-red-400'
                           }`}
                         >
                           Get Quote
@@ -277,34 +357,50 @@ const Pricing = () => {
                       </motion.div>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               </ScrollReveal>
             ))}
           </div>
 
           {/* Call to Action */}
-          <ScrollReveal className="text-center mt-16">
-            <div className="bg-gradient-to-br from-catalyst-red/15 to-orange-500/15 border-2 border-catalyst-red/40 rounded-3xl p-12 backdrop-blur-sm shadow-2xl">
-              <h3 className="text-4xl font-bold text-white mb-4">Ready to Get Started?</h3>
-              <p className="text-white/80 mb-8 text-xl">
-                Let's discuss your project and find the perfect solution for your needs.
-              </p>
+          <ScrollReveal className="text-center mt-20">
+            <div className="relative bg-gradient-to-br from-red-900/20 via-red-800/15 to-red-900/10 border-2 border-red-500/40 rounded-3xl p-12 backdrop-blur-xl shadow-2xl hover:shadow-red-500/20 transition-all duration-500 overflow-hidden">
+              {/* Background decoration */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-red-600/10 via-transparent to-red-500/5" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-red-400/10 rounded-full blur-2xl" />
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <div className="flex items-center space-x-2 text-white/80">
-                  <span>+91 92358 23255</span>
-                </div>
-                <div className="flex items-center space-x-2 text-white/80">
-                  <span>catalystcrewcreators@gmail.com</span>
-                </div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center space-x-3 bg-gradient-to-r from-catalyst-red to-orange-500 text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl shadow-catalyst-red/25 hover:shadow-catalyst-red/40 transition-all duration-300"
+              <div className="relative z-10">
+                <h3 className="text-4xl md:text-5xl font-bold mb-4">
+                  <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Ready to Get</span>
+                  <span className="text-white"> Started?</span>
+                </h3>
+                <p className="text-white/80 mb-8 text-xl max-w-2xl mx-auto">
+                  Let's discuss your project and find the perfect solution for your needs.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="flex items-center space-x-2 text-white/80 bg-red-900/20 px-4 py-2 rounded-full border border-red-500/30"
                   >
-                    <span>Contact Us</span>
-                  </Link>
-                </motion.div>
+                    <span className="font-semibold">📞 +91 92358 23255</span>
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="flex items-center space-x-2 text-white/80 bg-red-900/20 px-4 py-2 rounded-full border border-red-500/30"
+                  >
+                    <span className="font-semibold">✉️ catalystcrewcreators@gmail.com</span>
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center space-x-3 bg-gradient-to-r from-red-600 to-red-700 text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl shadow-red-600/25 hover:shadow-red-600/40 transition-all duration-300"
+                    >
+                      <span>Contact Us</span>
+                    </Link>
+                  </motion.div>
+                </div>
               </div>
             </div>
           </ScrollReveal>
@@ -312,12 +408,13 @@ const Pricing = () => {
       </section>
 
       {/* Additional Services */}
-      <section className="py-16 relative overflow-hidden">
+      <section className="py-24 relative bg-gradient-to-br from-red-900/5 via-transparent to-red-900/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollReveal>
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-                  <span style={{ color: '#D71B1B' }}>Choose Your Perfect Plan</span>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
+                  <span className="block mb-2 bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Additional</span>
+                  <span className="text-white">Services</span>
                 </h2>
                 <p className="text-xl text-white/70 max-w-3xl mx-auto">
                   Transparent pricing for all your digital needs
@@ -331,45 +428,67 @@ const Pricing = () => {
                 title: "Website Maintenance",
                 price: "₹2,599/month",
                 icon: <Zap className="w-8 h-8" />,
-                features: ["Regular Updates", "Security Monitoring", "Performance Optimization", "24/7 Support"]
+                features: ["Regular Updates", "Security Monitoring", "Performance Optimization", "24/7 Support"],
+                gradient: "from-red-500/20 to-red-600/20"
               },
               {
                 title: "SEO Services",
                 price: "₹7,999/month",
                 icon: <TrendingUp className="w-8 h-8" />,
-                features: ["Keyword Research", "Content Optimization", "Link Building", "Monthly Reports"]
+                features: ["Keyword Research", "Content Optimization", "Link Building", "Monthly Reports"],
+                gradient: "from-red-400/20 to-red-500/20"
               },
               {
                 title: "Content Management",
                 price: "₹4,999/month",
                 icon: <Award className="w-8 h-8" />,
-                features: ["Content Updates", "Blog Management", "Social Media", "Analytics Reports"]
+                features: ["Content Updates", "Blog Management", "Social Media", "Analytics Reports"],
+                gradient: "from-red-600/20 to-red-700/20"
               }
             ].map((service, index) => (
-              <ScrollReveal key={index} direction="up" delay={index * 0.1}>
+              <ScrollReveal key={index} delay={index * 0.1}>
                 <motion.div
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  className="bg-gradient-to-br from-white/5 to-white/10 border border-white/20 rounded-3xl p-8 backdrop-blur-sm hover:border-catalyst-red/30 transition-all duration-300 text-center"
+                  whileHover={{ scale: 1.02, y: -8 }}
+                  className={`relative bg-gradient-to-br ${service.gradient} border border-red-500/30 rounded-3xl p-8 backdrop-blur-xl hover:border-red-400/50 transition-all duration-500 text-center shadow-lg hover:shadow-red-500/20 overflow-hidden`}
                 >
-                  <div className="text-catalyst-red mb-4 flex justify-center">
-                    {service.icon}
+                  {/* Background decoration */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-red-600/5 via-transparent to-red-500/5" />
+
+                  <div className="relative z-10">
+                    <motion.div
+                      className="text-red-400 mb-6 flex justify-center"
+                      whileHover={{ rotate: 360, scale: 1.1 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {service.icon}
+                    </motion.div>
+                    <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                    <div className="text-3xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent mb-6">{service.price}</div>
+                    <ul className="space-y-3 mb-8">
+                      {service.features.map((feature, idx) => (
+                        <motion.li
+                          key={idx}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          className="text-white/70 text-sm flex items-center justify-center"
+                        >
+                          <Check className="w-4 h-4 text-red-400 mr-2 flex-shrink-0" />
+                          {feature}
+                        </motion.li>
+                      ))}
+                    </ul>
+                    <motion.button
+                      whileHover={{
+                        scale: 1.05,
+                        background: "linear-gradient(135deg, rgba(215, 27, 27, 0.8), rgba(239, 68, 68, 0.9))"
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full py-4 bg-red-500/20 text-red-400 rounded-xl font-semibold hover:text-white transition-all duration-300 border border-red-500/50 hover:border-red-400 backdrop-blur-sm"
+                    >
+                      Get Started
+                    </motion.button>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
-                  <div className="text-2xl font-bold text-catalyst-red mb-4">{service.price}</div>
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="text-white/70 text-sm">
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full py-3 bg-catalyst-red/10 text-catalyst-red rounded-xl font-semibold hover:bg-catalyst-red hover:text-white transition-all duration-300 border border-catalyst-red/30"
-                  >
-                    Get Started
-                  </motion.button>
                 </motion.div>
               </ScrollReveal>
             ))}
