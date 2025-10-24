@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
-  Palette,
+  Paintbrush,
   User,
   BookOpen,
   CheckCircle,
@@ -83,9 +83,74 @@ const Illustration = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-24 pb-20">
-        <div className="absolute inset-0 bg-purple-900" />
-        <div className="absolute inset-0 bg-purple-900/50" />
+      <section className="relative min-h-screen flex items-center justify-center pt-24 pb-20 overflow-hidden">
+        {/* Dynamic Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-red-900/10 via-transparent to-red-500/5" />
+
+        {/* Floating Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Geometric shapes */}
+          <motion.div
+            animate={{
+              rotate: 360,
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+              scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+            }}
+            className="absolute top-20 left-10 w-32 h-32 border border-red-500/20 rounded-full"
+          />
+
+          <motion.div
+            animate={{
+              y: [-20, 20, -20],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+              rotate: { duration: 15, repeat: Infinity, ease: "linear" }
+            }}
+            className="absolute top-40 right-20 w-24 h-24 bg-red-500/10 rounded-lg rotate-45"
+          />
+
+          <motion.div
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.7, 0.3],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute bottom-32 left-1/4 w-16 h-16 border border-red-400/30 rounded-full"
+          />
+
+          {/* Floating particles */}
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              animate={{
+                y: [-30, 30, -30],
+                x: [0, Math.sin(i) * 20, 0],
+                opacity: [0.2, 0.8, 0.2],
+              }}
+              transition={{
+                duration: 4 + i,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.5,
+              }}
+              className="absolute w-2 h-2 bg-red-400 rounded-full"
+              style={{
+                left: `${20 + i * 15}%`,
+                top: `${30 + i * 10}%`,
+              }}
+            />
+          ))}
+        </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -94,46 +159,68 @@ const Illustration = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full mb-8"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-red-500/10 to-red-600/10 border border-red-500/30 rounded-full mb-8 backdrop-blur-sm shadow-lg"
               >
-                <Palette className="w-4 h-4 text-purple-400 mr-2" />
-                <span className="text-sm text-purple-400 font-medium">Illustration</span>
+                <Paintbrush className="w-5 h-5 text-red-400 mr-3" />
+                <span className="text-sm font-semibold text-red-400">Illustration</span>
               </motion.div>
             </ScrollReveal>
 
             <ScrollReveal>
-              <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Custom Artwork</span>
-                <span className="text-white">Creation</span>
-              </h1>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mb-6"
+              >
+                <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight">
+                  <span className="block mb-2 bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+                    Custom Artwork
+                  </span>
+                  <span className="text-white">Creation</span>
+                </h1>
+              </motion.div>
             </ScrollReveal>
 
             <ScrollReveal>
-              <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Bespoke illustration services for books, websites, marketing materials,
-                and personal projects with unique artistic styles.
-              </p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="max-w-3xl mx-auto mb-12"
+              >
+                <p className="text-xl md:text-2xl text-white/80 leading-relaxed">
+                  Professional illustration services creating unique, eye-catching artwork for
+                  brands, campaigns, and creative projects.
+                </p>
+              </motion.div>
             </ScrollReveal>
 
             <ScrollReveal>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+              >
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     to="/contact"
-                    className="group relative px-10 py-5 bg-purple-600 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-purple-600/25 hover:shadow-purple-600/40 transition-all duration-500 flex items-center space-x-3 overflow-hidden"
+                    className="group relative px-10 py-5 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-red-600/25 hover:shadow-red-600/40 transition-all duration-500 flex items-center space-x-3 overflow-hidden"
                   >
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <span className="relative z-10">Get Started</span>
                   </Link>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     to="/portfolio"
-                    className="px-10 py-5 border-2 border-purple-500/50 text-purple-400 hover:bg-purple-600 hover:text-white rounded-2xl font-bold text-lg transition-all duration-500 flex items-center space-x-3"
+                    className="px-10 py-5 border-2 border-red-500/50 text-red-400 hover:bg-red-600 hover:text-white rounded-2xl font-bold text-lg transition-all duration-500 flex items-center space-x-3 backdrop-blur-sm"
                   >
                     <span>View Our Work</span>
                   </Link>
                 </motion.div>
-              </div>
+              </motion.div>
             </ScrollReveal>
           </div>
         </div>
@@ -161,7 +248,7 @@ const Illustration = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>What's</span>
+                <span className="block mb-2" style={{ color: '#D71B1B' }}>What's</span>
                 <span className="text-white">Included</span>
               </h2>
             </div>
@@ -172,22 +259,22 @@ const Illustration = () => {
               <ScrollReveal key={feature.title} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ scale: 1.05, y: -8 }}
-                  className="group relative p-8 bg-purple-900/20 border border-purple-500/30 rounded-2xl backdrop-blur-xl hover:border-purple-400/50 transition-all duration-500"
+                  className="group relative p-8 bg-red-900/20 border border-red-500/30 rounded-2xl backdrop-blur-xl hover:border-red-400/50 transition-all duration-500"
                 >
                   <motion.div
-                    className="text-purple-400 mb-4 group-hover:scale-125 transition-all duration-500"
+                    className="text-red-400 mb-4 group-hover:scale-125 transition-all duration-500"
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
                     {feature.icon}
                   </motion.div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-300 transition-colors duration-300">
                     {feature.title}
                   </h3>
                   <p className="text-white/70 group-hover:text-white/90 transition-colors duration-300">
                     {feature.description}
                   </p>
-                  <div className="absolute inset-0 bg-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-red-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
               </ScrollReveal>
             ))}
@@ -196,13 +283,13 @@ const Illustration = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-24 relative bg-purple-900/10">
+      <section className="py-24 relative bg-red-900/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-              <span className="block mb-2" style={{ color: '#A855F7' }}>Timeline</span>
+              <span className="block mb-2" style={{ color: '#D71B1B' }}>Timeline</span>
             </h2>
-            <div className="text-6xl font-bold text-purple-400 mb-4">2-4 weeks</div>
+            <div className="text-6xl font-bold text-red-400 mb-4">2-4 weeks</div>
             <p className="text-xl text-white/70">
               From concept sketches to final artwork, we create detailed illustrations.
             </p>
@@ -216,7 +303,7 @@ const Illustration = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Illustration</span>
+                <span className="block mb-2" style={{ color: '#D71B1B' }}>Illustration</span>
                 <span className="text-white">Packages</span>
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
@@ -230,15 +317,15 @@ const Illustration = () => {
               <ScrollReveal key={pkg.name} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ scale: 1.05, y: -8 }}
-                  className={`relative p-8 bg-purple-900/20 border rounded-2xl backdrop-blur-xl transition-all duration-500 ${
+                  className={`relative p-8 bg-red-900/20 border rounded-2xl backdrop-blur-xl transition-all duration-500 ${
                     pkg.popular
-                      ? 'border-purple-400 shadow-2xl shadow-purple-500/20'
-                      : 'border-purple-500/30 hover:border-purple-400/50'
+                      ? 'border-red-400 shadow-2xl shadow-red-500/20'
+                      : 'border-red-500/30 hover:border-red-400/50'
                   }`}
                 >
                   {pkg.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
                         Most Popular
                       </span>
                     </div>
@@ -246,14 +333,14 @@ const Illustration = () => {
 
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                    <div className="text-4xl font-bold text-purple-400 mb-2">{pkg.price}</div>
+                    <div className="text-4xl font-bold text-red-400 mb-2">{pkg.price}</div>
                     <p className="text-white/60">{pkg.description}</p>
                   </div>
 
                   <ul className="space-y-4 mb-8">
                     {pkg.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-purple-400 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
                         <span className="text-white/80">{feature}</span>
                       </li>
                     ))}
@@ -264,8 +351,8 @@ const Illustration = () => {
                     whileTap={{ scale: 0.95 }}
                     className={`w-full py-4 px-6 rounded-xl font-bold transition-all duration-300 ${
                       pkg.popular
-                        ? 'bg-purple-600 hover:bg-purple-700 text-white'
-                        : 'border-2 border-purple-500/50 text-purple-400 hover:bg-purple-600 hover:text-white'
+                        ? 'bg-red-600 hover:bg-red-700 text-white'
+                        : 'border-2 border-red-500/50 text-red-400 hover:bg-red-600 hover:text-white'
                     }`}
                   >
                     Get Started
@@ -278,12 +365,12 @@ const Illustration = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 relative bg-purple-900/10">
+      <section className="py-24 relative bg-red-900/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Client</span>
+                <span className="block mb-2" style={{ color: '#D71B1B' }}>Client</span>
                 <span className="text-white">Success Stories</span>
               </h2>
             </div>
@@ -313,9 +400,9 @@ const Illustration = () => {
               <ScrollReveal key={testimonial.name} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="relative p-8 bg-purple-900/30 border border-purple-500/40 rounded-2xl"
+                  className="relative p-8 bg-red-900/30 border border-red-500/40 rounded-2xl"
                 >
-                  <Quote className="w-8 h-8 text-purple-400 mb-4" />
+                  <Quote className="w-8 h-8 text-red-400 mb-4" />
                   <p className="text-white/80 mb-6 italic">"{testimonial.content}"</p>
                   <div className="flex items-center justify-between">
                     <div>
@@ -340,7 +427,7 @@ const Illustration = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-              <span className="block mb-2" style={{ color: '#A855F7' }}>Ready to Create</span>
+              <span className="block mb-2" style={{ color: '#D71B1B' }}>Ready to Create</span>
               <span className="text-white">Custom Artwork?</span>
             </h2>
             <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
@@ -349,7 +436,7 @@ const Illustration = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/contact"
-                className="inline-flex items-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 shadow-2xl shadow-purple-600/25"
+                className="inline-flex items-center space-x-3 bg-red-600 hover:bg-red-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 shadow-2xl shadow-red-600/25"
               >
                 <span>Get Started</span>
                 <ArrowLeft className="w-6 h-6 rotate-180" />
