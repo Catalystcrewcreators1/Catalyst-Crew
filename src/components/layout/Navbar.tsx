@@ -21,30 +21,12 @@ const Navbar = () => {
   const mobileNavItems = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    {
-      name: 'Services',
-      path: '/services',
-      subItems: [
-        { name: 'Logo Design', path: '/services/design' },
-        { name: 'Graphic Design', path: '/services/graphic-design' },
-        { name: 'Web Development', path: '/services/development' },
-        { name: 'Brand Identity', path: '/services/brand-identity' },
-        { name: 'Print Design', path: '/services/print-design' },
-        { name: 'Digital Design', path: '/services/digital-design' },
-        { name: 'Social Media Managing', path: '/services/social-media' },
-        { name: 'Illustration', path: '/services/illustration' },
-        { name: 'AI Bot / Agent Automation', path: '/services/ai-bot' }
-      ]
-    },
+    { name: 'Services', path: '/services' },
     { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Team', path: '/team' },
-    { name: 'Testimonials', path: '/testimonials' },
-    { name: 'Mission', path: '/mission' },
-    { name: 'Pricing', path: '/pricing' },
     { name: 'Blog', path: '/blog' },
     { name: 'Events', path: '/events' },
+    { name: 'Pricing', path: '/pricing' },
     { name: 'Careers', path: '/careers' },
-    { name: 'Apply', path: '/apply' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -182,43 +164,21 @@ const Navbar = () => {
               </div>
               <div className="flex-1 overflow-y-auto px-2 pt-2 pb-3 space-y-1 min-h-0">
                 {mobileNavItems.map((item, index) => (
-                  <div key={item.name}>
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                  >
+                    <Link
+                      to={item.path}
+                      className="block px-3 py-2 text-base font-medium text-white hover:bg-black/50 transition-colors duration-200 rounded-md"
+                      style={{ color: '#ffffff' }}
+                      onClick={() => setIsOpen(false)}
                     >
-                      <Link
-                        to={item.path}
-                        className="block px-3 py-2 text-base font-medium text-white hover:bg-black/50 transition-colors duration-200 rounded-md"
-                        style={{ color: '#ffffff' }}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    </motion.div>
-                    {item.subItems && (
-                      <div className="ml-4 mt-1 space-y-1">
-                        {item.subItems.map((subItem) => (
-                          <motion.div
-                            key={subItem.name}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.3, delay: (index + 1) * 0.05 }}
-                          >
-                            <Link
-                              to={subItem.path}
-                              className="block px-3 py-2 text-sm font-medium text-white hover:bg-black/50 transition-colors duration-200 rounded-md"
-                              style={{ color: '#cccccc' }}
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {subItem.name}
-                            </Link>
-                          </motion.div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                      {item.name}
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
               <div className="px-4 py-3 border-t border-red-500/20 flex-shrink-0" style={{ borderColor: 'rgba(215, 27, 27, 0.2)' }}>
