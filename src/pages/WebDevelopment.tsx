@@ -38,49 +38,220 @@ const WebDevelopment = () => {
   ];
 
   const packages = [
+    // Professional Website
     {
-      name: "Starter",
-      price: "₹75,000",
-      description: "Perfect for small businesses and portfolios",
-      features: [
-        "Responsive Website (5 pages)",
-        "Basic SEO Optimization",
-        "Contact Forms",
-        "Mobile-Friendly Design",
-        "3 months support",
-        "Delivery in 4-6 weeks"
+      category: "Professional Website",
+      title: "Professional website development solutions",
+      items: [
+        {
+          name: "Basic",
+          price: "₹2,599",
+          description: "5 Pages, Responsive Design, Basic SEO, Contact Form",
+          features: [
+            "5 Pages",
+            "Responsive Design",
+            "Basic SEO",
+            "Contact Form"
+          ]
+        },
+        {
+          name: "Medium",
+          price: "₹3,999",
+          description: "10 Pages, Advanced SEO, CMS Integration, Analytics, 1 Year Support",
+          features: [
+            "10 Pages",
+            "Advanced SEO",
+            "CMS Integration",
+            "Analytics",
+            "1 Year Support"
+          ],
+          popular: true
+        },
+        {
+          name: "Premium",
+          price: "₹7,999",
+          description: "Unlimited Pages, E-commerce Ready, Advanced SEO, Analytics, 2 Years Support, Performance Optimization",
+          features: [
+            "Unlimited Pages",
+            "E-commerce Ready",
+            "Advanced SEO",
+            "Analytics",
+            "2 Years Support",
+            "Performance Optimization"
+          ]
+        }
       ]
     },
+    // E-Commerce Website
     {
-      name: "Professional",
-      price: "₹1,50,000",
-      description: "Complete web solution for growing businesses",
-      features: [
-        "Responsive Website (10 pages)",
-        "Advanced SEO Optimization",
-        "E-commerce Integration",
-        "Content Management System",
-        "Payment Gateway Integration",
-        "Social Media Integration",
-        "6 months support",
-        "Analytics Setup"
-      ],
-      popular: true
+      category: "E-Commerce Website",
+      title: "Professional e-commerce website development solutions",
+      items: [
+        {
+          name: "Basic",
+          price: "₹9,999",
+          description: "Basic Store, Payment Gateway, Inventory Management, Mobile Optimized",
+          features: [
+            "Basic Store",
+            "Payment Gateway",
+            "Inventory Management",
+            "Mobile Optimized"
+          ]
+        },
+        {
+          name: "Medium",
+          price: "₹14,999",
+          description: "Advanced Store, Multiple Gateways, Advanced Inventory, SEO Optimized, Analytics",
+          features: [
+            "Advanced Store",
+            "Multiple Gateways",
+            "Advanced Inventory",
+            "SEO Optimized",
+            "Analytics"
+          ]
+        },
+        {
+          name: "Premium",
+          price: "₹19,999",
+          description: "Custom E-commerce, Multi-vendor Support, Advanced Analytics, Mobile App Ready, 24/7 Support",
+          features: [
+            "Custom E-commerce",
+            "Multi-vendor Support",
+            "Advanced Analytics",
+            "Mobile App Ready",
+            "24/7 Support"
+          ]
+        }
+      ]
     },
+    // Web Apps
     {
-      name: "Enterprise",
-      price: "₹3,00,000",
-      description: "Full-scale web development for large organizations",
-      features: [
-        "Custom Web Application",
-        "Advanced E-commerce Platform",
-        "Multi-language Support",
-        "Advanced Analytics",
-        "Third-party Integrations",
-        "Custom Features",
-        "12 months support",
-        "Priority Development",
-        "Performance Optimization"
+      category: "Web Apps",
+      title: "Professional web application development solutions",
+      items: [
+        {
+          name: "Basic",
+          price: "₹24,999",
+          description: "Basic Web App, Database Integration, User Authentication, Basic Analytics",
+          features: [
+            "Basic Web App",
+            "Database Integration",
+            "User Authentication",
+            "Basic Analytics"
+          ]
+        },
+        {
+          name: "Medium",
+          price: "₹28,999",
+          description: "Advanced Web App, Advanced Database, User Management, Advanced Analytics, API Integration",
+          features: [
+            "Advanced Web App",
+            "Advanced Database",
+            "User Management",
+            "Advanced Analytics",
+            "API Integration"
+          ]
+        },
+        {
+          name: "Premium",
+          price: "₹31,999",
+          description: "Custom Web App, Advanced Features, Complete User Management, Advanced Analytics, Third-party Integrations, 1 Year Support",
+          features: [
+            "Custom Web App",
+            "Advanced Features",
+            "Complete User Management",
+            "Advanced Analytics",
+            "Third-party Integrations",
+            "1 Year Support"
+          ]
+        }
+      ]
+    },
+    // Portfolio Website
+    {
+      category: "Portfolio Website",
+      title: "Professional portfolio website development solutions",
+      items: [
+        {
+          name: "Basic",
+          price: "₹499",
+          description: "5 Pages, Responsive Design, Basic SEO, Contact Form",
+          features: [
+            "5 Pages",
+            "Responsive Design",
+            "Basic SEO",
+            "Contact Form"
+          ]
+        },
+        {
+          name: "Medium",
+          price: "₹699",
+          description: "10 Pages, Advanced SEO, CMS Integration, Analytics",
+          features: [
+            "10 Pages",
+            "Advanced SEO",
+            "CMS Integration",
+            "Analytics"
+          ]
+        },
+        {
+          name: "Premium",
+          price: "₹999",
+          description: "Unlimited Pages, E-commerce Ready, Advanced SEO, Analytics, Blog Integration",
+          features: [
+            "Unlimited Pages",
+            "E-commerce Ready",
+            "Advanced SEO",
+            "Analytics",
+            "Blog Integration"
+          ]
+        }
+      ]
+    },
+    // Website Maintenance
+    {
+      category: "Website Maintenance",
+      title: "Professional website maintenance (monthly) solutions",
+      items: [
+        {
+          name: "Basic",
+          price: "₹2,599",
+          description: "Regular Updates, Security Monitoring, Performance Check, Monthly Report",
+          features: [
+            "Regular Updates",
+            "Security Monitoring",
+            "Performance Check",
+            "Monthly Report"
+          ]
+        },
+        {
+          name: "Medium",
+          price: "₹7,999",
+          description: "Regular Updates, Security Monitoring, Performance Optimization, Weekly Backups, Priority Support, Monthly Report",
+          features: [
+            "Regular Updates",
+            "Security Monitoring",
+            "Performance Optimization",
+            "Weekly Backups",
+            "Priority Support",
+            "Monthly Report"
+          ],
+          popular: true
+        },
+        {
+          name: "Premium",
+          price: "₹17,999",
+          description: "Regular Updates, Advanced Security, Performance Optimization, Daily Backups, 24/7 Support, Monthly Report, Content Updates",
+          features: [
+            "Regular Updates",
+            "Advanced Security",
+            "Performance Optimization",
+            "Daily Backups",
+            "24/7 Support",
+            "Monthly Report",
+            "Content Updates"
+          ]
+        }
       ]
     }
   ];
@@ -309,61 +480,78 @@ const WebDevelopment = () => {
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
                 <span className="block mb-2" style={{ color: '#D71B1B' }}>Development</span>
-                <span className="text-white">Packages</span>
+                <span className="text-white">Services & Pricing</span>
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                Choose the perfect web development package for your project and budget.
+                Professional web development services with competitive pricing. Get a personalized quote for your project.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <ScrollReveal key={pkg.name} delay={index * 0.1}>
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -8 }}
-                  className={`relative p-8 bg-red-900/20 border rounded-2xl backdrop-blur-xl transition-all duration-500 ${
-                    pkg.popular
-                      ? 'border-red-400 shadow-2xl shadow-red-500/20'
-                      : 'border-red-500/30 hover:border-red-400/50'
-                  }`}
-                >
-                  {pkg.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                        Most Popular
-                      </span>
+          <div className="space-y-16">
+            {packages.map((category) => (
+              <div key={category.category}>
+                <ScrollReveal>
+                  <div className="text-center mb-12">
+                    <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-red-500/10 to-red-600/10 border border-red-500/30 rounded-full mb-6 backdrop-blur-sm shadow-lg">
+                      <span className="text-sm font-semibold text-red-400">{category.category}</span>
                     </div>
-                  )}
-
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                    <div className="text-4xl font-bold text-red-400 mb-2">{pkg.price}</div>
-                    <p className="text-white/60">{pkg.description}</p>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                      {category.title}
+                    </h3>
                   </div>
+                </ScrollReveal>
 
-                  <ul className="space-y-4 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
-                        <span className="text-white/80">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {category.items.map((pkg, index) => (
+                    <ScrollReveal key={pkg.name} delay={index * 0.1}>
+                      <motion.div
+                        whileHover={{ scale: 1.05, y: -8 }}
+                        className={`relative p-8 bg-red-900/20 border rounded-2xl backdrop-blur-xl transition-all duration-500 ${
+                          pkg.popular
+                            ? 'border-red-400 shadow-2xl shadow-red-500/20'
+                            : 'border-red-500/30 hover:border-red-400/50'
+                        }`}
+                      >
+                        {pkg.popular && (
+                          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                            <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                              Most Popular
+                            </span>
+                          </div>
+                        )}
 
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`w-full py-4 px-6 rounded-xl font-bold transition-all duration-300 ${
-                      pkg.popular
-                        ? 'bg-red-600 hover:bg-red-700 text-white'
-                        : 'border-2 border-red-500/50 text-red-400 hover:bg-red-600 hover:text-white'
-                    }`}
-                  >
-                    Get Started
-                  </motion.button>
-                </motion.div>
-              </ScrollReveal>
+                        <div className="text-center mb-8">
+                          <h4 className="text-2xl font-bold text-white mb-2">{pkg.name}</h4>
+                          <div className="text-4xl font-bold text-red-400 mb-2">{pkg.price}</div>
+                          <p className="text-white/60 text-sm">{pkg.description}</p>
+                        </div>
+
+                        <ul className="space-y-4 mb-8">
+                          {pkg.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-center space-x-3">
+                              <CheckCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+                              <span className="text-white/80">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className={`w-full py-4 px-6 rounded-xl font-bold transition-all duration-300 ${
+                            pkg.popular
+                              ? 'bg-red-600 hover:bg-red-700 text-white'
+                              : 'border-2 border-red-500/50 text-red-400 hover:bg-red-600 hover:text-white'
+                          }`}
+                        >
+                          Get Quote
+                        </motion.button>
+                      </motion.div>
+                    </ScrollReveal>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -432,18 +620,18 @@ const WebDevelopment = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-              <span className="block mb-2" style={{ color: '#D71B1B' }}>Ready to Build</span>
-              <span className="text-white">Your Website?</span>
+              <span className="block mb-2" style={{ color: '#D71B1B' }}>Ready to Get</span>
+              <span className="text-white">Your Quote?</span>
             </h2>
             <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-              Let's discuss your web development needs and create something amazing together.
+              Get a personalized quote for your web development project. Let's create something amazing together.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/contact"
                 className="inline-flex items-center space-x-3 bg-red-600 hover:bg-red-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 shadow-2xl shadow-red-600/25"
               >
-                <span>Get Started</span>
+                <span>Get Quote</span>
                 <ArrowLeft className="w-6 h-6 rotate-180" />
               </Link>
             </motion.div>
