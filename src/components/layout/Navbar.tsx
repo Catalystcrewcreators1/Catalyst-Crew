@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
@@ -43,6 +43,19 @@ const Navbar = () => {
     { name: 'Apply', path: '/apply' },
     { name: 'Contact', path: '/contact' },
   ];
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-red-500/20" style={{ backgroundColor: 'rgba(11, 11, 11, 0.9)' }}>
@@ -131,37 +144,45 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Navigation Backdrop */}
+      {isOpen && (
+        <div
+          className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: '100vh' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden border-t border-red-500/20 max-h-screen overflow-hidden" style={{ backgroundColor: '#1A1A1A', borderColor: 'rgba(215, 27, 27, 0.2)' }}
+            className="md:hidden border-t border-red-500/20 fixed top-16 left-0 right-0 z-40 overflow-hidden" style={{ backgroundColor: '#1A1A1A', borderColor: 'rgba(215, 27, 27, 0.2)' }}
           >
-            <div className="px-4 py-3 border-b border-red-500/20" style={{ borderColor: 'rgba(215, 27, 27, 0.2)' }}>
-              <Link to="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                <img
-                  src="https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/catalyst%20crew%20logo.jpg?updatedAt=1758447247413"
-                  alt="Catalyst Crew Logo"
-                  className="w-6 h-6 rounded-lg object-contain"
-                />
-                <span className="text-lg font-heading font-bold">
-                  <span style={{ color: '#ffffff' }}>Catalyst </span>
-                  <span style={{ color: '#D71B1B' }}>Crew</span>
-                </span>
-              </Link>
-            </div>
-            <div className="flex flex-col max-h-96 overflow-hidden">
-              <div className="flex-1 overflow-y-auto px-2 pt-2 pb-3 space-y-1">
+            <div className="flex flex-col h-full">
+              <div className="px-4 py-3 border-b border-red-500/20 flex-shrink-0" style={{ borderColor: 'rgba(215, 27, 27, 0.2)' }}>
+                <Link to="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
+                  <img
+                    src="https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/catalyst%20crew%20logo.jpg?updatedAt=1758447247413"
+                    alt="Catalyst Crew Logo"
+                    className="w-6 h-6 rounded-lg object-contain"
+                  />
+                  <span className="text-lg font-heading font-bold">
+                    <span style={{ color: '#ffffff' }}>Catalyst </span>
+                    <span style={{ color: '#D71B1B' }}>Crew</span>
+                  </span>
+                </Link>
+              </div>
+              <div className="flex-1 overflow-y-auto px-2 pt-2 pb-3 space-y-1 min-h-0">
                 {mobileNavItems.map((item, index) => (
                   <div key={item.name}>
                     <motion.div
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
                     >
                       <Link
                         to={item.path}
@@ -179,7 +200,7 @@ const Navbar = () => {
                             key={subItem.name}
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.3, delay: (index + 1) * 0.1 }}
+                            transition={{ duration: 0.3, delay: (index + 1) * 0.05 }}
                           >
                             <Link
                               to={subItem.path}
