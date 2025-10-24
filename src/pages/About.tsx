@@ -456,6 +456,40 @@ const About = () => {
         </div>
       </section>
 
+      {/* Team CTA Section */}
+      <section className="py-16 relative overflow-hidden z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <ScrollReveal>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-8 md:p-12 backdrop-blur-sm"
+            >
+              <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4">
+                <span className="block" style={{ color: '#D71B1B' }}>Want to Know More</span>
+                <span className="text-white">About Our Team?</span>
+              </h3>
+
+              <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
+                Discover the full stories, expertise, and personalities behind Catalyst Crew's talented professionals.
+              </p>
+
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link
+                  to="/team"
+                  className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-catalyst-red to-red-600 text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:from-red-600 hover:to-catalyst-red hover:shadow-lg hover:shadow-catalyst-red/25"
+                >
+                  <Users className="w-5 h-5" />
+                  <span>Know About Team</span>
+                </Link>
+              </motion.div>
+            </motion.div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Client Testimonials */}
       <section className="py-20 relative overflow-hidden z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
