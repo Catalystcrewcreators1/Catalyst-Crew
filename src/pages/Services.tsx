@@ -346,13 +346,27 @@ const Services = () => {
                         {service.customCTA.text}
                       </motion.a>
                     ) : (
-                      <motion.button
+                      <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="w-full py-2.5 md:py-3 bg-gradient-to-r from-catalyst-red to-red-600 text-white rounded-xl font-semibold transition-all duration-300 text-sm md:text-base hover:from-red-600 hover:to-catalyst-red hover:shadow-lg"
                       >
-                        Get Started
-                      </motion.button>
+                        <Link
+                          to={`/services/${service.title.toLowerCase()
+                            .replace('logo design', 'design')
+                            .replace('graphic design', 'graphic-design')
+                            .replace('web development', 'development')
+                            .replace('brand identity', 'brand-identity')
+                            .replace('print design', 'print-design')
+                            .replace('digital design', 'digital-design')
+                            .replace('social media managing', 'social-media')
+                            .replace('illustration', 'illustration')
+                            .replace('ai bot / agent automation', 'ai-bot')
+                            .replace(/\s+/g, '-')}`}
+                          className="w-full py-2.5 md:py-3 bg-gradient-to-r from-catalyst-red to-red-600 text-white rounded-xl font-semibold transition-all duration-300 text-sm md:text-base hover:from-red-600 hover:to-catalyst-red hover:shadow-lg text-center block"
+                        >
+                          Get Started
+                        </Link>
+                      </motion.div>
                     )}
                   </div>
                 </motion.div>

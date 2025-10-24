@@ -17,44 +17,76 @@ const Home = () => {
   const services = [
     {
       icon: '🎨',
-      title: 'Design Studio',
-      description: 'Revolutionary visual solutions with AI-powered design systems, interactive prototypes, and cutting-edge UX/UI innovation',
+      title: 'Logo Design',
+      description: 'Professional logo design services that capture your brand\'s essence with unique, memorable designs tailored to your vision',
       path: '/services/design',
       gradient: 'from-purple-500/20 via-pink-500/20 to-catalyst-red/20',
-      features: ['AI-Powered Design', 'Interactive Prototypes', '3D Visualizations']
+      features: ['Custom Logo Concepts', 'Multiple Design Revisions', 'High-Resolution Files']
     },
     {
-      icon: '🚀',
-      title: 'Web & App Development',
-      description: 'Next-generation applications with cutting-edge technologies, seamless user experiences, and scalable architecture',
-      path: '/services/development',
+      icon: '🖼️',
+      title: 'Graphic Design',
+      description: 'Comprehensive graphic design services for all your visual needs, from marketing materials to digital assets',
+      path: '/services/graphic-design',
       gradient: 'from-blue-500/20 via-cyan-500/20 to-catalyst-red/20',
-      features: ['React/Next.js', 'Full-Stack Solutions', 'Performance Optimized']
+      features: ['Marketing Collateral', 'Brochure & Flyer Design', 'Digital Asset Design']
     },
     {
-      icon: '🎬',
-      title: 'Media & Production',
-      description: 'Immersive content creation with 4K production, VR experiences, viral marketing, and multimedia storytelling',
-      path: '/services/media',
+      icon: '💻',
+      title: 'Web Development',
+      description: 'Custom web development services building responsive, fast, and user-friendly websites and applications',
+      path: '/services/development',
       gradient: 'from-green-500/20 via-emerald-500/20 to-catalyst-red/20',
-      features: ['4K Production', 'VR/AR Content', 'Viral Marketing']
+      features: ['Responsive Design', 'E-commerce Development', 'SEO Optimization']
     },
     {
-      icon: '🎭',
-      title: 'Event Management',
-      description: 'Spectacular events with live streaming, interactive tech, memorable experiences, and seamless execution',
-      path: '/services/events',
-      gradient: 'from-red-500/20 via-red-500/20 to-catalyst-red/20',
-      features: ['Live Streaming', 'Interactive Tech', 'Event Production']
+      icon: '🎯',
+      title: 'Brand Identity',
+      description: 'Full brand identity services including logos, color schemes, typography, and guidelines for cohesive branding',
+      path: '/services/brand-identity',
+      gradient: 'from-orange-500/20 via-red-500/20 to-catalyst-red/20',
+      features: ['Logo Design & Variations', 'Color Palette Selection', 'Brand Style Guide']
+    },
+    {
+      icon: '🖨️',
+      title: 'Print Design',
+      description: 'Professional print design services for business cards, brochures, posters, and other physical marketing materials',
+      path: '/services/print-design',
+      gradient: 'from-indigo-500/20 via-purple-500/20 to-catalyst-red/20',
+      features: ['Business Card Design', 'Brochure & Catalog Design', 'Print-Ready Artwork']
+    },
+    {
+      icon: '📱',
+      title: 'Digital Design',
+      description: 'Creative digital design services for websites, apps, social media, and online marketing campaigns',
+      path: '/services/digital-design',
+      gradient: 'from-teal-500/20 via-blue-500/20 to-catalyst-red/20',
+      features: ['Website Graphics', 'Social Media Assets', 'Responsive Graphics']
     },
     {
       icon: '📊',
-      title: 'Marketing & Consulting',
-      description: 'Data-driven strategies with AI analytics, growth hacking, performance optimization, and ROI-focused campaigns',
-      path: '/services/marketing',
-      gradient: 'from-indigo-500/20 via-purple-500/20 to-catalyst-red/20',
-      features: ['AI Analytics', 'Growth Hacking', 'Performance Optimization']
+      title: 'Social Media Managing',
+      description: 'Comprehensive social media management including content creation, posting schedules, and audience engagement strategies',
+      path: '/services/social-media',
+      gradient: 'from-pink-500/20 via-rose-500/20 to-catalyst-red/20',
+      features: ['Content Calendar Planning', 'Post Creation & Scheduling', 'Audience Engagement']
     },
+    {
+      icon: '✏️',
+      title: 'Illustration',
+      description: 'Bespoke illustration services for books, websites, marketing materials, and personal projects with unique artistic styles',
+      path: '/services/illustration',
+      gradient: 'from-yellow-500/20 via-orange-500/20 to-catalyst-red/20',
+      features: ['Custom Illustrations', 'Character Design', 'Book & Editorial Art']
+    },
+    {
+      icon: '🤖',
+      title: 'AI Bot / Agent Automation',
+      description: 'Advanced AI-powered bots and agents for automating tasks, improving efficiency, and enhancing user interactions across platforms',
+      path: '/services/ai-bot',
+      gradient: 'from-cyan-500/20 via-blue-500/20 to-catalyst-red/20',
+      features: ['Custom AI Chatbots', 'Automated Workflows', 'Natural Language Processing']
+    }
   ];
 
   const features = [

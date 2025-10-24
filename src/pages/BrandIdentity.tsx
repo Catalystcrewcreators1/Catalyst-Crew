@@ -2,85 +2,84 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
-  Code,
+  Palette,
+  Type,
   CheckCircle,
   Quote,
   Star,
-  Globe,
-  ShoppingCart,
-  Search,
-  Shield,
+  Layout,
+  Target,
 } from 'lucide-react';
 import { ScrollReveal } from '../components/ui/ScrollAnimations';
 
-const WebDevelopment = () => {
+const BrandIdentity = () => {
   const features = [
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Responsive Website Design",
-      description: "Mobile-first responsive websites that work on all devices"
+      icon: <Palette className="w-8 h-8" />,
+      title: "Logo Design & Variations",
+      description: "Primary logo and variations for different applications"
     },
     {
-      icon: <ShoppingCart className="w-8 h-8" />,
-      title: "E-commerce Development",
-      description: "Full-featured online stores with secure payment processing"
+      icon: <Type className="w-8 h-8" />,
+      title: "Typography Guidelines",
+      description: "Font selections and usage guidelines for consistency"
     },
     {
-      icon: <Search className="w-8 h-8" />,
-      title: "SEO Optimization",
-      description: "Built-in SEO best practices for better search rankings"
+      icon: <Target className="w-8 h-8" />,
+      title: "Brand Style Guide",
+      description: "Comprehensive guidelines for brand implementation"
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Ongoing Support",
-      description: "Continuous maintenance and updates for your website"
+      icon: <Layout className="w-8 h-8" />,
+      title: "Stationery Design",
+      description: "Professional business cards and stationery materials"
     }
   ];
 
   const packages = [
     {
       name: "Starter",
-      price: "₹75,000",
-      description: "Perfect for small businesses and portfolios",
+      price: "₹50,000",
+      description: "Essential brand identity for small businesses",
       features: [
-        "Responsive Website (5 pages)",
-        "Basic SEO Optimization",
-        "Contact Forms",
-        "Mobile-Friendly Design",
-        "3 months support",
-        "Delivery in 4-6 weeks"
+        "Logo Design (3 concepts)",
+        "Basic Color Palette",
+        "Typography Selection",
+        "Business Card Design",
+        "3 revisions included",
+        "Delivery in 3-4 weeks"
       ]
     },
     {
       name: "Professional",
-      price: "₹1,50,000",
-      description: "Complete web solution for growing businesses",
+      price: "₹1,00,000",
+      description: "Complete brand identity for growing businesses",
       features: [
-        "Responsive Website (10 pages)",
-        "Advanced SEO Optimization",
-        "E-commerce Integration",
-        "Content Management System",
-        "Payment Gateway Integration",
-        "Social Media Integration",
-        "6 months support",
-        "Analytics Setup"
+        "Logo Design (5 concepts)",
+        "Complete Color Palette",
+        "Typography Guidelines",
+        "Brand Style Guide",
+        "Business Card Design",
+        "Letterhead Design",
+        "Social Media Assets",
+        "5 revisions included"
       ],
       popular: true
     },
     {
       name: "Enterprise",
-      price: "₹3,00,000",
-      description: "Full-scale web development for large organizations",
+      price: "₹2,00,000",
+      description: "Full-scale brand transformation for large organizations",
       features: [
-        "Custom Web Application",
-        "Advanced E-commerce Platform",
-        "Multi-language Support",
-        "Advanced Analytics",
-        "Third-party Integrations",
-        "Custom Features",
-        "12 months support",
-        "Priority Development",
-        "Performance Optimization"
+        "Logo Design (Unlimited concepts)",
+        "Complete Brand Guidelines",
+        "Typography System",
+        "Full Stationery Package",
+        "Brand Pattern & Graphics",
+        "Social Media Templates",
+        "Brand Book Creation",
+        "Unlimited revisions",
+        "Brand Training Session"
       ]
     }
   ];
@@ -101,22 +100,22 @@ const WebDevelopment = () => {
                 transition={{ duration: 0.6 }}
                 className="inline-flex items-center px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full mb-8"
               >
-                <Code className="w-4 h-4 text-purple-400 mr-2" />
-                <span className="text-sm text-purple-400 font-medium">Web Development</span>
+                <Target className="w-4 h-4 text-purple-400 mr-2" />
+                <span className="text-sm text-purple-400 font-medium">Brand Identity</span>
               </motion.div>
             </ScrollReveal>
 
             <ScrollReveal>
               <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Modern Web</span>
-                <span className="text-white">Solutions</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>Complete Brand</span>
+                <span className="text-white">Packages</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal>
               <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Custom web development services building responsive, fast, and user-friendly
-                websites and applications.
+                Full brand identity services including logos, color schemes, typography, and
+                guidelines for cohesive branding.
               </p>
             </ScrollReveal>
 
@@ -207,9 +206,9 @@ const WebDevelopment = () => {
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
               <span className="block mb-2" style={{ color: '#A855F7' }}>Timeline</span>
             </h2>
-            <div className="text-6xl font-bold text-purple-400 mb-4">4-8 weeks</div>
+            <div className="text-6xl font-bold text-purple-400 mb-4">3-4 weeks</div>
             <p className="text-xl text-white/70">
-              From planning to launch, we deliver quality websites on schedule.
+              From research to final delivery, we create comprehensive brand identities.
             </p>
           </ScrollReveal>
         </div>
@@ -221,11 +220,11 @@ const WebDevelopment = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Development</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>Brand</span>
                 <span className="text-white">Packages</span>
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                Choose the perfect web development package for your project and budget.
+                Choose the perfect brand identity package for your business needs.
               </p>
             </div>
           </ScrollReveal>
@@ -299,19 +298,19 @@ const WebDevelopment = () => {
               {
                 name: "Sarah Johnson",
                 company: "TechStart Inc.",
-                content: "The web development team built us an amazing website that perfectly represents our brand. Professional and efficient!",
+                content: "The brand identity package transformed our business image completely. Professional work and excellent results!",
                 rating: 5
               },
               {
                 name: "Michael Chen",
                 company: "Growth Co.",
-                content: "Outstanding web development service! They delivered a responsive, fast website that exceeded our expectations.",
+                content: "Outstanding brand identity service! They created a cohesive brand that perfectly represents our values.",
                 rating: 5
               },
               {
                 name: "Emily Rodriguez",
                 company: "Creative Solutions",
-                content: "Amazing web development work! They understood our requirements and created a fantastic online presence.",
+                content: "Amazing brand identity work! They delivered comprehensive guidelines that make branding effortless.",
                 rating: 5
               }
             ].map((testimonial, index) => (
@@ -346,10 +345,10 @@ const WebDevelopment = () => {
           <ScrollReveal>
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
               <span className="block mb-2" style={{ color: '#A855F7' }}>Ready to Build</span>
-              <span className="text-white">Your Website?</span>
+              <span className="text-white">Your Brand Identity?</span>
             </h2>
             <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-              Let's discuss your web development needs and create something amazing together.
+              Let's discuss your brand identity needs and create something cohesive and memorable.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
@@ -367,4 +366,4 @@ const WebDevelopment = () => {
   );
 };
 
-export default WebDevelopment;
+export default BrandIdentity;

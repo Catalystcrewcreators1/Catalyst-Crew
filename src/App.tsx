@@ -28,11 +28,15 @@ import Team from './pages/Team';
 import Testimonials from './pages/Testimonials';
 
 // Service Pages
-import DesignStudio from './pages/DesignStudio';
+import LogoDesign from './pages/LogoDesign';
+import GraphicDesign from './pages/GraphicDesign';
 import WebDevelopment from './pages/WebDevelopment';
-import MediaProduction from './pages/MediaProduction';
-import EventManagement from './pages/EventManagement';
-import MarketingConsulting from './pages/MarketingConsulting';
+import BrandIdentity from './pages/BrandIdentity';
+import PrintDesign from './pages/PrintDesign';
+import DigitalDesign from './pages/DigitalDesign';
+import SocialMediaManaging from './pages/SocialMediaManaging';
+import Illustration from './pages/Illustration';
+import AIBot from './pages/AIBot';
 
 function App() {
   const location = useLocation();
@@ -47,6 +51,15 @@ function App() {
     '/',
     '/about',
     '/services',
+    '/services/design',
+    '/services/graphic-design',
+    '/services/development',
+    '/services/brand-identity',
+    '/services/print-design',
+    '/services/digital-design',
+    '/services/social-media',
+    '/services/illustration',
+    '/services/ai-bot',
     '/portfolio',
     '/team',
     '/testimonials',
@@ -125,11 +138,15 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/services/design" element={<DesignStudio />} />
+            <Route path="/services/design" element={<LogoDesign />} />
+            <Route path="/services/graphic-design" element={<GraphicDesign />} />
             <Route path="/services/development" element={<WebDevelopment />} />
-            <Route path="/services/media" element={<MediaProduction />} />
-            <Route path="/services/events" element={<EventManagement />} />
-            <Route path="/services/marketing" element={<MarketingConsulting />} />
+            <Route path="/services/brand-identity" element={<BrandIdentity />} />
+            <Route path="/services/print-design" element={<PrintDesign />} />
+            <Route path="/services/digital-design" element={<DigitalDesign />} />
+            <Route path="/services/social-media" element={<SocialMediaManaging />} />
+            <Route path="/services/illustration" element={<Illustration />} />
+            <Route path="/services/ai-bot" element={<AIBot />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/events" element={<Events />} />

@@ -2,85 +2,81 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
-  Code,
+  Users,
+  Calendar,
+  MessageSquare,
   CheckCircle,
   Quote,
   Star,
-  Globe,
-  ShoppingCart,
-  Search,
-  Shield,
+  BarChart3,
 } from 'lucide-react';
 import { ScrollReveal } from '../components/ui/ScrollAnimations';
 
-const WebDevelopment = () => {
+const SocialMediaManaging = () => {
   const features = [
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Responsive Website Design",
-      description: "Mobile-first responsive websites that work on all devices"
+      icon: <Calendar className="w-8 h-8" />,
+      title: "Content Calendar Planning",
+      description: "Strategic content scheduling for maximum engagement"
     },
     {
-      icon: <ShoppingCart className="w-8 h-8" />,
-      title: "E-commerce Development",
-      description: "Full-featured online stores with secure payment processing"
+      icon: <MessageSquare className="w-8 h-8" />,
+      title: "Post Creation & Scheduling",
+      description: "Compelling content creation and automated posting"
     },
     {
-      icon: <Search className="w-8 h-8" />,
-      title: "SEO Optimization",
-      description: "Built-in SEO best practices for better search rankings"
+      icon: <Users className="w-8 h-8" />,
+      title: "Audience Engagement",
+      description: "Community management and interaction strategies"
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Ongoing Support",
-      description: "Continuous maintenance and updates for your website"
+      icon: <BarChart3 className="w-8 h-8" />,
+      title: "Analytics & Reporting",
+      description: "Performance tracking and growth insights"
     }
   ];
 
   const packages = [
     {
       name: "Starter",
-      price: "₹75,000",
-      description: "Perfect for small businesses and portfolios",
+      price: "₹20,000",
+      description: "Essential social media management",
       features: [
-        "Responsive Website (5 pages)",
-        "Basic SEO Optimization",
-        "Contact Forms",
-        "Mobile-Friendly Design",
-        "3 months support",
-        "Delivery in 4-6 weeks"
+        "3 Social Platforms",
+        "12 Posts per month",
+        "Basic Analytics",
+        "Community Management",
+        "Monthly Reporting",
+        "3 months minimum"
       ]
     },
     {
       name: "Professional",
-      price: "₹1,50,000",
-      description: "Complete web solution for growing businesses",
+      price: "₹40,000",
+      description: "Complete social media management",
       features: [
-        "Responsive Website (10 pages)",
-        "Advanced SEO Optimization",
-        "E-commerce Integration",
-        "Content Management System",
-        "Payment Gateway Integration",
-        "Social Media Integration",
-        "6 months support",
-        "Analytics Setup"
+        "5 Social Platforms",
+        "20 Posts per month",
+        "Advanced Analytics",
+        "Content Calendar",
+        "Audience Engagement",
+        "Weekly Reporting",
+        "Growth Strategies"
       ],
       popular: true
     },
     {
       name: "Enterprise",
-      price: "₹3,00,000",
-      description: "Full-scale web development for large organizations",
+      price: "₹80,000",
+      description: "Full-scale social media transformation",
       features: [
-        "Custom Web Application",
-        "Advanced E-commerce Platform",
-        "Multi-language Support",
-        "Advanced Analytics",
-        "Third-party Integrations",
-        "Custom Features",
-        "12 months support",
-        "Priority Development",
-        "Performance Optimization"
+        "All Major Platforms",
+        "Unlimited Posts",
+        "Custom Analytics Dashboard",
+        "Crisis Management",
+        "Influencer Partnerships",
+        "Real-time Monitoring",
+        "Monthly Strategy Sessions"
       ]
     }
   ];
@@ -101,22 +97,22 @@ const WebDevelopment = () => {
                 transition={{ duration: 0.6 }}
                 className="inline-flex items-center px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full mb-8"
               >
-                <Code className="w-4 h-4 text-purple-400 mr-2" />
-                <span className="text-sm text-purple-400 font-medium">Web Development</span>
+                <Users className="w-4 h-4 text-purple-400 mr-2" />
+                <span className="text-sm text-purple-400 font-medium">Social Media</span>
               </motion.div>
             </ScrollReveal>
 
             <ScrollReveal>
               <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Modern Web</span>
-                <span className="text-white">Solutions</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>Engage Your</span>
+                <span className="text-white">Audience</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal>
               <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Custom web development services building responsive, fast, and user-friendly
-                websites and applications.
+                Comprehensive social media management including content creation, posting
+                schedules, and audience engagement strategies.
               </p>
             </ScrollReveal>
 
@@ -207,9 +203,9 @@ const WebDevelopment = () => {
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
               <span className="block mb-2" style={{ color: '#A855F7' }}>Timeline</span>
             </h2>
-            <div className="text-6xl font-bold text-purple-400 mb-4">4-8 weeks</div>
+            <div className="text-6xl font-bold text-purple-400 mb-4">Ongoing</div>
             <p className="text-xl text-white/70">
-              From planning to launch, we deliver quality websites on schedule.
+              Continuous management and optimization of your social media presence.
             </p>
           </ScrollReveal>
         </div>
@@ -221,11 +217,11 @@ const WebDevelopment = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Development</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>Management</span>
                 <span className="text-white">Packages</span>
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                Choose the perfect web development package for your project and budget.
+                Choose the perfect social media management package for your business.
               </p>
             </div>
           </ScrollReveal>
@@ -299,19 +295,19 @@ const WebDevelopment = () => {
               {
                 name: "Sarah Johnson",
                 company: "TechStart Inc.",
-                content: "The web development team built us an amazing website that perfectly represents our brand. Professional and efficient!",
+                content: "The social media management team transformed our online presence. Engagement increased by 300%!",
                 rating: 5
               },
               {
                 name: "Michael Chen",
                 company: "Growth Co.",
-                content: "Outstanding web development service! They delivered a responsive, fast website that exceeded our expectations.",
+                content: "Outstanding social media service! They created a comprehensive strategy that delivered real results.",
                 rating: 5
               },
               {
                 name: "Emily Rodriguez",
                 company: "Creative Solutions",
-                content: "Amazing web development work! They understood our requirements and created a fantastic online presence.",
+                content: "Amazing social media management! Our follower growth and engagement have never been better.",
                 rating: 5
               }
             ].map((testimonial, index) => (
@@ -345,11 +341,11 @@ const WebDevelopment = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-              <span className="block mb-2" style={{ color: '#A855F7' }}>Ready to Build</span>
-              <span className="text-white">Your Website?</span>
+              <span className="block mb-2" style={{ color: '#A855F7' }}>Ready to Grow</span>
+              <span className="text-white">Your Social Media?</span>
             </h2>
             <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-              Let's discuss your web development needs and create something amazing together.
+              Let's discuss your social media goals and create an engaging strategy for your audience.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
@@ -367,4 +363,4 @@ const WebDevelopment = () => {
   );
 };
 
-export default WebDevelopment;
+export default SocialMediaManaging;

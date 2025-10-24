@@ -3,77 +3,79 @@ import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
   Palette,
-  PenTool,
-  Layers,
-  Zap,
+  User,
+  BookOpen,
   CheckCircle,
   Quote,
   Star,
+  PenTool,
+  Image,
 } from 'lucide-react';
 import { ScrollReveal } from '../components/ui/ScrollAnimations';
 
-const DesignStudio = () => {
+const Illustration = () => {
   const features = [
-    {
-      icon: <Palette className="w-8 h-8" />,
-      title: "Brand Identity",
-      description: "Complete brand identity packages including logos, color schemes, and typography"
-    },
     {
       icon: <PenTool className="w-8 h-8" />,
       title: "Custom Illustrations",
-      description: "Unique illustrations and graphics tailored to your brand story"
+      description: "Unique artwork tailored to your specific needs"
     },
     {
-      icon: <Layers className="w-8 h-8" />,
-      title: "UI/UX Design",
-      description: "User-centered design for web and mobile applications"
+      icon: <User className="w-8 h-8" />,
+      title: "Character Design",
+      description: "Memorable characters for branding and stories"
     },
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Motion Graphics",
-      description: "Animated graphics and interactive elements for enhanced engagement"
+      icon: <BookOpen className="w-8 h-8" />,
+      title: "Book & Editorial Art",
+      description: "Illustrations for books, magazines, and publications"
+    },
+    {
+      icon: <Image className="w-8 h-8" />,
+      title: "Digital & Hand-Drawn",
+      description: "Both digital and traditional illustration techniques"
     }
   ];
 
   const packages = [
     {
       name: "Starter",
-      price: "₹25,000",
-      description: "Perfect for startups and small projects",
+      price: "₹30,000",
+      description: "Perfect for simple illustrations and concepts",
       features: [
-        "Logo Design (3 concepts)",
-        "Basic Brand Guidelines",
-        "High-resolution files",
+        "3 Custom Illustrations",
+        "Basic Character Design",
+        "Digital Format",
         "2 revisions included",
-        "Delivery in 1 week"
+        "Delivery in 2-3 weeks"
       ]
     },
     {
       name: "Professional",
-      price: "₹75,000",
-      description: "Complete design solution for growing businesses",
+      price: "₹60,000",
+      description: "Complete illustration solution",
       features: [
-        "Logo Design (5 concepts)",
-        "Complete Brand Identity",
-        "Business Card Design",
-        "Social Media Kit",
-        "5 revisions included",
-        "Delivery in 2 weeks"
+        "5 Custom Illustrations",
+        "Character Design Package",
+        "Book & Editorial Art",
+        "Digital & Print Formats",
+        "High-Resolution Delivery",
+        "5 revisions included"
       ],
       popular: true
     },
     {
       name: "Enterprise",
-      price: "₹1,50,000",
-      description: "Full-scale design transformation for large organizations",
+      price: "₹1,20,000",
+      description: "Full-scale illustration transformation",
       features: [
-        "Logo Design (Unlimited concepts)",
-        "Complete Brand Identity Package",
-        "Marketing Collateral Suite",
-        "Website/App UI Design",
-        "Unlimited revisions",
-        "Priority support"
+        "Unlimited Illustrations",
+        "Complete Character Sets",
+        "Storyboarding",
+        "Animation Ready Assets",
+        "Commercial Usage Rights",
+        "Priority Support",
+        "Unlimited revisions"
       ]
     }
   ];
@@ -95,21 +97,21 @@ const DesignStudio = () => {
                 className="inline-flex items-center px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full mb-8"
               >
                 <Palette className="w-4 h-4 text-purple-400 mr-2" />
-                <span className="text-sm text-purple-400 font-medium">Design Studio</span>
+                <span className="text-sm text-purple-400 font-medium">Illustration</span>
               </motion.div>
             </ScrollReveal>
 
             <ScrollReveal>
               <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Revolutionary</span>
-                <span className="text-white">Design Solutions</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>Custom Artwork</span>
+                <span className="text-white">Creation</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal>
               <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Transform your brand with our AI-powered design studio. We create stunning visuals
-                that capture attention, tell your story, and drive results.
+                Bespoke illustration services for books, websites, marketing materials,
+                and personal projects with unique artistic styles.
               </p>
             </ScrollReveal>
 
@@ -120,7 +122,7 @@ const DesignStudio = () => {
                     to="/contact"
                     className="group relative px-10 py-5 bg-purple-600 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-purple-600/25 hover:shadow-purple-600/40 transition-all duration-500 flex items-center space-x-3 overflow-hidden"
                   >
-                    <span className="relative z-10">Start Your Design Project</span>
+                    <span className="relative z-10">Get Started</span>
                   </Link>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -153,18 +155,15 @@ const DesignStudio = () => {
         </motion.div>
       </section>
 
-      {/* Features Section */}
+      {/* What's Included Section */}
       <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Our Design</span>
-                <span className="text-white">Capabilities</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>What's</span>
+                <span className="text-white">Included</span>
               </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                From concept to completion, we deliver exceptional design solutions that elevate your brand.
-              </p>
             </div>
           </ScrollReveal>
 
@@ -196,48 +195,18 @@ const DesignStudio = () => {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Timeline Section */}
       <section className="py-24 relative bg-purple-900/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Our Creative</span>
-                <span className="text-white">Process</span>
-              </h2>
-            </div>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
+              <span className="block mb-2" style={{ color: '#A855F7' }}>Timeline</span>
+            </h2>
+            <div className="text-6xl font-bold text-purple-400 mb-4">2-4 weeks</div>
+            <p className="text-xl text-white/70">
+              From concept sketches to final artwork, we create detailed illustrations.
+            </p>
           </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Discovery & Strategy",
-                description: "We dive deep into your brand, target audience, and objectives to create a solid foundation."
-              },
-              {
-                step: "02",
-                title: "Concept & Design",
-                description: "Our creative team develops multiple concepts and refines them based on your feedback."
-              },
-              {
-                step: "03",
-                title: "Delivery & Support",
-                description: "Final deliverables with all necessary files and ongoing support for your design needs."
-              }
-            ].map((item, index) => (
-              <ScrollReveal key={item.step} delay={index * 0.2}>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="relative p-8 bg-purple-900/30 border border-purple-500/40 rounded-2xl"
-                >
-                  <div className="text-6xl font-bold text-purple-400 mb-4">{item.step}</div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-                  <p className="text-white/70">{item.description}</p>
-                </motion.div>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -247,11 +216,11 @@ const DesignStudio = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Design</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>Illustration</span>
                 <span className="text-white">Packages</span>
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                Choose the perfect design package for your project and budget.
+                Choose the perfect illustration package for your creative project.
               </p>
             </div>
           </ScrollReveal>
@@ -325,19 +294,19 @@ const DesignStudio = () => {
               {
                 name: "Sarah Johnson",
                 company: "TechStart Inc.",
-                content: "The design team transformed our brand completely. The new logo and visual identity perfectly capture our innovative spirit.",
+                content: "The illustrations brought our brand story to life! Beautiful artwork and professional service.",
                 rating: 5
               },
               {
                 name: "Michael Chen",
                 company: "Growth Co.",
-                content: "Outstanding creativity and professionalism. The designs exceeded our expectations and helped boost our conversion rates.",
+                content: "Outstanding illustration work! They created unique characters that perfectly represent our brand.",
                 rating: 5
               },
               {
                 name: "Emily Rodriguez",
                 company: "Creative Solutions",
-                content: "Working with the design studio was a game-changer for our business. Highly recommend their services!",
+                content: "Amazing illustration service! The custom artwork exceeded our expectations and enhanced our project.",
                 rating: 5
               }
             ].map((testimonial, index) => (
@@ -371,18 +340,18 @@ const DesignStudio = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-              <span className="block mb-2" style={{ color: '#A855F7' }}>Ready to Transform</span>
-              <span className="text-white">Your Brand?</span>
+              <span className="block mb-2" style={{ color: '#A855F7' }}>Ready to Create</span>
+              <span className="text-white">Custom Artwork?</span>
             </h2>
             <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-              Let's discuss your design needs and create something amazing together.
+              Let's discuss your illustration needs and create something unique and beautiful.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/contact"
                 className="inline-flex items-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 shadow-2xl shadow-purple-600/25"
               >
-                <span>Start Your Design Project</span>
+                <span>Get Started</span>
                 <ArrowLeft className="w-6 h-6 rotate-180" />
               </Link>
             </motion.div>
@@ -393,4 +362,4 @@ const DesignStudio = () => {
   );
 };
 
-export default DesignStudio;
+export default Illustration;

@@ -2,85 +2,84 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
-  Code,
+  Palette,
   CheckCircle,
   Quote,
   Star,
-  Globe,
-  ShoppingCart,
-  Search,
-  Shield,
+  FileText,
+  Image,
+  Layout,
+  Zap,
 } from 'lucide-react';
 import { ScrollReveal } from '../components/ui/ScrollAnimations';
 
-const WebDevelopment = () => {
+const GraphicDesign = () => {
   const features = [
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Responsive Website Design",
-      description: "Mobile-first responsive websites that work on all devices"
+      icon: <FileText className="w-8 h-8" />,
+      title: "Marketing Collateral",
+      description: "Professional brochures, flyers, and marketing materials"
     },
     {
-      icon: <ShoppingCart className="w-8 h-8" />,
-      title: "E-commerce Development",
-      description: "Full-featured online stores with secure payment processing"
+      icon: <Image className="w-8 h-8" />,
+      title: "Brochure & Flyer Design",
+      description: "Eye-catching designs for promotional materials"
     },
     {
-      icon: <Search className="w-8 h-8" />,
-      title: "SEO Optimization",
-      description: "Built-in SEO best practices for better search rankings"
+      icon: <Layout className="w-8 h-8" />,
+      title: "Poster & Banner Design",
+      description: "Large format designs for events and advertising"
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Ongoing Support",
-      description: "Continuous maintenance and updates for your website"
+      icon: <Zap className="w-8 h-8" />,
+      title: "Digital Asset Design",
+      description: "Modern digital graphics for web and social media"
     }
   ];
 
   const packages = [
     {
       name: "Starter",
-      price: "₹75,000",
-      description: "Perfect for small businesses and portfolios",
+      price: "₹35,000",
+      description: "Perfect for small projects and startups",
       features: [
-        "Responsive Website (5 pages)",
-        "Basic SEO Optimization",
-        "Contact Forms",
-        "Mobile-Friendly Design",
-        "3 months support",
-        "Delivery in 4-6 weeks"
+        "5 Design Concepts",
+        "Brochure Design",
+        "Flyer Design",
+        "High-resolution files",
+        "3 revisions included",
+        "Delivery in 2-3 weeks"
       ]
     },
     {
       name: "Professional",
-      price: "₹1,50,000",
-      description: "Complete web solution for growing businesses",
+      price: "₹75,000",
+      description: "Complete graphic design solution for growing businesses",
       features: [
-        "Responsive Website (10 pages)",
-        "Advanced SEO Optimization",
-        "E-commerce Integration",
-        "Content Management System",
-        "Payment Gateway Integration",
-        "Social Media Integration",
-        "6 months support",
-        "Analytics Setup"
+        "10 Design Concepts",
+        "Complete Marketing Package",
+        "Brochure & Catalog Design",
+        "Poster & Banner Design",
+        "Digital Assets",
+        "Print-Ready Files",
+        "5 revisions included",
+        "Brand Guidelines Integration"
       ],
       popular: true
     },
     {
       name: "Enterprise",
-      price: "₹3,00,000",
-      description: "Full-scale web development for large organizations",
+      price: "₹1,50,000",
+      description: "Full-scale graphic design transformation",
       features: [
-        "Custom Web Application",
-        "Advanced E-commerce Platform",
-        "Multi-language Support",
-        "Advanced Analytics",
-        "Third-party Integrations",
-        "Custom Features",
-        "12 months support",
-        "Priority Development",
-        "Performance Optimization"
+        "Unlimited Design Concepts",
+        "Complete Marketing Suite",
+        "All Print Materials",
+        "Digital Asset Library",
+        "Infographic Creation",
+        "Unlimited revisions",
+        "Priority support",
+        "Multi-format delivery"
       ]
     }
   ];
@@ -101,22 +100,22 @@ const WebDevelopment = () => {
                 transition={{ duration: 0.6 }}
                 className="inline-flex items-center px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full mb-8"
               >
-                <Code className="w-4 h-4 text-purple-400 mr-2" />
-                <span className="text-sm text-purple-400 font-medium">Web Development</span>
+                <Palette className="w-4 h-4 text-purple-400 mr-2" />
+                <span className="text-sm text-purple-400 font-medium">Graphic Design</span>
               </motion.div>
             </ScrollReveal>
 
             <ScrollReveal>
               <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Modern Web</span>
-                <span className="text-white">Solutions</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>Visual Communication</span>
+                <span className="text-white">Experts</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal>
               <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Custom web development services building responsive, fast, and user-friendly
-                websites and applications.
+                Comprehensive graphic design services for all your visual needs, from marketing
+                materials to digital assets.
               </p>
             </ScrollReveal>
 
@@ -207,9 +206,9 @@ const WebDevelopment = () => {
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
               <span className="block mb-2" style={{ color: '#A855F7' }}>Timeline</span>
             </h2>
-            <div className="text-6xl font-bold text-purple-400 mb-4">4-8 weeks</div>
+            <div className="text-6xl font-bold text-purple-400 mb-4">2-3 weeks</div>
             <p className="text-xl text-white/70">
-              From planning to launch, we deliver quality websites on schedule.
+              From concept to final delivery, we work efficiently to meet your deadlines.
             </p>
           </ScrollReveal>
         </div>
@@ -221,11 +220,11 @@ const WebDevelopment = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Development</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>Design</span>
                 <span className="text-white">Packages</span>
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                Choose the perfect web development package for your project and budget.
+                Choose the perfect graphic design package for your project and budget.
               </p>
             </div>
           </ScrollReveal>
@@ -299,19 +298,19 @@ const WebDevelopment = () => {
               {
                 name: "Sarah Johnson",
                 company: "TechStart Inc.",
-                content: "The web development team built us an amazing website that perfectly represents our brand. Professional and efficient!",
+                content: "The graphic design team created stunning marketing materials that perfectly captured our brand. Outstanding work!",
                 rating: 5
               },
               {
                 name: "Michael Chen",
                 company: "Growth Co.",
-                content: "Outstanding web development service! They delivered a responsive, fast website that exceeded our expectations.",
+                content: "Professional designs that exceeded our expectations. The team was creative and delivered on time.",
                 rating: 5
               },
               {
                 name: "Emily Rodriguez",
                 company: "Creative Solutions",
-                content: "Amazing web development work! They understood our requirements and created a fantastic online presence.",
+                content: "Amazing graphic design service! They understood our vision and created visually appealing materials.",
                 rating: 5
               }
             ].map((testimonial, index) => (
@@ -345,11 +344,11 @@ const WebDevelopment = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-              <span className="block mb-2" style={{ color: '#A855F7' }}>Ready to Build</span>
-              <span className="text-white">Your Website?</span>
+              <span className="block mb-2" style={{ color: '#A855F7' }}>Ready to Create</span>
+              <span className="text-white">Stunning Graphics?</span>
             </h2>
             <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-              Let's discuss your web development needs and create something amazing together.
+              Let's discuss your graphic design needs and create something amazing together.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
@@ -367,4 +366,4 @@ const WebDevelopment = () => {
   );
 };
 
-export default WebDevelopment;
+export default GraphicDesign;

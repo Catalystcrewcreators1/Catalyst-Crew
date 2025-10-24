@@ -25,11 +25,15 @@ const Navbar = () => {
       name: 'Services',
       path: '/services',
       subItems: [
-        { name: 'Design Studio', path: '/services/design' },
+        { name: 'Logo Design', path: '/services/design' },
+        { name: 'Graphic Design', path: '/services/graphic-design' },
         { name: 'Web Development', path: '/services/development' },
-        { name: 'Media Production', path: '/services/media' },
-        { name: 'Event Management', path: '/services/events' },
-        { name: 'Marketing Consulting', path: '/services/marketing' }
+        { name: 'Brand Identity', path: '/services/brand-identity' },
+        { name: 'Print Design', path: '/services/print-design' },
+        { name: 'Digital Design', path: '/services/digital-design' },
+        { name: 'Social Media Managing', path: '/services/social-media' },
+        { name: 'Illustration', path: '/services/illustration' },
+        { name: 'AI Bot / Agent Automation', path: '/services/ai-bot' }
       ]
     },
     { name: 'Portfolio', path: '/portfolio' },

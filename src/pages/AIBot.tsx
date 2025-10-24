@@ -2,85 +2,82 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
-  Code,
+  Bot,
+  Workflow,
+  Brain,
   CheckCircle,
   Quote,
   Star,
-  Globe,
-  ShoppingCart,
-  Search,
-  Shield,
+  MessageSquare,
 } from 'lucide-react';
 import { ScrollReveal } from '../components/ui/ScrollAnimations';
 
-const WebDevelopment = () => {
+const AIBot = () => {
   const features = [
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Responsive Website Design",
-      description: "Mobile-first responsive websites that work on all devices"
+      icon: <Bot className="w-8 h-8" />,
+      title: "Custom AI Chatbots",
+      description: "Intelligent conversational agents for customer service"
     },
     {
-      icon: <ShoppingCart className="w-8 h-8" />,
-      title: "E-commerce Development",
-      description: "Full-featured online stores with secure payment processing"
+      icon: <Workflow className="w-8 h-8" />,
+      title: "Automated Workflows",
+      description: "Streamlined processes and task automation"
     },
     {
-      icon: <Search className="w-8 h-8" />,
-      title: "SEO Optimization",
-      description: "Built-in SEO best practices for better search rankings"
+      icon: <Brain className="w-8 h-8" />,
+      title: "Natural Language Processing",
+      description: "Advanced understanding of human language"
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Ongoing Support",
-      description: "Continuous maintenance and updates for your website"
+      icon: <MessageSquare className="w-8 h-8" />,
+      title: "24/7 Customer Support",
+      description: "Round-the-clock automated assistance"
     }
   ];
 
   const packages = [
     {
       name: "Starter",
-      price: "₹75,000",
-      description: "Perfect for small businesses and portfolios",
+      price: "₹1,00,000",
+      description: "Basic AI chatbot for customer service",
       features: [
-        "Responsive Website (5 pages)",
-        "Basic SEO Optimization",
-        "Contact Forms",
-        "Mobile-Friendly Design",
-        "3 months support",
-        "Delivery in 4-6 weeks"
+        "Simple AI Chatbot",
+        "Basic NLP",
+        "Website Integration",
+        "24/7 Support",
+        "Basic Analytics",
+        "Delivery in 3-4 weeks"
       ]
     },
     {
       name: "Professional",
-      price: "₹1,50,000",
-      description: "Complete web solution for growing businesses",
+      price: "₹2,50,000",
+      description: "Advanced AI automation solution",
       features: [
-        "Responsive Website (10 pages)",
-        "Advanced SEO Optimization",
-        "E-commerce Integration",
-        "Content Management System",
-        "Payment Gateway Integration",
-        "Social Media Integration",
-        "6 months support",
-        "Analytics Setup"
+        "Advanced AI Chatbot",
+        "Multi-Platform Integration",
+        "Custom Workflows",
+        "Advanced Analytics",
+        "Natural Language Processing",
+        "API Integrations",
+        "Delivery in 4-6 weeks"
       ],
       popular: true
     },
     {
       name: "Enterprise",
-      price: "₹3,00,000",
-      description: "Full-scale web development for large organizations",
+      price: "₹5,00,000",
+      description: "Full-scale AI transformation",
       features: [
-        "Custom Web Application",
-        "Advanced E-commerce Platform",
-        "Multi-language Support",
-        "Advanced Analytics",
-        "Third-party Integrations",
-        "Custom Features",
-        "12 months support",
-        "Priority Development",
-        "Performance Optimization"
+        "Custom AI Agent System",
+        "Complex Automation",
+        "Machine Learning",
+        "Multi-Platform Integration",
+        "Advanced Analytics Dashboard",
+        "Custom API Development",
+        "Priority Support",
+        "Ongoing Optimization"
       ]
     }
   ];
@@ -101,22 +98,22 @@ const WebDevelopment = () => {
                 transition={{ duration: 0.6 }}
                 className="inline-flex items-center px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full mb-8"
               >
-                <Code className="w-4 h-4 text-purple-400 mr-2" />
-                <span className="text-sm text-purple-400 font-medium">Web Development</span>
+                <Bot className="w-4 h-4 text-purple-400 mr-2" />
+                <span className="text-sm text-purple-400 font-medium">AI Bot</span>
               </motion.div>
             </ScrollReveal>
 
             <ScrollReveal>
               <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Modern Web</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>Intelligent Automation</span>
                 <span className="text-white">Solutions</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal>
               <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Custom web development services building responsive, fast, and user-friendly
-                websites and applications.
+                Advanced AI-powered bots and agents for automating tasks, improving efficiency,
+                and enhancing user interactions across platforms.
               </p>
             </ScrollReveal>
 
@@ -207,9 +204,9 @@ const WebDevelopment = () => {
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
               <span className="block mb-2" style={{ color: '#A855F7' }}>Timeline</span>
             </h2>
-            <div className="text-6xl font-bold text-purple-400 mb-4">4-8 weeks</div>
+            <div className="text-6xl font-bold text-purple-400 mb-4">3-6 weeks</div>
             <p className="text-xl text-white/70">
-              From planning to launch, we deliver quality websites on schedule.
+              From planning to deployment, we create sophisticated AI automation solutions.
             </p>
           </ScrollReveal>
         </div>
@@ -221,11 +218,11 @@ const WebDevelopment = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Development</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>AI Bot</span>
                 <span className="text-white">Packages</span>
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                Choose the perfect web development package for your project and budget.
+                Choose the perfect AI automation package for your business needs.
               </p>
             </div>
           </ScrollReveal>
@@ -299,19 +296,19 @@ const WebDevelopment = () => {
               {
                 name: "Sarah Johnson",
                 company: "TechStart Inc.",
-                content: "The web development team built us an amazing website that perfectly represents our brand. Professional and efficient!",
+                content: "The AI chatbot transformed our customer service! 24/7 support with intelligent responses.",
                 rating: 5
               },
               {
                 name: "Michael Chen",
                 company: "Growth Co.",
-                content: "Outstanding web development service! They delivered a responsive, fast website that exceeded our expectations.",
+                content: "Outstanding AI automation! They created workflows that saved us countless hours.",
                 rating: 5
               },
               {
                 name: "Emily Rodriguez",
                 company: "Creative Solutions",
-                content: "Amazing web development work! They understood our requirements and created a fantastic online presence.",
+                content: "Amazing AI bot service! The intelligent automation exceeded our expectations and improved efficiency.",
                 rating: 5
               }
             ].map((testimonial, index) => (
@@ -345,11 +342,11 @@ const WebDevelopment = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-              <span className="block mb-2" style={{ color: '#A855F7' }}>Ready to Build</span>
-              <span className="text-white">Your Website?</span>
+              <span className="block mb-2" style={{ color: '#A855F7' }}>Ready to Automate</span>
+              <span className="text-white">with AI?</span>
             </h2>
             <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-              Let's discuss your web development needs and create something amazing together.
+              Let's discuss your automation needs and create intelligent solutions for your business.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
@@ -367,4 +364,4 @@ const WebDevelopment = () => {
   );
 };
 
-export default WebDevelopment;
+export default AIBot;

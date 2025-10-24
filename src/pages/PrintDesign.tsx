@@ -2,85 +2,83 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
-  Code,
+  Printer,
+  CreditCard,
+  FileText,
   CheckCircle,
   Quote,
   Star,
-  Globe,
-  ShoppingCart,
-  Search,
-  Shield,
+  Package,
+  Image,
+  ExternalLink,
 } from 'lucide-react';
 import { ScrollReveal } from '../components/ui/ScrollAnimations';
 
-const WebDevelopment = () => {
+const PrintDesign = () => {
   const features = [
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Responsive Website Design",
-      description: "Mobile-first responsive websites that work on all devices"
+      icon: <CreditCard className="w-8 h-8" />,
+      title: "Business Card Design",
+      description: "Professional business cards that make a lasting impression"
     },
     {
-      icon: <ShoppingCart className="w-8 h-8" />,
-      title: "E-commerce Development",
-      description: "Full-featured online stores with secure payment processing"
+      icon: <FileText className="w-8 h-8" />,
+      title: "Brochure & Catalog Design",
+      description: "Compelling layouts for marketing materials and catalogs"
     },
     {
-      icon: <Search className="w-8 h-8" />,
-      title: "SEO Optimization",
-      description: "Built-in SEO best practices for better search rankings"
+      icon: <Image className="w-8 h-8" />,
+      title: "Poster & Flyer Design",
+      description: "Eye-catching designs for events and promotions"
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Ongoing Support",
-      description: "Continuous maintenance and updates for your website"
+      icon: <Package className="w-8 h-8" />,
+      title: "Packaging Design",
+      description: "Creative packaging solutions for products"
     }
   ];
 
   const packages = [
     {
       name: "Starter",
-      price: "₹75,000",
-      description: "Perfect for small businesses and portfolios",
+      price: "₹30,000",
+      description: "Essential print materials for small businesses",
       features: [
-        "Responsive Website (5 pages)",
-        "Basic SEO Optimization",
-        "Contact Forms",
-        "Mobile-Friendly Design",
-        "3 months support",
-        "Delivery in 4-6 weeks"
+        "Business Card Design",
+        "Letterhead Design",
+        "Envelope Design",
+        "Print-Ready Files",
+        "3 revisions included",
+        "Delivery in 2-3 weeks"
       ]
     },
     {
       name: "Professional",
-      price: "₹1,50,000",
-      description: "Complete web solution for growing businesses",
+      price: "₹60,000",
+      description: "Complete print design solution",
       features: [
-        "Responsive Website (10 pages)",
-        "Advanced SEO Optimization",
-        "E-commerce Integration",
-        "Content Management System",
-        "Payment Gateway Integration",
-        "Social Media Integration",
-        "6 months support",
-        "Analytics Setup"
+        "Complete Stationery Package",
+        "Brochure Design",
+        "Flyer Design",
+        "Poster Design",
+        "Print-Ready Files",
+        "Multiple Format Support",
+        "5 revisions included"
       ],
       popular: true
     },
     {
       name: "Enterprise",
-      price: "₹3,00,000",
-      description: "Full-scale web development for large organizations",
+      price: "₹1,20,000",
+      description: "Full-scale print design transformation",
       features: [
-        "Custom Web Application",
-        "Advanced E-commerce Platform",
-        "Multi-language Support",
-        "Advanced Analytics",
-        "Third-party Integrations",
-        "Custom Features",
-        "12 months support",
-        "Priority Development",
-        "Performance Optimization"
+        "Complete Print Material Suite",
+        "Catalog Design",
+        "Packaging Design",
+        "Large Format Printing",
+        "Quality Assurance",
+        "Print Consultation",
+        "Unlimited revisions"
       ]
     }
   ];
@@ -101,22 +99,22 @@ const WebDevelopment = () => {
                 transition={{ duration: 0.6 }}
                 className="inline-flex items-center px-4 py-2 bg-purple-500/10 border border-purple-500/30 rounded-full mb-8"
               >
-                <Code className="w-4 h-4 text-purple-400 mr-2" />
-                <span className="text-sm text-purple-400 font-medium">Web Development</span>
+                <Printer className="w-4 h-4 text-purple-400 mr-2" />
+                <span className="text-sm text-purple-400 font-medium">Print Design</span>
               </motion.div>
             </ScrollReveal>
 
             <ScrollReveal>
               <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 leading-tight">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Modern Web</span>
-                <span className="text-white">Solutions</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>High-Quality Print</span>
+                <span className="text-white">Materials</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal>
               <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Custom web development services building responsive, fast, and user-friendly
-                websites and applications.
+                Professional print design services for business cards, brochures, posters,
+                and other physical marketing materials.
               </p>
             </ScrollReveal>
 
@@ -207,9 +205,9 @@ const WebDevelopment = () => {
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
               <span className="block mb-2" style={{ color: '#A855F7' }}>Timeline</span>
             </h2>
-            <div className="text-6xl font-bold text-purple-400 mb-4">4-8 weeks</div>
+            <div className="text-6xl font-bold text-purple-400 mb-4">2-3 weeks</div>
             <p className="text-xl text-white/70">
-              From planning to launch, we deliver quality websites on schedule.
+              From concept to print-ready files, we deliver quality designs efficiently.
             </p>
           </ScrollReveal>
         </div>
@@ -221,11 +219,11 @@ const WebDevelopment = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-                <span className="block mb-2" style={{ color: '#A855F7' }}>Development</span>
+                <span className="block mb-2" style={{ color: '#A855F7' }}>Design</span>
                 <span className="text-white">Packages</span>
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                Choose the perfect web development package for your project and budget.
+                Choose the perfect print design package for your business needs.
               </p>
             </div>
           </ScrollReveal>
@@ -282,8 +280,32 @@ const WebDevelopment = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Brochure CTA Section */}
       <section className="py-24 relative bg-purple-900/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
+              <span className="block mb-2" style={{ color: '#A855F7' }}>Company Brochure</span>
+              <span className="text-white">Available</span>
+            </h2>
+            <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
+              Download our comprehensive company brochure to learn more about our print design services.
+            </p>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="/contact"
+                className="inline-flex items-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 shadow-2xl shadow-purple-600/25"
+              >
+                <span>View Our Brochure</span>
+                <ExternalLink className="w-6 h-6" />
+              </Link>
+            </motion.div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -299,19 +321,19 @@ const WebDevelopment = () => {
               {
                 name: "Sarah Johnson",
                 company: "TechStart Inc.",
-                content: "The web development team built us an amazing website that perfectly represents our brand. Professional and efficient!",
+                content: "The print design materials exceeded our expectations. Professional quality and perfect for our brand!",
                 rating: 5
               },
               {
                 name: "Michael Chen",
                 company: "Growth Co.",
-                content: "Outstanding web development service! They delivered a responsive, fast website that exceeded our expectations.",
+                content: "Outstanding print design service! They delivered high-quality materials that made our brand stand out.",
                 rating: 5
               },
               {
                 name: "Emily Rodriguez",
                 company: "Creative Solutions",
-                content: "Amazing web development work! They understood our requirements and created a fantastic online presence.",
+                content: "Amazing print design work! The team created stunning materials that perfectly represented our business.",
                 rating: 5
               }
             ].map((testimonial, index) => (
@@ -345,11 +367,11 @@ const WebDevelopment = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-              <span className="block mb-2" style={{ color: '#A855F7' }}>Ready to Build</span>
-              <span className="text-white">Your Website?</span>
+              <span className="block mb-2" style={{ color: '#A855F7' }}>Ready to Create</span>
+              <span className="text-white">Stunning Print Materials?</span>
             </h2>
             <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
-              Let's discuss your web development needs and create something amazing together.
+              Let's discuss your print design needs and create professional materials for your business.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
@@ -367,4 +389,4 @@ const WebDevelopment = () => {
   );
 };
 
-export default WebDevelopment;
+export default PrintDesign;
