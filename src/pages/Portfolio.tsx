@@ -2,12 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
-  ExternalLink,
-  Github,
   Calendar,
-  Eye,
-  Heart,
-  Share2,
   Grid,
   List,
   Award
@@ -20,97 +15,76 @@ const Portfolio = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   const filters = [
-    { id: 'all', label: 'All Projects', count: 24 },
-    { id: 'web', label: 'Web Development', count: 8 },
-    { id: 'design', label: 'Design', count: 6 },
-    { id: 'media', label: 'Media', count: 5 },
-    { id: 'events', label: 'Events', count: 3 },
-    { id: 'marketing', label: 'Marketing', count: 2 }
+    { id: 'all', label: 'All', count: 5 },
+    { id: 'web', label: 'Websites', count: 1 },
+    { id: 'ecommerce', label: 'E-Commerce', count: 2 },
+    { id: 'webapp', label: 'Web Apps', count: 2 }
   ];
 
   const projects = [
     {
       id: 1,
-      title: "TechFlow CRM Platform",
+      title: "Sulax Solar",
       category: "web",
-      description: "A comprehensive CRM solution with AI-powered analytics and real-time collaboration features.",
-      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/projects/techflow.jpg?updatedAt=1755974392379",
-      technologies: ["React", "Node.js", "PostgreSQL", "AI/ML"],
-      client: "TechFlow Inc",
+      description: "Corporate solar energy website optimized for search visibility, featuring a custom backend for dynamic content updates.",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_1-removebg-preview%20(1).png?updatedAt=1755976929939",
+      technologies: ["Backend", "SEO"],
+      client: "Sulax Solar",
       year: "2024",
       featured: true,
-      metrics: { users: "10K+", revenue: "₹50L+", growth: "300%" },
-      link: "#",
+      link: "https://sulaxsolar.com/",
       github: "#"
     },
     {
       id: 2,
-      title: "EcoGreen Mobile App",
-      category: "design",
-      description: "Sustainable living app with carbon footprint tracking and eco-friendly recommendations.",
-      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/projects/ecogreen.jpg?updatedAt=1755974392379",
-      technologies: ["React Native", "Firebase", "MongoDB"],
-      client: "EcoGreen Solutions",
+      title: "Catalyst Crew Inventory",
+      category: "webapp",
+      description: "A custom-built inventory management system for Catalyst Crew to efficiently track and manage production assets.",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_2-removebg-preview.png?updatedAt=1755976929781",
+      technologies: ["Storage", "Backend"],
+      client: "Catalyst Crew",
       year: "2024",
       featured: true,
-      metrics: { downloads: "25K+", rating: "4.8", impact: "50K trees" },
-      link: "#",
+      link: "https://crew-inventory.vercel.app/",
       github: "#"
     },
     {
       id: 3,
-      title: "StartupX Website",
-      category: "web",
-      description: "Modern, responsive website for a fintech startup with advanced animations and interactions.",
-      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/projects/startupx.jpg?updatedAt=1755974392379",
-      technologies: ["Next.js", "Framer Motion", "Tailwind CSS"],
-      client: "StartupX",
-      year: "2023",
-      featured: false,
-      metrics: { conversion: "85%", bounce: "12%", leads: "2K+" },
-      link: "#",
+      title: "Premium Portfolio",
+      category: "Portfolio",
+      description: "A dynamic portfolio web app template with a sleek UI, backend integration, and motion-based animations for modern creatives.",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_3-removebg-preview.png?updatedAt=1755976929799",
+      technologies: ["React", "Node.js"],
+      client: "Arpit Bajpai",
+      year: "2024",
+      featured: true,
+      link: "https://arpitportfolio-ten.vercel.app/",
       github: "#"
     },
     {
       id: 4,
-      title: "Fashion Week 2024",
-      category: "events",
-      description: "Complete event management for international fashion week with live streaming and virtual attendance.",
-      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/projects/fashion.jpg?updatedAt=1755974392379",
-      technologies: ["Event Management", "Live Streaming", "VR"],
-      client: "Fashion Week Org",
-      year: "2024",
-      featured: true,
-      metrics: { attendees: "5K+", views: "100K+", engagement: "95%" },
-      link: "#",
+      title: "Our Website",
+      category: "Proffesional Website",
+      description: "Catalyst Crew's official digital home built for performance, clarity, and a powerful brand-driven user experience.",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_4-removebg-preview.png?updatedAt=1755976929761",
+      technologies: ["HTML/CSS", "JavaScript"],
+      client: "Catalyst Crew",
+      year: "2023",
+      featured: false,
+      link: "https://catalyst-crew-alpha.vercel.app/",
       github: "#"
     },
     {
       id: 5,
-      title: "BrandRevive Campaign",
-      category: "marketing",
-      description: "Complete digital marketing campaign that increased brand visibility by 400%.",
-      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/projects/brandrevive.jpg?updatedAt=1755974392379",
-      technologies: ["Digital Marketing", "SEO", "Social Media"],
-      client: "BrandRevive",
+      title: "Portfolio Website",
+      category: "Portfolio",
+      description: "A creative personal website design showcasing elegant transitions, lightweight performance, and modern dark-mode support.",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project%205%20(2).png?updatedAt=1755978151851",
+      technologies: ["HTML/CSS", "JS"],
+      client: "Twinkle Pal",
       year: "2023",
       featured: false,
-      metrics: { reach: "1M+", engagement: "45%", roi: "350%" },
-      link: "#",
-      github: "#"
-    },
-    {
-      id: 6,
-      title: "MediaCorp Video Series",
-      category: "media",
-      description: "Professional video series showcasing corporate achievements and milestones.",
-      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/projects/mediacorp.jpg?updatedAt=1755974392379",
-      technologies: ["4K Production", "Drone Cinematography", "Post-Production"],
-      client: "MediaCorp",
-      year: "2024",
-      featured: true,
-      metrics: { views: "500K+", shares: "10K+", awards: "3" },
-      link: "#",
+      link: "https://catalystcrew1.github.io/Twinkle-Pal-Portfolio/",
       github: "#"
     }
   ];
@@ -157,10 +131,10 @@ const Portfolio = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-catalyst-red/10 to-orange-500/10 border border-catalyst-red/30 rounded-full mb-8 backdrop-blur-sm"
+                className="inline-flex items-center px-6 py-3 border rounded-full mb-8 backdrop-blur-sm" style={{ backgroundColor: 'rgba(215, 27, 27, 0.1)', borderColor: '#D71B1B' }}
               >
-                <Award className="w-5 h-5 text-catalyst-red mr-3" />
-                <span className="text-sm font-semibold text-catalyst-red">Our Portfolio</span>
+                <Award className="w-5 h-5 mr-3" style={{ color: '#D71B1B' }} />
+                <span className="text-sm font-semibold" style={{ color: '#D71B1B' }}>Our Portfolio</span>
               </motion.div>
             </ScrollReveal>
 
@@ -189,9 +163,13 @@ const Portfolio = () => {
                   onClick={() => setActiveFilter(filter.id)}
                   className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 flex items-center space-x-2 ${
                     activeFilter === filter.id
-                      ? 'bg-catalyst-red text-white shadow-lg shadow-catalyst-red/25'
-                      : 'bg-white/5 text-white/80 border border-white/20 hover:border-catalyst-red/30 hover:bg-catalyst-red/10'
+                      ? 'text-white shadow-lg'
+                      : 'bg-white/5 text-white/80 border hover:bg-catalyst-red/10'
                   }`}
+                  style={{
+                    backgroundColor: activeFilter === filter.id ? '#D71B1B' : undefined,
+                    borderColor: '#D71B1B'
+                  }}
                 >
                   <span>{filter.label}</span>
                   <span className="text-xs opacity-70">({filter.count})</span>
@@ -210,9 +188,12 @@ const Portfolio = () => {
                   onClick={() => setViewMode('grid')}
                   className={`p-2 rounded-lg transition-all duration-200 ${
                     viewMode === 'grid'
-                      ? 'bg-catalyst-red text-white'
+                      ? 'text-white'
                       : 'text-white/60 hover:text-white'
                   }`}
+                  style={{
+                    backgroundColor: viewMode === 'grid' ? '#D71B1B' : undefined
+                  }}
                 >
                   <Grid className="w-4 h-4" />
                 </motion.button>
@@ -222,9 +203,12 @@ const Portfolio = () => {
                   onClick={() => setViewMode('list')}
                   className={`p-2 rounded-lg transition-all duration-200 ${
                     viewMode === 'list'
-                      ? 'bg-catalyst-red text-white'
+                      ? 'text-white'
                       : 'text-white/60 hover:text-white'
                   }`}
+                  style={{
+                    backgroundColor: viewMode === 'list' ? '#D71B1B' : undefined
+                  }}
                 >
                   <List className="w-4 h-4" />
                 </motion.button>
@@ -236,7 +220,7 @@ const Portfolio = () => {
 
       {/* Featured Projects Section */}
       <section className="py-20 relative overflow-hidden z-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-catalyst-red/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/5 to-transparent" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal>
@@ -259,65 +243,33 @@ const Portfolio = () => {
               <ScrollReveal key={project.id} direction="up" delay={index * 0.1}>
                 <motion.div
                   whileHover={{ scale: 1.02, y: -10 }}
-                  className={`group relative overflow-hidden rounded-2xl md:rounded-3xl backdrop-blur-sm border border-white/20 hover:border-catalyst-red/30 transition-all duration-500 hover:shadow-2xl hover:shadow-catalyst-red/10 ${
-                    viewMode === 'list' ? 'flex flex-col md:flex-row' : ''
-                  }`}
+                  className="group relative overflow-hidden rounded-3xl backdrop-blur-sm transition-all duration-500"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(215, 27, 27, 0.1), rgba(215, 27, 27, 0.05))',
+                    border: `2px solid rgba(215, 27, 27, 0.4)`,
+                    boxShadow: '0 10px 30px rgba(215, 27, 27, 0.15)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#D71B1B';
+                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(215, 27, 27, 0.3)';
+                    e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(215, 27, 27, 0.4)';
+                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(215, 27, 27, 0.15)';
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  }}
                 >
                   {/* Project Image */}
                   <div className={`relative ${viewMode === 'list' ? 'w-full md:w-1/2' : ''}`}>
-                    <div className={`aspect-video bg-gradient-to-br from-catalyst-red/20 to-catalyst-red/5 border-b border-white/10 group-hover:border-catalyst-red/30 transition-colors duration-300 overflow-hidden ${
+                    <div className={`aspect-video transition-colors duration-300 overflow-hidden ${
                       viewMode === 'list' ? 'rounded-t-2xl md:rounded-l-3xl md:rounded-tr-none' : 'rounded-t-2xl md:rounded-t-3xl'
                     }`}>
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-500"
                       />
-
-                      {/* Animated overlay */}
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                        className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
-                      >
-                        <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4 flex justify-between items-center">
-                          <div className="flex space-x-2">
-                            <motion.button
-                              whileHover={{ scale: 1.1 }}
-                              className="p-2 bg-white/10 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
-                            >
-                              <ExternalLink className="w-3 h-3 md:w-4 md:h-4 text-white" />
-                            </motion.button>
-                            <motion.button
-                              whileHover={{ scale: 1.1 }}
-                              className="p-2 bg-white/10 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
-                            >
-                              <Github className="w-3 h-3 md:w-4 md:h-4 text-white" />
-                            </motion.button>
-                          </div>
-                          <div className="flex space-x-1">
-                            <motion.button
-                              whileHover={{ scale: 1.1 }}
-                              className="p-1.5 md:p-2 bg-white/10 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
-                            >
-                              <Eye className="w-3 h-3 md:w-4 md:h-4 text-white" />
-                            </motion.button>
-                            <motion.button
-                              whileHover={{ scale: 1.1 }}
-                              className="p-1.5 md:p-2 bg-white/10 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
-                            >
-                              <Heart className="w-3 h-3 md:w-4 md:h-4 text-white" />
-                            </motion.button>
-                            <motion.button
-                              whileHover={{ scale: 1.1 }}
-                              className="p-1.5 md:p-2 bg-white/10 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
-                            >
-                              <Share2 className="w-3 h-3 md:w-4 md:h-4 text-white" />
-                            </motion.button>
-                          </div>
-                        </div>
-                      </motion.div>
 
                       {/* Featured badge */}
                       {project.featured && (
@@ -327,18 +279,30 @@ const Portfolio = () => {
                           transition={{ duration: 0.6, delay: 0.2 }}
                           className="absolute top-3 md:top-4 left-3 md:left-4"
                         >
-                          <div className="bg-gradient-to-r from-catalyst-red to-orange-500 text-white px-2 md:px-3 py-1 rounded-full text-xs font-semibold">
-                            Featured
+                          <div className="px-3 py-1.5 rounded-full text-xs font-bold shadow-lg" style={{ backgroundColor: '#D71B1B', color: 'white' }}>
+                            ⭐ Featured
                           </div>
                         </motion.div>
                       )}
+
+                      {/* Category badge */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="absolute top-3 md:top-4 right-3 md:right-4"
+                      >
+                        <div className="px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-sm border" style={{ backgroundColor: 'rgba(215, 27, 27, 0.2)', color: '#D71B1B', borderColor: '#D71B1B' }}>
+                          {project.category}
+                        </div>
+                      </motion.div>
                     </div>
                   </div>
 
                   {/* Project Content */}
-                  <div className={`p-4 md:p-6 ${viewMode === 'list' ? 'w-full md:w-1/2' : ''}`}>
-                    <div className="flex items-center justify-between mb-2 md:mb-3">
-                      <span className="text-xs text-catalyst-red font-semibold uppercase tracking-wide">
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xs font-semibold uppercase tracking-wide" style={{ color: '#D71B1B' }}>
                         {project.category}
                       </span>
                       <div className="flex items-center text-xs text-white/60">
@@ -347,48 +311,68 @@ const Portfolio = () => {
                       </div>
                     </div>
 
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 group-hover:text-catalyst-red transition-colors duration-300">
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 transition-colors duration-300" style={{ color: '#D71B1B' }}>
                       {project.title}
                     </h3>
 
-                    <p className="text-white/70 text-sm mb-3 md:mb-4 leading-relaxed">
+                    <p className="text-white/80 text-sm leading-relaxed mb-4">
                       {project.description}
                     </p>
 
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-1 md:gap-2 mb-3 md:mb-4">
+                    <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.map((tech, idx) => (
-                        <span
+                        <motion.span
                           key={idx}
-                          className="px-2 md:px-3 py-1 bg-white/5 border border-white/20 rounded-full text-xs text-white/80 hover:border-catalyst-red/30 transition-all duration-300"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.3, delay: idx * 0.1 }}
+                          className="px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300"
+                          style={{
+                            backgroundColor: 'rgba(215, 27, 27, 0.15)',
+                            color: '#D71B1B',
+                            border: '1px solid rgba(215, 27, 27, 0.3)'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = '#D71B1B';
+                            e.currentTarget.style.color = 'white';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'rgba(215, 27, 27, 0.15)';
+                            e.currentTarget.style.color = '#D71B1B';
+                          }}
                         >
                           {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Metrics */}
-                    <div className="grid grid-cols-3 gap-2 md:gap-4 mb-3 md:mb-4">
-                      {Object.entries(project.metrics).map(([key, value], idx) => (
-                        <div key={idx} className="text-center">
-                          <div className="text-sm md:text-lg font-bold text-catalyst-red">{value}</div>
-                          <div className="text-xs text-white/60 capitalize">{key}</div>
-                        </div>
+                        </motion.span>
                       ))}
                     </div>
 
                     {/* Client */}
-                    <div className="text-xs md:text-sm text-white/60 mb-3 md:mb-4">
-                      <span className="font-semibold">Client:</span> {project.client}
+                    <div className="text-sm text-white/70 mb-4">
+                      <span className="font-semibold" style={{ color: '#D71B1B' }}>Client:</span> {project.client}
                     </div>
 
                     {/* CTA */}
                     <motion.button
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="w-full py-2 md:py-3 bg-catalyst-red text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-catalyst-red/25 transition-all duration-300 text-sm md:text-base"
+                      onClick={() => window.open(project.link, '_blank')}
+                      className="w-full py-3 rounded-xl font-bold transition-all duration-300 text-base"
+                      style={{
+                        backgroundColor: '#D71B1B',
+                        color: 'white',
+                        boxShadow: '0 4px 15px rgba(215, 27, 27, 0.3)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = '#B91C1C';
+                        e.currentTarget.style.boxShadow = '0 8px 25px rgba(215, 27, 27, 0.5)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = '#D71B1B';
+                        e.currentTarget.style.boxShadow = '0 4px 15px rgba(215, 27, 27, 0.3)';
+                      }}
                     >
-                      View Case Study
+                      View Project
                     </motion.button>
                   </div>
                 </motion.div>
@@ -400,7 +384,7 @@ const Portfolio = () => {
 
       {/* All Projects Section */}
       <section className="py-20 relative overflow-hidden z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-catalyst-red/5 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]" style={{ background: `radial-gradient(ellipse at center, rgba(215, 27, 27, 0.05), transparent)` }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal>
@@ -422,80 +406,107 @@ const Portfolio = () => {
             {filteredProjects.map((project, index) => (
               <ScrollReveal key={project.id} direction="up" delay={index * 0.05}>
                 <motion.div
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/5 to-white/10 border border-white/20 hover:border-catalyst-red/30 transition-all duration-500 backdrop-blur-sm hover:shadow-2xl hover:shadow-catalyst-red/10"
+                  whileHover={{ scale: 1.02, y: -10 }}
+                  className="group relative overflow-hidden rounded-3xl backdrop-blur-sm transition-all duration-500"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(215, 27, 27, 0.08), rgba(215, 27, 27, 0.03))',
+                    border: `2px solid rgba(215, 27, 27, 0.3)`,
+                    boxShadow: '0 8px 25px rgba(215, 27, 27, 0.1)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#D71B1B';
+                    e.currentTarget.style.boxShadow = '0 15px 35px rgba(215, 27, 27, 0.25)';
+                    e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(215, 27, 27, 0.3)';
+                    e.currentTarget.style.boxShadow = '0 8px 25px rgba(215, 27, 27, 0.1)';
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  }}
                 >
-                  <div className="aspect-video bg-catalyst-red/5 relative">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-3xl opacity-30">📁</div>
-                    </div>
+                  <div className="aspect-video relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500"
+                      loading="lazy"
+                    />
 
+                    {/* Featured badge */}
+                    {project.featured && (
+                      <motion.div
+                        initial={{ scale: 0, rotate: -180 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="absolute top-3 left-3"
+                      >
+                        <div className="px-3 py-1.5 rounded-full text-xs font-bold shadow-lg" style={{ backgroundColor: '#D71B1B', color: 'white' }}>
+                          ⭐ Featured
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {/* Category badge */}
                     <motion.div
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                      className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                      className="absolute top-3 right-3"
                     >
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="text-xs text-catalyst-red font-semibold uppercase tracking-wide">
-                            {project.category}
-                          </span>
-                          <div className="flex space-x-2">
-                            <motion.button
-                              whileHover={{ scale: 1.1 }}
-                              className="p-2 bg-white/10 rounded-lg backdrop-blur-sm"
-                            >
-                              <ExternalLink className="w-3 h-3 text-white" />
-                            </motion.button>
-                            <motion.button
-                              whileHover={{ scale: 1.1 }}
-                              className="p-2 bg-white/10 rounded-lg backdrop-blur-sm"
-                            >
-                              <Github className="w-3 h-3 text-white" />
-                            </motion.button>
-                          </div>
-                        </div>
-
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-catalyst-red transition-colors duration-300">
-                          {project.title}
-                        </h3>
-
-                        <p className="text-white/70 text-sm mb-3 line-clamp-2">
-                          {project.description}
-                        </p>
-
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs text-white/60">{project.client}</span>
-                          <span className="text-xs text-white/60">{project.year}</span>
-                        </div>
+                      <div className="px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-sm border" style={{ backgroundColor: 'rgba(215, 27, 27, 0.2)', color: '#D71B1B', borderColor: '#D71B1B' }}>
+                        {project.category}
                       </div>
                     </motion.div>
                   </div>
 
-                  <div className="p-4">
-                    <div className="flex flex-wrap gap-1 mb-3">
-                      {project.technologies.slice(0, 3).map((tech, idx) => (
-                        <span
+                  <div className="p-5">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, idx) => (
+                        <motion.span
                           key={idx}
-                          className="px-2 py-1 bg-white/5 border border-white/20 rounded text-xs text-white/80"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.3, delay: idx * 0.1 }}
+                          className="px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300"
+                          style={{
+                            backgroundColor: 'rgba(215, 27, 27, 0.15)',
+                            color: '#D71B1B',
+                            border: '1px solid rgba(215, 27, 27, 0.3)'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = '#D71B1B';
+                            e.currentTarget.style.color = 'white';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'rgba(215, 27, 27, 0.15)';
+                            e.currentTarget.style.color = '#D71B1B';
+                          }}
                         >
                           {tech}
-                        </span>
+                        </motion.span>
                       ))}
-                      {project.technologies.length > 3 && (
-                        <span className="px-2 py-1 bg-white/5 border border-white/20 rounded text-xs text-white/60">
-                          +{project.technologies.length - 3}
-                        </span>
-                      )}
                     </div>
 
                     <motion.button
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="w-full py-2 bg-catalyst-red/10 text-catalyst-red rounded-lg font-semibold hover:bg-catalyst-red hover:text-white transition-all duration-300 border border-catalyst-red/30"
+                      onClick={() => window.open(project.link, '_blank')}
+                      className="w-full py-3 rounded-xl font-bold transition-all duration-300 text-base"
+                      style={{
+                        backgroundColor: '#D71B1B',
+                        color: 'white',
+                        boxShadow: '0 4px 15px rgba(215, 27, 27, 0.3)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = '#B91C1C';
+                        e.currentTarget.style.boxShadow = '0 8px 25px rgba(215, 27, 27, 0.5)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = '#D71B1B';
+                        e.currentTarget.style.boxShadow = '0 4px 15px rgba(215, 27, 27, 0.3)';
+                      }}
                     >
-                      View Details
+                      View Project
                     </motion.button>
                   </div>
                 </motion.div>
