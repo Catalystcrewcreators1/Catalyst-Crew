@@ -232,7 +232,7 @@ const Pricing = () => {
                 className="mb-6"
               >
                 <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight">
-                  <span className="block mb-2 bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+                  <span className="block mb-2" style={{ color: '#D71B1B' }}>
                     Premium Digital
                   </span>
                   <span className="text-white">Solutions</span>
@@ -372,7 +372,7 @@ const Pricing = () => {
 
               <div className="relative z-10">
                 <h3 className="text-4xl md:text-5xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Ready to Get</span>
+                  <span style={{ color: '#D71B1B' }}>Ready to Get</span>
                   <span className="text-white"> Started?</span>
                 </h3>
                 <p className="text-white/80 mb-8 text-xl max-w-2xl mx-auto">
@@ -413,7 +413,7 @@ const Pricing = () => {
             <ScrollReveal>
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-                  <span className="block mb-2 bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Additional</span>
+                  <span className="block mb-2" style={{ color: '#D71B1B' }}>Additional</span>
                   <span className="text-white">Services</span>
                 </h2>
                 <p className="text-xl text-white/70 max-w-3xl mx-auto">
