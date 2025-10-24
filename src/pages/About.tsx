@@ -126,6 +126,10 @@ const About = () => {
     }
   ];
 
+  // Separate CEO from other team members
+  const ceo = team.find(member => member.role === "Founder & CEO");
+  const otherMembers = team.filter(member => member.role !== "Founder & CEO");
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-catalyst-dark via-black to-catalyst-red/5 relative overflow-hidden">
       {/* Background Elements */}
@@ -391,7 +395,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section - Orbit Style */}
       <section className="py-20 relative overflow-hidden z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal>
@@ -405,7 +409,130 @@ const About = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Orbit Layout */}
+          <div className="relative h-[600px] md:h-[800px] flex items-center justify-center">
+            {/* Orbiting Team Members */}
+            {otherMembers.map((member, index) => {
+              const angle = (index / otherMembers.length) * 2 * Math.PI;
+              const radius = 200; // Base radius for mobile
+              const x = Math.cos(angle) * radius;
+              const y = Math.sin(angle) * radius;
+              
+              return (
+                <ScrollReveal key={index} direction="up" delay={index * 0.1}>
+                  <motion.div
+                    className="absolute group cursor-pointer"
+                    style={{
+                      x: x,
+                      y: y,
+                    }}
+                    whileHover={{ scale: 1.2, zIndex: 10 }}
+                    animate={{
+                      x: x,
+                      y: y,
+                      transition: {
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }
+                    }}
+                  >
+                    <div className="relative">
+                      <motion.div
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 1 }}
+                        className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-catalyst-red/20 to-catalyst-red/5 rounded-full border-2 border-catalyst-red/30 flex items-center justify-center backdrop-blur-sm group-hover:border-catalyst-red/50 transition-all duration-300"
+                      >
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full border-2 border-white/20 group-hover:border-catalyst-red/50 transition-all duration-300"
+                        />
+                      </motion.div>
+                      
+                      {/* Hover Info */}
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                        whileHover={{ opacity: 1, scale: 1, y: 0 }}
+                        className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-48 bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-4 backdrop-blur-sm opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-300 z-20"
+                      >
+                        <h3 className="text-white font-bold text-center mb-1">{member.name}</h3>
+                        <p className="text-catalyst-red text-sm font-medium text-center mb-2">{member.role}</p>
+                        <p className="text-white/70 text-xs text-center">{member.bio}</p>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                </ScrollReveal>
+              );
+            })}
+
+            {/* Center CEO */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <ScrollReveal direction="up">
+                <motion.div
+                  className="text-center group cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <motion.div
+                    animate={{ 
+                      rotate: 360,
+                      scale: [1, 1.02, 1]
+                    }}
+                    transition={{ 
+                      rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+                      scale: { duration: 2, repeat: Infinity }
+                    }}
+                    className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-catalyst-red/30 to-catalyst-red/10 rounded-full border-4 border-catalyst-red/50 flex items-center justify-center mx-auto mb-6 backdrop-blur-sm group-hover:border-catalyst-red/70 group-hover:shadow-2xl group-hover:shadow-catalyst-red/30 transition-all duration-500"
+                  >
+                    <img
+                      src={ceo.image}
+                      alt={ceo.name}
+                      className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full border-4 border-white/30 group-hover:border-catalyst-red/50 transition-all duration-300"
+                    />
+                  </motion.div>
+                  
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-catalyst-red transition-colors duration-300">
+                    {ceo.name}
+                  </h3>
+                  <p className="text-catalyst-red text-lg md:text-xl font-semibold mb-3">
+                    {ceo.role}
+                  </p>
+                  <p className="text-white/70 max-w-xs mx-auto text-sm md:text-base">
+                    {ceo.bio}
+                  </p>
+
+                  {/* CEO Glow Effect */}
+                  <motion.div
+                    animate={{ 
+                      opacity: [0.3, 0.6, 0.3],
+                      scale: [1, 1.2, 1]
+                    }}
+                    transition={{ 
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="absolute inset-0 rounded-full bg-catalyst-red/20 blur-xl -z-10"
+                  />
+                </motion.div>
+              </ScrollReveal>
+            </div>
+
+            {/* Orbit Rings */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+              className="absolute w-64 h-64 md:w-96 md:h-96 border border-catalyst-red/10 rounded-full"
+            />
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+              className="absolute w-80 h-80 md:w-[500px] md:h-[500px] border border-catalyst-red/5 rounded-full"
+            />
+          </div>
+
+          {/* Team Grid for Smaller Screens */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20 md:hidden">
             {team.map((member, index) => (
               <ScrollReveal key={index} direction="up" delay={index * 0.1}>
                 <motion.div
@@ -453,40 +580,6 @@ const About = () => {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Team CTA Section */}
-      <section className="py-16 relative overflow-hidden z-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <ScrollReveal>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-8 md:p-12 backdrop-blur-sm"
-            >
-              <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4">
-                <span className="block" style={{ color: '#D71B1B' }}>Want to Know More</span>
-                <span className="text-white">About Our Team?</span>
-              </h3>
-
-              <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
-                Discover the full stories, expertise, and personalities behind Catalyst Crew's talented professionals.
-              </p>
-
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link
-                  to="/team"
-                  className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-catalyst-red to-red-600 text-white rounded-2xl font-semibold text-lg transition-all duration-300 hover:from-red-600 hover:to-catalyst-red hover:shadow-lg hover:shadow-catalyst-red/25"
-                >
-                  <Users className="w-5 h-5" />
-                  <span>Know About Team</span>
-                </Link>
-              </motion.div>
-            </motion.div>
-          </ScrollReveal>
         </div>
       </section>
 
