@@ -99,11 +99,17 @@ const Services = () => {
         "Poster & Flyer Design",
         "Packaging Design",
         "Print-Ready Artwork",
+        "Company Brochure Available",
         "Quality Assurance"
       ],
       timeline: "2-3 weeks",
       color: "from-indigo-500/20 to-purple-500/20",
-      borderColor: "border-indigo-500/30"
+      borderColor: "border-indigo-500/30",
+      customCTA: {
+        text: "View Our Brochure",
+        href: "https://online.fliphtml5.com/Catalyst_Crew/rwae/",
+        external: true
+      }
     },
     {
       icon: <Monitor className="w-12 h-12" />,
@@ -328,18 +334,73 @@ const Services = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-full py-2.5 md:py-3 bg-gradient-to-r from-catalyst-red to-red-600 text-white rounded-xl font-semibold transition-all duration-300 text-sm md:text-base hover:from-red-600 hover:to-catalyst-red hover:shadow-lg"
-                    >
-                      Get Started
-                    </motion.button>
+                    {service.customCTA ? (
+                      <motion.a
+                        href={service.customCTA.href}
+                        target={service.customCTA.external ? "_blank" : "_self"}
+                        rel={service.customCTA.external ? "noopener noreferrer" : ""}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="w-full py-2.5 md:py-3 bg-gradient-to-r from-catalyst-red to-red-600 text-white rounded-xl font-semibold transition-all duration-300 text-sm md:text-base hover:from-red-600 hover:to-catalyst-red hover:shadow-lg text-center block"
+                      >
+                        {service.customCTA.text}
+                      </motion.a>
+                    ) : (
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="w-full py-2.5 md:py-3 bg-gradient-to-r from-catalyst-red to-red-600 text-white rounded-xl font-semibold transition-all duration-300 text-sm md:text-base hover:from-red-600 hover:to-catalyst-red hover:shadow-lg"
+                      >
+                        Get Started
+                      </motion.button>
+                    )}
                   </div>
                 </motion.div>
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Brochure Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-catalyst-red/5 via-transparent to-catalyst-red/5" />
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <ScrollReveal>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-8 md:p-12 backdrop-blur-sm"
+            >
+              <div className="w-20 h-20 bg-catalyst-red/20 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                <FileText className="w-10 h-10 text-catalyst-red" />
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+                <span className="block" style={{ color: '#D71B1B' }}>View Our</span>
+                <span className="text-white">Company Brochure</span>
+              </h2>
+
+              <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+                Discover our comprehensive range of services, portfolio highlights, and company information in our interactive digital brochure.
+              </p>
+
+              <motion.a
+                href="https://online.fliphtml5.com/Catalyst_Crew/rwae/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-catalyst-red to-red-600 text-white rounded-xl font-semibold text-lg transition-all duration-300 hover:from-red-600 hover:to-catalyst-red hover:shadow-lg"
+              >
+                <FileText className="w-5 h-5 mr-3" />
+                View Interactive Brochure
+              </motion.a>
+            </motion.div>
+          </ScrollReveal>
         </div>
       </section>
 

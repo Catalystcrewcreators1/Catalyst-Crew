@@ -11,7 +11,6 @@ import {
   Globe,
   Rocket,
   Sparkles,
-  Download,
   ExternalLink
 } from 'lucide-react';
 import { ScrollReveal, FloatingElement } from '../components/ui/ScrollAnimations';
@@ -279,10 +278,15 @@ const About = () => {
                   </motion.div>
 
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <button className="inline-flex items-center space-x-2 px-6 md:px-8 py-3 md:py-4 border-2 border-catalyst-red/50 text-catalyst-red hover:bg-catalyst-red hover:text-white rounded-2xl font-semibold transition-all duration-300 backdrop-blur-sm w-full sm:w-auto justify-center">
-                      <Download className="w-5 h-5" />
-                      <span>Download Brochure</span>
-                    </button>
+                    <a
+                      href="https://online.fliphtml5.com/Catalyst_Crew/rwae/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 px-6 md:px-8 py-3 md:py-4 border-2 border-catalyst-red/50 text-catalyst-red hover:bg-catalyst-red hover:text-white rounded-2xl font-semibold transition-all duration-300 backdrop-blur-sm w-full sm:w-auto justify-center"
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                      <span>Our Brochure</span>
+                    </a>
                   </motion.div>
                 </motion.div>
               </div>
