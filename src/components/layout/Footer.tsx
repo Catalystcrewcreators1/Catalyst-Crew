@@ -153,8 +153,13 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
             {/* Copyright */}
-            <div className="text-gray-300 mb-4 md:mb-0" style={{ color: '#d1d5db' }}>
-              © 2025 Catalyst Crew. All rights reserved.
+            <div className="text-gray-300 mb-4 md:mb-0 text-center md:text-left" style={{ color: '#d1d5db' }}>
+              <div>© 2025 Catalyst Crew. All rights reserved.</div>
+              <div className="text-sm mt-1">
+                <Link to="/privacy-policy" className="text-red-500 hover:text-red-400 transition-colors">
+                  Privacy Policy & Terms of Service
+                </Link>
+              </div>
             </div>
 
             {/* Social Links */}

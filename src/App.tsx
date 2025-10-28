@@ -26,6 +26,7 @@ import Mission from './pages/Mission';
 import Pricing from './pages/Pricing';
 import Team from './pages/Team';
 import Testimonials from './pages/Testimonials';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 // Service Pages
 import LogoDesign from './pages/LogoDesign';
@@ -68,7 +69,8 @@ function App() {
     '/mission',
     '/pricing',
     '/blog',
-    '/events'
+    '/events',
+    '/privacy-policy'
   ];
 
   // Get current page index
@@ -157,6 +159,7 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/team" element={<Team />} />
             <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </AnimatePresence>
       </main>
