@@ -1,0 +1,44 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /*?*
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Sitemap location
+Sitemap: https://catalyst-crew-alpha.vercel.app/sitemap.xml
+
+# Crawl-delay: 10  # Uncomment if needed to limit crawl rate
+
+# Google specific rules
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Google AdsBot specific rules
+User-agent: AdsBot-Google
+Allow: /
+
+# Google Image specific rules
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Bing specific rules
+User-agent: bingbot
+Allow: /
+Crawl-delay: 10
+
+# Social Media Bots
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Rate limiting for all bots
+User-agent: *
+Crawl-delay: 2
