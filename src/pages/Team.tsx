@@ -21,6 +21,7 @@ import { ScrollReveal, FloatingElement } from '../components/ui/ScrollAnimations
 
 const Team = () => {
   const teamMembers = [
+    // Leadership Team
     {
       name: "Arpit Bajpai",
       role: "Founder & CEO",
@@ -34,7 +35,7 @@ const Team = () => {
         instagram: "https://www.instagram.com/arpitexplores/"
       },
       skills: ["Strategic Planning", "Business Development", "Team Leadership", "Innovation"],
-      achievements: ["Built 200+ websites", "Led 50+ projects", "10+ years experience"]
+      achievements: ["As a fresher, building foundational experience in leadership and innovation", "Learning and growing with each project", "Developing skills in real-world scenarios"]
     },
     {
       name: "Ashwin Jauhary",
@@ -49,7 +50,54 @@ const Team = () => {
         instagram: "https://www.instagram.com/just_ashwin9?igsh=aWt0ZjhnZGRhazlm"
       },
       skills: ["Project Management", "Technical Architecture", "Team Management", "Client Relations"],
-      achievements: ["Delivered 150+ projects", "Managed 30+ developers", "5+ years leadership"]
+      achievements: ["As a fresher, gaining experience in project management", "Developing technical and leadership skills", "Building expertise through hands-on learning"]
+    },
+    {
+      name: "Twinkle Pal",
+      role: "Social Media Manager",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/twinkle%20png.png?updatedAt=1758099509007",
+      description: "Digital marketing specialist with expertise in social media strategy and content creation. Builds our online presence and community engagement.",
+      email: "twinkle.pal@catalystcrew.com",
+      phone: "+91 98765 43220",
+      social: {
+        linkedin: "https://www.linkedin.com/in/twinkle-pal-55a774324",
+        instagram: "https://www.linkedin.com/in/twinkle-pal-55a774324"
+      },
+      skills: ["Social Media Strategy", "Content Creation", "Community Management", "Digital Marketing"],
+      achievements: ["As a fresher, building social media expertise", "Learning digital marketing strategies", "Developing content creation skills"]
+    },
+    
+    // Technical Team
+    {
+      name: "Atharva Sharma",
+      role: "Technical Head",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/atharva.png?updatedAt=1755974380765",
+      description: "I am MERN Stack Developer and passionate about new technologies and Generative AI.",
+      email: "2432560atharva@gmail.com",
+      phone: "7355081900",
+      social: {
+        linkedin: "https://www.linkedin.com/in/atharvasharma2161?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github: "https://github.com/atharva-dev1",
+        instagram: "https://www.instagram.com/mr_sharmaji88/profilecard/?igsh=bzlzbHgxaHZ2eDYz"
+      },
+      skills: ["Full stack developer", "Python", "C", "C++", "JavaScript"],
+      achievements: ["As a fresher, building technical expertise", "Developing full-stack development skills", "Growing through hands-on project experience"]
+    },
+    
+    // Creative Team
+    {
+      name: "Sanskriti Gupta",
+      role: "Creative Head",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/sanskriti_pic-removebg-preview.png?updatedAt=1758098706275",
+      description: "Award-winning designer with global recognition. Leads our creative vision and ensures exceptional user experiences across all projects.",
+      email: "sanskriti.gupta@catalystcrew.com",
+      phone: "+91 98765 43218",
+      social: {
+        linkedin: "https://www.linkedin.com/in/sanskriti-gupta-a15978324",
+        instagram: "https://www.linkedin.com/in/sanskriti-gupta-a15978324"
+      },
+      skills: ["UI/UX Design", "Brand Strategy", "Creative Direction", "Design Systems"],
+      achievements: ["As a fresher, developing creative expertise", "Building design skills through practice", "Growing as a creative professional"]
     },
     {
       name: "Anurag Tiwari",
@@ -64,65 +112,54 @@ const Team = () => {
         instagram: "https://www.instagram.com/panditanuragtiwari__07?igsh=bWw5d2hqcmF6OHBz&utm_source=qr"
       },
       skills: ["UI/UX Design", "Graphic Design", "Brand Identity", "Creative Strategy"],
-      achievements: ["Designed 100+ interfaces", "Award-winning designs", "6+ years experience"]
+      achievements: ["As a fresher, exploring creative design possibilities", "Building a portfolio through diverse projects", "Learning and applying design principles"]
     },
     {
-      name: "Sanskriti Gupta",
-      role: "Creative Head",
-      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/sanskriti_pic-removebg-preview.png?updatedAt=1758098706275",
-      description: "Award-winning designer with global recognition. Leads our creative vision and ensures exceptional user experiences across all projects.",
-      email: "sanskriti.gupta@catalystcrew.com",
-      phone: "+91 98765 43218",
+      name: "Shubhi Singh",
+      role: "Graphic Designer",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/shubhi.png?updatedAt=1755974380465",
+      description: "Creative graphic designer and video editor with experience in startups and professional projects.",
+      email: "work.shubhisingh@gmail.com",
+      phone: "8604685182",
       social: {
-        linkedin: "https://www.linkedin.com/in/sanskriti-gupta-a15978324",
-        instagram: "https://www.linkedin.com/in/sanskriti-gupta-a15978324"
+        linkedin: "https://www.linkedin.com/in/sagarika-singh-268923392?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+        github: "",
+        instagram: ""
       },
-      skills: ["UI/UX Design", "Brand Strategy", "Creative Direction", "Design Systems"],
-      achievements: ["500+ designs created", "Award-winning portfolio", "8+ years experience"]
+      skills: ["Graphic Designing", "Editing", "Craft", "Video Editing", "Animation", "Branding"],
+      achievements: ["As a fresher, building graphic design and video editing skills", "Gaining professional experience through internships", "Developing creative expertise"]
     },
-    {
-      name: "Atharva Sharma",
-      role: "Technical Head",
-      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/atharva.png?updatedAt=1755974380765",
-      description: "Full-stack development expert specializing in modern web technologies. Ensures technical excellence and innovation in every project.",
-      email: "atharva.sharma@catalystcrew.com",
-      phone: "+91 98765 43219",
-      social: {
-        linkedin: "http://www.linkedin.com/in/atharvasharma2431560",
-        github: "https://github.com/atharva-dev1",
-        instagram: "https://www.instagram.com/mr_sharmaji88/profilecard/?igsh=bzlzbHgxaHZ2eDYz"
-      },
-      skills: ["Full-Stack Development", "System Architecture", "Performance Optimization", "Cloud Technologies"],
-      achievements: ["Built 100+ applications", "Led technical teams", "7+ years development"]
-    },
-    {
-      name: "Twinkle Pal",
-      role: "Social Media Manager",
-      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/twinkle%20png.png?updatedAt=1758099509007",
-      description: "Digital marketing specialist with expertise in social media strategy and content creation. Builds our online presence and community engagement.",
-      email: "twinkle.pal@catalystcrew.com",
-      phone: "+91 98765 43220",
-      social: {
-        linkedin: "https://www.linkedin.com/in/twinkle-pal-55a774324",
-        instagram: "https://www.linkedin.com/in/twinkle-pal-55a774324"
-      },
-      skills: ["Social Media Strategy", "Content Creation", "Community Management", "Digital Marketing"],
-      achievements: ["10K+ followers grown", "500+ campaigns managed", "4+ years marketing"]
-    },
+    
+    // Marketing & Communication Team
     {
       name: "Aviral Mishra",
       role: "Engagement Manager",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/aviral.png?updatedAt=1755974380465",
-      description: "Client relationship specialist focused on ensuring exceptional service delivery and customer satisfaction across all projects.",
-      email: "aviral.mishra@catalystcrew.com",
-      phone: "+91 98765 43221",
+      description: "An accomplished Engagement Manager with strong expertise in client relationship management, project coordination, and cross-functional team leadership. Skilled in understanding client needs, delivering solutions on time, and ensuring high customer satisfaction. Known for effective communication, problem-solving, and driving successful project outcomes.",
+      email: "avi.avimishra.com@gmail.com",
+      phone: "09170252358",
       social: {
         linkedin: "https://www.linkedin.com/in/aviral-mishra-93484430b/",
         github: "https://github.com/Aviral-Mishra18",
         instagram: "https://www.instagram.com/_its_aviral_mishra/"
       },
-      skills: ["Client Relations", "Project Coordination", "Quality Assurance", "Communication"],
-      achievements: ["100+ clients served", "99% satisfaction rate", "3+ years service"]
+      skills: ["Client Relationship Management", "Stakeholder Management", "Problem-Solving & Decision Making"],
+      achievements: ["As a fresher, developing engagement skills", "Building client relationship expertise", "Growing through practical experience"]
+    },
+    {
+      name: "Prakirti Mishra",
+      role: "Spokesperson and graphic designer",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/prakirti?updatedAt=1764573327040",
+      description: "Confident spokesperson with strong communication skills and creative graphic design expertise for impactful visual and brand communication.",
+      email: "prakirtimishra4@gmail.com",
+      phone: "8318058344",
+      social: {
+        linkedin: "https://www.linkedin.com/in/prakirti-mishra-14798a375?utm_source=share&utm_content=profile&utm_medium=member_android",
+        github: "",
+        instagram: ""
+      },
+      skills: ["Communication", "Public Speaking", "Editing", "Graphic Designing", "Canva", "Teamwork"],
+      achievements: ["As a fresher, developing communication and design skills", "Building creative expertise through projects", "Growing as a spokesperson and designer"]
     }
   ];
 

@@ -15,18 +15,19 @@ const Portfolio = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   const filters = [
-    { id: 'all', label: 'All', count: 6 },
-    { id: 'web', label: 'Websites', count: 2 },
-    { id: 'ecommerce', label: 'E-Commerce', count: 0 },
-    { id: 'webapp', label: 'Web Apps', count: 2 },
-    { id: 'portfolio', label: 'Portfolios', count: 2 }
+    { id: 'all', label: 'All', count: 8 },
+    { id: 'web-design', label: 'Web Design', count: 2 },
+    { id: 'web-application', label: 'Web Applications', count: 2 },
+    { id: 'portfolio-design', label: 'Portfolio Design', count: 2 },
+    { id: 'graphic-design', label: 'Graphic Design', count: 2 }
   ];
 
   const projects = [
+    // Web Design Projects
     {
       id: 1,
       title: "Sulax Solar",
-      category: "web",
+      category: "web-design",
       description: "Corporate solar energy website optimized for search visibility, featuring a custom backend for dynamic content updates.",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_1-removebg-preview%20(1).png?updatedAt=1755976929939",
       technologies: ["Backend", "SEO"],
@@ -37,9 +38,24 @@ const Portfolio = () => {
       github: "#"
     },
     {
+      id: 4,
+      title: "Our Website",
+      category: "web-design",
+      description: "Catalyst Crew's official digital home built for performance, clarity, and a powerful brand-driven user experience.",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_4-removebg-preview.png?updatedAt=1755976929761",
+      technologies: ["HTML/CSS", "JavaScript"],
+      client: "Catalyst Crew",
+      year: "2023",
+      featured: false,
+      link: "https://catalyst-crew-alpha.vercel.app/",
+      github: "#"
+    },
+    
+    // Web Application Projects
+    {
       id: 2,
       title: "Catalyst Crew Inventory",
-      category: "webapp",
+      category: "web-application",
       description: "A custom-built inventory management system for Catalyst Crew to efficiently track and manage production assets.",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_2-removebg-preview.png?updatedAt=1755976929781",
       technologies: ["Storage", "Backend"],
@@ -52,7 +68,7 @@ const Portfolio = () => {
     {
       id: 3,
       title: "Premium Portfolio",
-      category: "webapp",
+      category: "web-application",
       description: "A dynamic portfolio web app template with a sleek UI, backend integration, and motion-based animations for modern creatives.",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_3-removebg-preview.png?updatedAt=1755976929799",
       technologies: ["React", "Node.js"],
@@ -62,23 +78,12 @@ const Portfolio = () => {
       link: "https://arpitportfolio-ten.vercel.app/",
       github: "#"
     },
-    {
-      id: 4,
-      title: "Our Website",
-      category: "web",
-      description: "Catalyst Crew's official digital home built for performance, clarity, and a powerful brand-driven user experience.",
-      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_4-removebg-preview.png?updatedAt=1755976929761",
-      technologies: ["HTML/CSS", "JavaScript"],
-      client: "Catalyst Crew",
-      year: "2023",
-      featured: false,
-      link: "https://catalyst-crew-alpha.vercel.app/",
-      github: "#"
-    },
+    
+    // Portfolio Design Projects
     {
       id: 5,
       title: "Portfolio Website",
-      category: "portfolio",
+      category: "portfolio-design",
       description: "A creative personal website design showcasing elegant transitions, lightweight performance, and modern dark-mode support.",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project%205%20(2).png?updatedAt=1755978151851",
       technologies: ["HTML/CSS", "JS"],
@@ -91,7 +96,7 @@ const Portfolio = () => {
     {
       id: 6,
       title: "Ashwin Jauhary – Advanced Portfolio",
-      category: "portfolio",
+      category: "portfolio-design",
       description: "A sleek, animated portfolio showcasing skills, projects, and creativity with modern design and seamless interactions.",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/Ashwin-portfolio_5QO948eZ2?updatedAt=1761308179872",
       technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite", "EmailJS"],
@@ -99,6 +104,34 @@ const Portfolio = () => {
       year: "2025",
       featured: true,
       link: "https://ashwin-portolio-react.vercel.app/",
+      github: "#"
+    },
+    
+    // Graphic Design Projects
+    {
+      id: 7,
+      title: "Joylicious Menu Design",
+      category: "graphic-design",
+      description: "Vibrant, student-friendly menu poster for CSJM University startup. Features brand identity, appetizing illustrations, and modern typography with clear product highlights.",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/JOlicious.png",
+      technologies: ["Photoshop", "Illustrator", "Canva"],
+      client: "Joylicious - CSJM University Startup",
+      year: "2025",
+      featured: true,
+      link: "#",
+      github: "#"
+    },
+    {
+      id: 8,
+      title: "Catalyst Crew – Food Menu Design",
+      category: "graphic-design",
+      description: "Visually appealing food menu with main courses, appetizers, and beverages. Features bold yellow accents, dark textured background, and organized sections perfect for promotions and events.",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/menu.png",
+      technologies: ["Photoshop", "Illustrator", "Graphic Design"],
+      client: "Catalyst Crew",
+      year: "2025",
+      featured: true,
+      link: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/Food%20Menu.pdf",
       github: "#"
     }
   ];

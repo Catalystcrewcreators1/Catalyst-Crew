@@ -1,19 +1,47 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import {
-  Cpu,
-  Zap,
-  Globe,
-  Target,
-  Sparkles,
-  Play,
-  ArrowRight
-} from 'lucide-react';
+import { Cpu, Zap, Globe, Target, Sparkles, Play, ArrowRight, ExternalLink } from 'lucide-react';
+import { PageLayout } from '../components/layout/PageLayout';
+import { StructuredData } from '../components/seo/StructuredData';
+import { seoConfigs } from '../utils/seoConfig';
 import ParticleBackground from '../components/ui/ParticleBackground';
 import ServiceCard from '../components/ui/ServiceCard';
 import { ScrollReveal } from '../components/ui/ScrollAnimations';
 
 const Home = () => {
+  // Get default SEO config for home page
+  const seoConfig = seoConfigs.home();
+  
+  // Additional structured data for home page
+  const webpageData = {
+    '@type': 'WebPage' as const,
+    name: seoConfig.title,
+    description: seoConfig.description,
+    url: seoConfig.canonicalUrl,
+    mainEntityOfPage: {
+      '@type': 'WebPage' as const,
+      '@id': seoConfig.canonicalUrl,
+    },
+    publisher: {
+      '@type': 'Organization' as const,
+      name: 'Catalyst Crew',
+      logo: {
+        '@type': 'ImageObject' as const,
+        url: seoConfig.ogImageUrl,
+      },
+    },
+  };
+
+  const organizationData = {
+    '@type': 'Organization' as const,
+    name: 'Catalyst Crew',
+    url: seoConfig.canonicalUrl,
+    logo: seoConfig.ogImageUrl,
+    sameAs: [
+      'https://www.linkedin.com/company/catalyst-crew-tech',
+      'https://www.instagram.com/catalyst.crew',
+    ],
+  };
   const services = [
     {
       icon: '🎨',
@@ -116,13 +144,98 @@ const Home = () => {
     }
   ];
 
+  // Featured Projects Data
+  const featuredProjects = [
+    {
+      id: 1,
+      title: "Sulax Solar",
+      category: "Web Development",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_1-removebg-preview%20(1).png?updatedAt=1755976929939",
+      description: "Corporate solar energy website optimized for search visibility, featuring a custom backend for dynamic content updates.",
+      technologies: ["Backend", "SEO"],
+      link: "https://sulaxsolar.com/",
+      featured: true
+    },
+    {
+      id: 6,
+      title: "Joylicious Menu Design",
+      category: "Graphic Design",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/JOlicious.png",
+      description: "Vibrant, student-friendly menu poster for CSJM University startup with brand identity and modern typography.",
+      technologies: ["Photoshop", "Illustrator", "Canva"],
+      link: "/portfolio",
+      featured: true
+    },
+    {
+      id: 2,
+      title: "Catalyst Crew Inventory",
+      category: "Web Application",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_2-removebg-preview.png?updatedAt=1755976929781",
+      description: "A custom-built inventory management system for Catalyst Crew to efficiently track and manage production assets.",
+      technologies: ["Storage", "Backend"],
+      link: "https://crew-inventory.vercel.app/",
+      featured: true
+    },
+    {
+      id: 7,
+      title: "Catalyst Crew – Food Menu Design",
+      category: "Graphic Design",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/menu.png",
+      description: "Visually appealing food menu with bold yellow accents and dark textured background, perfect for promotions and events.",
+      technologies: ["Photoshop", "Illustrator", "Graphic Design"],
+      link: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/Food%20Menu.pdf",
+      featured: true
+    },
+    {
+      id: 3,
+      title: "Premium Portfolio",
+      category: "Web Application",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_3-removebg-preview.png?updatedAt=1755976929799",
+      description: "A dynamic portfolio web app template with a sleek UI, backend integration, and motion-based animations for modern creatives.",
+      technologies: ["React", "Node.js"],
+      link: "https://arpitportfolio-ten.vercel.app/",
+      featured: true
+    },
+    {
+      id: 4,
+      title: "Our Website",
+      category: "Website",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/project_4-removebg-preview.png?updatedAt=1755976929761",
+      description: "Catalyst Crew's official digital home built for performance, clarity, and a powerful brand-driven user experience.",
+      technologies: ["HTML/CSS", "JavaScript"],
+      link: "https://catalyst-crew-alpha.vercel.app/",
+      featured: true
+    },
+    {
+      id: 5,
+      title: "Ashwin Jauhary – Advanced Portfolio",
+      category: "Portfolio",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/Ashwin-portfolio_5QO948eZ2?updatedAt=1761308179872",
+      description: "A sleek, animated portfolio showcasing skills, projects, and creativity with modern design and seamless interactions.",
+      technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite", "EmailJS"],
+      link: "https://ashwin-portolio-react.vercel.app/",
+      featured: true
+    }
+  ];
+
+  // Marquee state - no state needed for continuous scrolling
+
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <PageLayout 
+      pageType="home"
+      className="relative overflow-hidden"
+    >
+      <StructuredData data={webpageData} />
+      <StructuredData data={organizationData} />
       {/* Enhanced Particle Background */}
       <ParticleBackground />
 
       {/* Enhanced Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-24 pb-20">
+      <section 
+        className="relative min-h-screen flex items-center justify-center pt-24 pb-20"
+        itemScope
+        itemType="https://schema.org/WPHeader"
+      >
         {/* Dynamic Background with Multiple Layers */}
         <div className="absolute inset-0 bg-gradient-to-br from-catalyst-dark via-black to-catalyst-red/10" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-catalyst-red/5 via-transparent to-transparent" />
@@ -503,7 +616,142 @@ const Home = () => {
           </ScrollReveal>
         </div>
       </section>
-    </div>
+
+      {/* Featured Projects Section */}
+      <section className="py-24 relative overflow-hidden z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <ScrollReveal>
+            <div className="text-center mb-20">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center px-4 py-2 bg-catalyst-red/10 border border-catalyst-red/30 rounded-full mb-6"
+              >
+                <Sparkles className="w-4 h-4 text-catalyst-red mr-2" />
+                <span className="text-sm text-catalyst-red font-medium">Featured Projects</span>
+              </motion.div>
+
+              <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
+                <span className="block mb-2" style={{ color: '#D71B1B' }}>Our Latest</span>
+                <span className="text-white">Template Projects</span>
+              </h2>
+
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Explore our showcase of innovative template projects demonstrating our expertise across
+                web development, design, and digital solutions.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Marquee Container */}
+          <div className="relative overflow-hidden">
+            {/* Marquee Track */}
+            <div className="relative">
+              {/* First set of projects */}
+              <motion.div
+                className="flex space-x-6"
+                animate={{
+                  x: [0, -4480] // Adjust based on total width (7 projects × 320px + 6 gaps × 24px = 2240px × 2 for duplicate)
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 25, // Slightly slower for more projects
+                    ease: "linear"
+                  }
+                }}
+              >
+                {/* Duplicate projects for seamless loop */}
+                {[...featuredProjects, ...featuredProjects].map((project, index) => (
+                  <motion.div
+                    key={`${project.id}-${index}`}
+                    whileHover={{ scale: 1.05, y: -10 }}
+                    className="flex-shrink-0 w-80 bg-gradient-to-br from-white/10 to-white/5 border border-white/20 backdrop-blur-sm rounded-2xl overflow-hidden"
+                  >
+                    {/* Project Image */}
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-3 left-3">
+                        <span className="px-2 py-1 bg-catalyst-red/80 backdrop-blur-sm text-white text-xs font-medium rounded-full">
+                          {project.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Project Details */}
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-white mb-3">
+                        {project.title}
+                      </h3>
+                      
+                      <p className="text-white/70 text-sm mb-4 line-clamp-2">
+                        {project.description}
+                      </p>
+
+                      {/* Technologies */}
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-2 py-1 bg-gradient-to-r from-catalyst-red/20 to-catalyst-red/10 border border-catalyst-red/30 rounded-full text-white/70 text-xs"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.technologies.length > 3 && (
+                          <span className="px-2 py-1 bg-gradient-to-r from-catalyst-red/20 to-catalyst-red/10 border border-catalyst-red/30 rounded-full text-white/70 text-xs">
+                            +{project.technologies.length - 3}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Action Button */}
+                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <Link
+                          to={project.link}
+                          target="_blank"
+                          className="w-full inline-flex items-center justify-center space-x-2 px-4 py-2 bg-catalyst-red text-white rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-catalyst-red/40"
+                        >
+                          <span>View Project</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </Link>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Gradient overlays for fade effect */}
+            <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-black via-black/50 to-transparent pointer-events-none z-10" />
+            <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-black via-black/50 to-transparent pointer-events-none z-10" />
+          </div>
+
+          {/* View All Projects Button */}
+          <div className="text-center mt-12">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="/portfolio"
+                className="inline-flex items-center space-x-2 px-8 py-4 bg-catalyst-red text-white rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-catalyst-red/40"
+              >
+                <span>View All Projects</span>
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    </PageLayout>
   );
 };
 
