@@ -131,7 +131,7 @@ const Portfolio = () => {
       client: "Catalyst Crew",
       year: "2025",
       featured: true,
-      link: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/Food%20Menu.pdf",
+      link: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/Memnu.pdf",
       github: "#"
     }
   ];
