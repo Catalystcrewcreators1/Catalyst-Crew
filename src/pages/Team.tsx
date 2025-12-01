@@ -115,7 +115,7 @@ const Team = () => {
       achievements: ["As a fresher, exploring creative design possibilities", "Building a portfolio through diverse projects", "Learning and applying design principles"]
     },
     {
-      name: "Shubhi Singh",
+      name: "Sagarika Singh",
       role: "Graphic Designer",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/shubhi.png?updatedAt=1755974380465",
       description: "Creative graphic designer and video editor with experience in startups and professional projects.",
