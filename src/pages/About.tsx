@@ -1,21 +1,35 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import {
-  ArrowLeft,
-  Users,
-  Target,
-  Award,
-  Star,
-  Heart,
-  Zap,
-  Globe,
-  Rocket,
-  Sparkles,
-  ExternalLink
-} from 'lucide-react';
+import { Users, Target, Award, Star, Heart, Zap, Globe, Rocket, Sparkles, ArrowLeft, ExternalLink } from 'lucide-react';
+import { PageLayout } from '../components/layout/PageLayout';
+import { StructuredData } from '../components/seo/StructuredData';
+import { seoConfigs } from '../utils/seoConfig';
 import { ScrollReveal, FloatingElement } from '../components/ui/ScrollAnimations';
+import type { WebPageData } from '../types/seo';
 
 const About = () => {
+  // Get default SEO config for about page
+  const seoConfig = seoConfigs.about();
+  
+  // Additional structured data for about page
+  const webpageData: WebPageData = {
+    '@type': 'WebPage',
+    name: seoConfig.title || 'About Us | Catalyst Crew',
+    description: seoConfig.description || 'Learn about Catalyst Crew, a leading digital solutions provider based in Kanpur, India',
+    url: seoConfig.canonicalUrl || 'https://catalystcrew.tech/about',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': seoConfig.canonicalUrl || 'https://catalystcrew.tech/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Catalyst Crew',
+      logo: {
+        '@type': 'ImageObject',
+        url: seoConfig.ogImageUrl || 'https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/catalyst%20crew%20logo.jpg',
+      },
+    },
+  };
   const stats = [
     { number: 2024, label: 'Founded', icon: Rocket },
     { number: 7, label: 'Team Members', icon: Users },
@@ -127,19 +141,25 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-catalyst-dark via-black to-catalyst-red/5 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-catalyst-red/5 to-transparent" />
-      {[...Array(6)].map((_, i) => (
-        <FloatingElement key={i} intensity={20} speed={4 + i}>
-          <div className={`absolute w-3 h-3 rounded-full opacity-40 ${
-            i % 2 === 0 ? 'bg-catalyst-red' : 'bg-white'
-          }`} style={{
-            left: `${15 + (i * 15)}%`,
-            top: `${20 + (i * 12)}%`
-          }} />
-        </FloatingElement>
-      ))}
+    <PageLayout 
+      pageType="about"
+      className="relative overflow-hidden"
+    >
+      <StructuredData data={webpageData} />
+      <div className="min-h-screen bg-gradient-to-br from-catalyst-dark via-black to-catalyst-red/5 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-catalyst-red/5 to-transparent" />
+        {[...Array(6)].map((i) => (
+          <FloatingElement key={i} intensity={20} speed={4 + i}>
+            <div 
+              className={`absolute w-3 h-3 rounded-full opacity-40 ${i % 2 === 0 ? 'bg-catalyst-red' : 'bg-white'}`} 
+              style={{
+                left: `${15 + (i * 15)}%`,
+                top: `${20 + (i * 12)}%`
+              }} 
+            />
+          </FloatingElement>
+        ))}
 
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
@@ -604,6 +624,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </PageLayout>
   );
 };
 

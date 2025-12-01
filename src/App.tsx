@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { initGA, logPageView, logEvent } from './utils/analytics';
 
 // Define types for PWA install prompt
 interface BeforeInstallPromptEvent extends Event {
@@ -39,6 +40,11 @@ import SocialMediaManaging from './pages/SocialMediaManaging';
 import Illustration from './pages/Illustration';
 import AIBot from './pages/AIBot';
 
+// Initialize Google Analytics when the app loads
+if (typeof window !== 'undefined') {
+  initGA();
+}
+
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -46,6 +52,18 @@ function App() {
   const [showInstallPopup, setShowInstallPopup] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  
+  // Track page views on route change
+  useEffect(() => {
+    logPageView(window.location.pathname);
+    
+    // Track custom event for page view
+    logEvent({
+      category: 'Navigation',
+      action: 'Page View',
+      label: window.location.pathname
+    });
+  }, [location.pathname]);
 
   // Define page order for swipe navigation
   const pageOrder = [
