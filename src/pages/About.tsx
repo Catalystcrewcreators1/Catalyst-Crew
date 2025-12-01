@@ -32,7 +32,7 @@ const About = () => {
   };
   const stats = [
     { number: 2024, label: 'Founded', icon: Rocket },
-    { number: 7, label: 'Team Members', icon: Users },
+    { number: 9, label: 'Team Members', icon: Users },
     { number: 20, label: 'Projects Completed', icon: Award },
     { number: 15, label: 'Happy Clients', icon: Star }
   ];
@@ -120,6 +120,18 @@ const About = () => {
       role: "Engagement Manager",
       image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/aviral.png?updatedAt=1755974380465",
       bio: "Client relations and project coordination"
+    },
+    {
+      name: "Sagarika Singh",
+      role: "Graphic Designer",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/sagarika.png?updatedAt=1755974380465",
+      bio: "Creative graphic designer and video editor with experience in startups"
+    },
+    {
+      name: "Prakirti Mishra",
+      role: "Spokesperson and Graphic Designer",
+      image: "https://ik.imagekit.io/7cknsz6it/CATALYST%20CREW/prakirti?updatedAt=1764573327040",
+      bio: "Confident spokesperson with strong communication and creative design skills"
     }
   ];
 
@@ -149,8 +161,8 @@ const About = () => {
       <div className="min-h-screen bg-gradient-to-br from-catalyst-dark via-black to-catalyst-red/5 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-catalyst-red/5 to-transparent" />
-        {[...Array(6)].map((i) => (
-          <FloatingElement key={i} intensity={20} speed={4 + i}>
+        {[...Array(6)].map((_, i) => (
+          <FloatingElement key={`floating-${i}`} intensity={20} speed={4 + i}>
             <div 
               className={`absolute w-3 h-3 rounded-full opacity-40 ${i % 2 === 0 ? 'bg-catalyst-red' : 'bg-white'}`} 
               style={{
